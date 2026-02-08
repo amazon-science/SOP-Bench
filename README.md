@@ -7,9 +7,13 @@
 
 ### Key Features
 🏭 **Human Expert-Authored SOPs**: Authentic procedures crafted by domain experts reflecting real-world complexity
+
 🤖 **Human-AI Collaborative Framework**: AI-generated artifacts (tools, APIs, datasets) with human validation
+
 📊 **Executable Interfaces**: Ground-truth outputs enabling reproducible evaluation
+
 🔧 **Two Agent Architectures**: Function-Calling (FC) and ReAct agents for systematic comparison
+
 📈 **11 Frontier Models Evaluated**: Comprehensive benchmarking across Claude, GPT, Llama, and DeepSeek families
 
 ## News
