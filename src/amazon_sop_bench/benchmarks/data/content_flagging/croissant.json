@@ -1,0 +1,249 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "content_flagging_sop",
+  "description": "Standard operating procedure for content_flagging_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "content_flagging_sop/test_set_with_outputs.csv",
+      "sha256": "f87bf1450f35f711d3f551e1fcfe021ddf82bae63fe6af6420ba6ac4d2c6c6dd"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "content_flagging_sop/test_set_without_outputs.csv",
+      "sha256": "1ce0d9f1754689052b9f382d2c3d0684ea66bcc58ead4ac5820cf1aaaa3f6395"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "content_flagging_sop/toolspecs.json",
+      "sha256": "47ad4ce7894f64d22ec99d68a3999f2a2164e9e30aa2747b5d27b071fee24867"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "content_flagging_sop/tools.py",
+      "sha256": "0fd03f202aa1eaca3a863bb4a2fe21219c55cfe7a5d585adafdbf0df536cc494"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "content_flagging_sop/sop.txt",
+      "sha256": "472bd3613f3bae66362c0f0ab081854e6130297ba8c538b0a82697fa1d4cda75"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "content_flagging_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "content_id",
+          "description": "Column 'content_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "userid",
+          "description": "Column 'userid' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "flagid",
+          "description": "Column 'flagid' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Latitude",
+          "description": "Column 'Latitude' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Longitude",
+          "description": "Column 'Longitude' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "device_type",
+          "description": "Column 'device_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "os",
+          "description": "Column 'os' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "browser",
+          "description": "Column 'browser' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "PrimaryViolationType",
+          "description": "Column 'PrimaryViolationType' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "SecondaryViolationType",
+          "description": "Column 'SecondaryViolationType' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "PrimaryViolation_Confidence",
+          "description": "Column 'PrimaryViolation_Confidence' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "SecondaryViolation_Confidence",
+          "description": "Column 'SecondaryViolation_Confidence' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NumberofPreviousPosts",
+          "description": "Column 'NumberofPreviousPosts' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "CountofFlaggedPosts",
+          "description": "Column 'CountofFlaggedPosts' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "is_possible_bot",
+          "description": "Column 'is_possible_bot' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Captcha_tries",
+          "description": "Column 'Captcha_tries' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "user_trust_score",
+          "description": "Column 'user_trust_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "content_severity_index",
+          "description": "Column 'content_severity_index' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "final_decision",
+          "description": "Column 'final_decision' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "content_id",
+          "description": "Column 'content_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "userid",
+          "description": "Column 'userid' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "flagid",
+          "description": "Column 'flagid' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Latitude",
+          "description": "Column 'Latitude' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Longitude",
+          "description": "Column 'Longitude' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "device_type",
+          "description": "Column 'device_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "os",
+          "description": "Column 'os' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "browser",
+          "description": "Column 'browser' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "PrimaryViolationType",
+          "description": "Column 'PrimaryViolationType' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "SecondaryViolationType",
+          "description": "Column 'SecondaryViolationType' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "PrimaryViolation_Confidence",
+          "description": "Column 'PrimaryViolation_Confidence' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "SecondaryViolation_Confidence",
+          "description": "Column 'SecondaryViolation_Confidence' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "NumberofPreviousPosts",
+          "description": "Column 'NumberofPreviousPosts' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "CountofFlaggedPosts",
+          "description": "Column 'CountofFlaggedPosts' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "is_possible_bot",
+          "description": "Column 'is_possible_bot' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "Captcha_tries",
+          "description": "Column 'Captcha_tries' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

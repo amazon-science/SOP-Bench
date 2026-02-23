@@ -1,19 +1,88 @@
-*~
-*#
-*.swp
-
-*.DS_Store
-
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
 *.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-/.coverage
-/.coverage.*
-/.cache
-/.pytest_cache
-/.mypy_cache
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
 
-/doc/_apidoc/
-/build
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Environment variables
+.env
+.env.local
+
+# Results and outputs
+results/
+outputs/
+logs/
+*.log
+*_traces/
+*_detailed.csv
+*_results.json
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Distribution
+*.tar.gz
+*.whl
+
+# Documentation builds
+docs/_build/
+doc/_build/
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# Repolinter
+repolinter/
+amazon-ospo-ruleset.json

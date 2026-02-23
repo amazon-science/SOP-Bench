@@ -1,0 +1,201 @@
+partner_id,violation_code,registered_websites,earnings_amount,unique_users,total_orders,total_clicks,click_spike,engagement_score,session_count,conversion_rate,computer_traffic_percent,phone_traffic_percent,browser_a_traffic_percent,unattributed_clicks,bounce_rate,visit_duration_seconds,direct_traffic_percent,top_referral_source,violation_type,risk_level,investigation_status,evidence_collected,traffic_analysis_result,source_verification_result
+PARTNER100,300,https://site0.com/,2.07,15,13,9711,22952,1.5,62358,0.023,79.0,21.0,58.4,704,97.3,22,22.3,organic-search.com,Click Funneling,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER101,301,https://site1.com/,4.26,1,20,4255,16394,0.2,87103,0.024,65.8,34.2,25.6,989,96.5,8,44.7,popup-ads.com,Redirecting Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER102,302,https://site2.com/,9.8,1,7,6917,14016,0.2,74167,0.026,73.1,26.9,31.3,141,91.3,36,32.3,twitter.com,Spoofing Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER103,303,https://site3.com/,6.18,10,9,6657,25658,0.8,54555,0.048,54.8,45.2,21.2,1110,81.7,8,20.2,traffic-stuffing.com,Blank Source Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER104,304,https://site4.com/,68.51,78,84,1255,0,2.1,33399,0.15,29.2,70.8,41.0,1059,33.6,181,51.7,google.com,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER105,305,https://site5.com/,5.75,2,16,5961,3107,1.2,33551,0.036,11.3,88.7,58.3,1320,96.5,10,42.3,google.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER106,306,https://site6.com/,5.06,9,13,7384,15583,0.8,14452,0.015,48.4,51.6,47.3,1133,90.4,15,28.9,generic-ads.com,Click Funneling,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER107,307,https://site7.com/,8.91,11,2,5662,6536,0.9,75595,0.032,48.2,51.8,22.5,58,81.0,43,65.1,twitter.com,Pop Ads Masking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER108,308,https://site8.com/,6.2,14,19,3324,20117,0.3,45645,0.031,29.1,70.9,66.6,1349,83.3,22,15.8,google.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER109,309,https://site9.com/,1.32,2,3,2552,21347,0.5,43320,0.039,75.8,24.2,30.7,1232,90.7,16,57.7,generic-ads.com,Pop Ads Masking,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER110,310,https://site10.com/,4.2,5,15,9979,26124,1.3,23351,0.008,25.5,74.5,88.2,1097,83.1,20,48.2,generic-ads.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER111,311,https://site11.com/,8.96,14,20,5461,1771,1.3,28419,0.054,34.5,65.5,34.7,48,93.6,30,72.7,twitter.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER112,312,https://site12.com/,3.49,10,7,6600,12179,1.5,96388,0.037,33.1,66.9,64.3,374,89.8,28,15.6,redirect-ads.com,Redirecting Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER113,313,https://site13.com/,5.04,10,14,2887,18594,1.1,61371,0.013,79.4,20.6,78.4,963,96.5,26,19.2,google.com,Traffic Stuffing,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER114,314,https://site14.com/,6.96,9,10,1764,2550,0.9,45758,0.042,71.0,29.0,26.9,23,94.0,13,17.9,google.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER115,315,https://site15.com/,7.77,6,7,6485,10961,0.9,76784,0.029,43.3,56.7,80.5,318,84.8,13,12.8,popup-ads.com,Spoofing Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER116,316,https://site16.com/,3.13,1,2,5111,17358,0.5,52146,0.073,27.5,72.5,64.3,1014,94.1,27,69.1,popup-ads.com,Traffic/URL Cloaking,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER117,317,https://site17.com/,5.93,14,1,4825,9456,1.3,90724,0.017,87.5,12.5,87.7,1089,92.5,23,37.7,traffic-stuffing.com,Spoofing Traffic,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER118,318,https://site18.com/,3.46,8,9,9318,843,0.2,97675,0.069,28.4,71.6,38.6,194,89.0,21,11.9,popup-ads.com,Click Funneling,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER119,319,https://site19.com/,8.31,7,13,1547,26464,1.5,99460,0.047,63.5,36.5,78.0,615,97.4,44,27.3,popup-ads.com,Traffic/URL Cloaking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER120,320,https://site20.com/,6.2,9,12,3167,24798,1.2,21777,0.077,58.7,41.3,23.6,177,94.6,39,34.4,facebook.com,Spoofing Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER121,321,https://site21.com/,0.24,7,20,7182,14053,1.0,10534,0.007,88.8,11.2,61.2,62,89.8,39,24.2,google.com,Spoofing Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER122,322,https://site22.com/,3.46,10,3,9107,16180,0.3,83270,0.012,39.8,60.2,27.0,354,85.9,8,28.1,organic-search.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER123,323,https://site23.com/,98.02,99,116,9537,0,3.3,13270,0.326,62.9,37.1,67.3,877,49.5,142,19.2,generic-ads.com,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER124,324,https://site24.com/,74.25,97,55,1461,0,3.4,51345,0.227,55.0,45.0,68.0,1086,65.4,112,46.2,popup-ads.com,,Low,Completed,"screenshots,URLs,analytics_data",NORMAL,PASSED
+PARTNER125,325,https://site25.com/,8.1,13,19,6710,8208,0.2,13533,0.014,34.3,65.7,48.2,1162,83.6,11,58.6,organic-search.com,Plugin/Software Usage,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER126,326,https://site26.com/,3.47,2,16,5337,7728,0.2,11274,0.004,41.1,58.9,36.1,916,80.3,11,46.8,redirect-ads.com,Plugin/Software Usage,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER127,327,https://site27.com/,2.95,2,18,3761,18816,0.8,93390,0.013,31.8,68.2,77.2,228,95.0,16,40.6,google.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER128,328,https://site28.com/,9.57,9,13,1179,7289,0.6,55208,0.044,14.7,85.3,82.4,109,93.5,24,52.3,popup-ads.com,Click Funneling,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER129,329,https://site29.com/,9.83,7,13,6250,3743,1.3,56345,0.042,53.0,47.0,70.4,678,85.5,33,37.5,unknown,Pop Ads Masking,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER130,330,https://site30.com/,8.19,4,6,7784,28262,1.1,49595,0.042,50.9,49.1,70.9,1344,81.4,36,75.5,facebook.com,Traffic/URL Cloaking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER131,331,https://site31.com/,6.08,2,6,3717,28917,0.9,5070,0.057,50.7,49.3,63.6,1144,95.2,24,51.2,click-funnel.com,Blank Source Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER132,332,https://site32.com/,4.94,11,7,5343,4193,0.5,85230,0.022,37.4,62.6,70.5,926,97.9,29,48.0,google.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER133,333,https://site33.com/,69.54,97,50,2288,0,3.9,76876,0.47,49.5,50.5,49.7,24,47.8,213,66.3,google.com,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER134,334,https://site34.com/,5.56,7,18,4356,24771,1.2,80358,0.051,20.4,79.6,20.6,253,88.3,28,50.7,unknown,Redirecting Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER135,335,https://site35.com/,2.68,13,11,6992,25054,0.6,22403,0.032,17.3,82.7,55.9,838,94.6,35,51.7,google.com,Traffic/URL Cloaking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER136,336,https://site36.com/,8.78,15,13,9426,8096,0.9,56215,0.054,68.6,31.4,49.6,170,98.0,30,35.1,redirect-ads.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER137,337,https://site37.com/,2.83,11,6,2172,5249,0.6,53124,0.06,12.5,87.5,89.6,78,89.4,26,19.4,facebook.com,Spoofing Traffic,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER138,338,https://site38.com/,1.94,11,4,2428,20250,1.4,97420,0.03,82.5,17.5,75.5,697,80.3,20,54.8,facebook.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER139,339,https://site39.com/,4.13,5,1,6382,28968,0.3,88981,0.01,74.8,25.2,61.1,218,87.1,24,12.8,google.com,Blank Source Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER140,340,https://site40.com/,1.14,8,5,3329,3833,1.3,52975,0.04,70.5,29.5,32.9,1499,85.8,21,32.1,traffic-stuffing.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER141,341,https://site41.com/,0.38,12,6,4759,6625,0.6,57572,0.028,19.4,80.6,36.7,575,89.1,8,43.4,popup-ads.com,Click Funneling,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER142,342,https://site42.com/,4.14,3,15,4418,15932,0.6,42721,0.054,67.5,32.5,61.3,1095,87.3,17,59.2,organic-search.com,Click Funneling,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER143,343,https://site43.com/,2.03,6,6,8870,15691,1.4,90147,0.017,71.3,28.7,45.4,606,90.5,34,26.5,twitter.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER144,344,https://site44.com/,2.81,8,11,6253,10867,0.8,65328,0.035,15.1,84.9,47.0,138,92.3,8,63.7,click-funnel.com,Traffic Stuffing,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER145,345,https://site45.com/,2.91,1,9,5966,5750,0.6,84403,0.037,57.5,42.5,32.6,711,92.6,31,22.3,unknown,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER146,346,https://site46.com/,7.04,6,17,3875,4364,1.0,66508,0.017,14.3,85.7,42.1,396,93.3,39,39.0,generic-ads.com,Spoofing Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER147,347,https://site47.com/,0.91,2,2,2750,20940,1.0,67706,0.052,48.6,51.4,64.7,223,89.3,29,53.7,popup-ads.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER148,348,https://site48.com/,0.72,14,18,9168,29631,1.5,47834,0.054,14.4,85.6,88.4,867,80.4,27,76.5,facebook.com,Plugin/Software Usage,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER149,349,https://site49.com/,2.75,12,9,4703,20664,0.3,33855,0.054,10.8,89.2,45.4,463,91.9,28,24.7,redirect-ads.com,Spoofing Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER150,350,https://site50.com/,3.92,8,5,6711,29909,0.9,16715,0.015,25.1,74.9,67.9,556,89.7,32,72.5,organic-search.com,Pop Ads Masking,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER151,351,https://site51.com/,9.23,4,3,6684,672,0.4,37067,0.024,57.7,42.3,33.3,738,89.6,11,37.8,traffic-stuffing.com,Click Funneling,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER152,352,https://site52.com/,0.39,10,7,1670,21247,0.8,70785,0.078,32.9,67.1,79.7,1209,82.1,23,28.7,traffic-stuffing.com,Traffic Stuffing,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER153,353,https://site53.com/,9.7,12,18,4872,15297,1.3,18215,0.042,71.1,28.9,49.1,226,81.8,42,26.6,facebook.com,Plugin/Software Usage,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER154,354,https://site54.com/,9.98,1,14,5040,2989,1.3,28332,0.033,89.8,10.2,71.3,1000,94.8,37,42.7,google.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER155,355,https://site55.com/,3.32,6,6,3917,5339,1.4,94694,0.006,48.2,51.8,25.6,1291,80.4,15,27.6,generic-ads.com,Click Funneling,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER156,356,https://site56.com/,0.65,2,20,3498,26828,0.8,6721,0.007,17.2,82.8,20.1,1449,94.7,9,16.8,facebook.com,Spoofing Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER157,357,https://site57.com/,5.17,7,1,9190,22242,0.8,50176,0.034,44.2,55.8,29.2,142,91.9,33,72.7,redirect-ads.com,Redirecting Traffic,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER158,358,https://site58.com/,0.64,15,4,6125,28899,0.7,35097,0.036,51.8,48.2,89.2,604,96.2,5,32.5,google.com,Redirecting Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER159,359,https://site59.com/,9.08,11,11,2595,24515,1.1,70183,0.001,45.0,55.0,33.5,845,82.4,14,35.9,generic-ads.com,Plugin/Software Usage,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER160,360,https://site60.com/,1.43,9,8,4772,3297,0.2,91436,0.006,18.4,81.6,22.8,1131,91.1,10,77.9,generic-ads.com,Plugin/Software Usage,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER161,361,https://site61.com/,6.73,2,17,5331,28419,1.2,79400,0.063,86.5,13.5,38.1,1172,89.0,5,33.6,traffic-stuffing.com,Spoofing Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER162,362,https://site62.com/,6.78,8,14,8698,15948,0.4,68946,0.051,35.9,64.1,64.3,83,97.6,22,34.8,organic-search.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER163,363,https://site63.com/,5.89,9,17,8309,16249,0.7,12374,0.036,36.6,63.4,39.0,70,97.3,16,63.4,redirect-ads.com,Redirecting Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER164,364,https://site64.com/,5.49,6,1,4566,19176,1.0,15180,0.031,67.5,32.5,65.3,174,92.6,36,35.9,google.com,Spoofing Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER165,365,https://site65.com/,1.3,9,18,2526,13879,0.5,74012,0.019,22.7,77.3,68.2,414,84.2,36,25.2,twitter.com,Click Funneling,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER166,366,https://site66.com/,6.73,8,9,9003,27073,0.2,91613,0.04,55.5,44.5,33.0,1029,86.4,9,20.6,popup-ads.com,Plugin/Software Usage,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER167,367,https://site67.com/,3.56,14,6,4113,26891,0.5,59990,0.024,35.3,64.7,75.9,81,84.6,41,10.4,unknown,Click Funneling,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER168,368,https://site68.com/,9.49,6,5,7451,13320,0.1,53701,0.072,88.1,11.9,57.0,1225,81.1,24,74.2,generic-ads.com,Plugin/Software Usage,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER169,369,https://site69.com/,9.56,5,12,5081,2678,0.3,39500,0.055,73.8,26.2,74.4,1186,81.0,32,12.4,google.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER170,370,https://site70.com/,1.22,13,2,5873,8121,1.2,64670,0.053,23.1,76.9,67.6,339,83.8,21,24.6,facebook.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER171,371,https://site71.com/,3.76,8,15,8242,4145,1.3,76842,0.029,88.8,11.2,76.5,1422,81.2,6,64.8,unknown,Pop Ads Masking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER172,372,https://site72.com/,2.13,10,14,9374,19462,0.2,27777,0.004,39.8,60.2,45.5,817,80.8,19,71.6,organic-search.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER173,373,https://site73.com/,3.33,14,13,6470,14282,0.8,92357,0.048,77.5,22.5,76.1,1395,94.0,7,32.8,traffic-stuffing.com,Click Funneling,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER174,374,https://site74.com/,9.19,10,6,1888,12217,0.7,93315,0.047,81.7,18.3,86.8,252,96.6,38,44.6,generic-ads.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER175,375,https://site75.com/,42.43,48,73,9985,0,3.1,32729,0.44,23.6,76.4,40.1,867,30.5,83,38.1,twitter.com,,Low,Completed,analytics_data,NORMAL,PASSED
+PARTNER176,376,https://site76.com/,6.53,5,2,5863,26130,0.5,46072,0.064,20.1,79.9,40.7,1128,87.7,7,33.3,click-funnel.com,Spoofing Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER177,377,https://site77.com/,5.81,14,3,1664,184,1.5,41737,0.049,54.9,45.1,66.1,923,90.5,20,37.9,organic-search.com,Blank Source Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER178,378,https://site78.com/,7.46,15,14,1574,22597,1.4,88321,0.067,55.0,45.0,82.6,1329,81.1,6,14.6,facebook.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER179,379,https://site79.com/,3.05,3,16,2729,20739,0.2,41841,0.059,28.7,71.3,61.2,932,94.4,37,42.6,facebook.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER180,380,https://site80.com/,7.96,2,16,8791,17854,0.4,31418,0.064,49.3,50.7,39.6,385,81.8,33,20.4,unknown,Redirecting Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER181,381,https://site81.com/,1.25,9,3,6449,9154,0.6,61680,0.029,33.2,66.8,77.3,1344,93.7,23,39.8,unknown,Blank Source Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER182,382,https://site82.com/,1.62,10,9,9937,18052,0.7,23896,0.066,84.1,15.9,46.0,749,92.9,7,79.4,generic-ads.com,Click Funneling,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER183,383,https://site83.com/,9.43,7,10,4510,25504,0.5,57267,0.039,86.4,13.6,49.1,1480,90.6,29,31.4,google.com,Plugin/Software Usage,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER184,384,https://site84.com/,7.46,4,8,1543,4422,1.3,45704,0.055,29.6,70.4,28.6,1345,97.8,8,70.2,click-funnel.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER185,385,https://site85.com/,9.99,11,11,7880,23648,1.3,52872,0.079,27.3,72.7,38.1,538,95.6,33,19.4,organic-search.com,Blank Source Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER186,386,https://site86.com/,3.79,8,4,2020,20157,0.5,42618,0.025,78.5,21.5,30.4,1383,93.3,38,47.4,google.com,Pop Ads Masking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER187,387,https://site87.com/,1.66,3,11,9778,10886,0.8,74999,0.012,60.6,39.4,70.1,952,84.7,17,69.0,twitter.com,Spoofing Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER188,388,https://site88.com/,2.78,15,10,1382,24852,0.3,32763,0.042,30.7,69.3,20.9,1069,92.1,6,22.9,twitter.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER189,389,https://site89.com/,1.56,11,10,7205,17909,0.3,78713,0.033,10.2,89.8,38.5,541,97.1,26,42.3,click-funnel.com,Spoofing Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER190,390,https://site90.com/,5.41,11,17,6552,29213,0.6,82539,0.05,79.6,20.4,83.6,1284,96.9,42,10.3,unknown,Spoofing Traffic,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER191,391,https://site91.com/,9.21,14,18,1811,6552,0.2,9338,0.018,38.3,61.7,30.7,987,87.5,43,14.1,traffic-stuffing.com,Plugin/Software Usage,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER192,392,https://site92.com/,4.67,2,12,4741,9156,0.3,14849,0.024,33.7,66.3,73.9,480,82.6,19,69.9,generic-ads.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER193,393,https://site93.com/,12.32,71,101,4555,0,2.1,65320,0.419,30.1,69.9,63.9,269,67.2,251,76.1,generic-ads.com,,Low,Completed,"screenshots,URLs,analytics_data",NORMAL,PASSED
+PARTNER194,394,https://site94.com/,2.88,7,18,4344,6648,0.9,63847,0.015,33.5,66.5,70.5,1423,97.6,12,45.5,google.com,Spoofing Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER195,395,https://site95.com/,6.28,15,14,8342,11096,0.9,49459,0.057,55.4,44.6,50.7,392,97.9,14,46.0,organic-search.com,Traffic/URL Cloaking,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER196,396,https://site96.com/,2.56,15,6,2701,25219,0.2,49195,0.04,52.7,47.3,52.6,454,96.7,14,74.0,traffic-stuffing.com,Traffic/URL Cloaking,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER197,397,https://site97.com/,16.86,34,28,3758,0,2.5,56339,0.126,14.3,85.7,49.4,178,42.2,211,59.6,google.com,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER198,398,https://site98.com/,6.91,10,17,4503,23639,0.3,79482,0.059,36.0,64.0,82.6,1171,92.8,11,34.2,unknown,Redirecting Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER199,399,https://site99.com/,4.47,10,5,4982,28857,0.1,89465,0.08,69.3,30.7,42.0,467,95.1,32,52.6,click-funnel.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER200,400,https://site100.com/,8.53,4,18,1843,27673,1.3,7270,0.055,66.6,33.4,84.4,104,89.1,32,31.1,generic-ads.com,Click Funneling,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER201,401,https://site101.com/,1.78,5,7,4568,26164,0.7,6043,0.024,43.6,56.4,58.1,250,82.3,43,36.1,google.com,Redirecting Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER202,402,https://site102.com/,6.27,4,7,4653,628,1.0,49914,0.039,61.2,38.8,85.6,747,84.8,19,55.4,facebook.com,Redirecting Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER203,403,https://site103.com/,4.39,14,6,1475,26946,0.8,28343,0.029,59.1,40.9,57.9,178,91.8,6,69.6,click-funnel.com,Redirecting Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER204,404,https://site104.com/,0.46,2,17,1201,8827,0.2,14025,0.006,39.6,60.4,54.9,439,88.4,40,15.3,organic-search.com,Plugin/Software Usage,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER205,405,https://site105.com/,0.51,2,19,2672,17101,0.8,9366,0.071,83.2,16.8,49.5,661,97.3,35,23.7,redirect-ads.com,Traffic/URL Cloaking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER206,406,https://site106.com/,5.51,1,17,8162,2894,1.2,30457,0.044,70.2,29.8,79.9,1101,91.5,39,79.2,unknown,Spoofing Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER207,407,https://site107.com/,1.46,4,6,4959,14794,0.3,43313,0.057,64.1,35.9,82.3,153,89.2,11,75.3,organic-search.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER208,408,https://site108.com/,59.13,86,57,8190,0,3.4,27689,0.356,88.9,11.1,33.9,1316,32.1,63,29.6,unknown,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER209,409,https://site109.com/,21.79,28,98,9152,0,2.0,16956,0.476,29.4,70.6,59.6,547,45.8,264,15.9,unknown,,Low,Completed,"screenshots,URLs",NORMAL,PASSED
+PARTNER210,410,https://site110.com/,2.33,15,14,6125,21221,1.1,20125,0.067,86.7,13.3,80.1,1159,83.2,11,24.1,facebook.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER211,411,https://site111.com/,7.36,9,5,2528,6091,0.8,45710,0.009,39.9,60.1,46.3,74,93.4,39,30.8,facebook.com,Click Funneling,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER212,412,https://site112.com/,6.89,12,6,5098,7743,0.5,87733,0.007,79.0,21.0,27.3,323,86.7,9,26.3,facebook.com,Traffic Stuffing,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER213,413,https://site113.com/,8.2,9,17,3587,12759,0.9,45739,0.008,11.8,88.2,20.3,449,80.4,21,27.1,traffic-stuffing.com,Redirecting Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER214,414,https://site114.com/,0.33,3,4,4623,28304,1.3,42397,0.069,89.8,10.2,51.9,296,89.7,14,79.3,traffic-stuffing.com,Plugin/Software Usage,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER215,415,https://site115.com/,2.97,11,4,2294,18226,1.2,41514,0.034,64.1,35.9,31.1,168,90.7,15,20.0,facebook.com,Plugin/Software Usage,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER216,416,https://site116.com/,8.71,10,11,8637,14580,0.8,17209,0.072,59.5,40.5,77.6,1013,88.1,16,41.0,traffic-stuffing.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER217,417,https://site117.com/,26.25,32,54,4055,0,3.7,30586,0.133,77.0,23.0,60.7,646,35.3,185,71.1,unknown,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER218,418,https://site118.com/,5.89,14,3,2479,15785,0.6,95284,0.067,53.0,47.0,80.9,1434,90.6,27,49.1,google.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER219,419,https://site119.com/,5.87,1,10,3293,28827,1.0,54770,0.071,75.9,24.1,68.4,727,91.7,37,58.0,facebook.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER220,420,https://site120.com/,9.51,8,12,7584,9909,0.5,44015,0.007,36.4,63.6,46.0,1401,95.7,16,78.5,facebook.com,Spoofing Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER221,421,https://site121.com/,0.81,13,5,7523,13915,1.1,11561,0.027,10.4,89.6,21.4,1031,94.3,33,69.6,twitter.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER222,422,https://site122.com/,6.61,3,2,4902,18355,1.2,32399,0.047,33.4,66.6,24.2,1037,96.4,6,13.5,unknown,Spoofing Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER223,423,https://site123.com/,4.47,5,5,8680,16780,0.7,29319,0.012,17.5,82.5,56.9,1419,93.0,12,54.2,google.com,Redirecting Traffic,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER224,424,https://site124.com/,7.92,6,12,5125,11103,0.3,85841,0.014,16.5,83.5,63.4,253,93.1,9,36.0,unknown,Plugin/Software Usage,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER225,425,https://site125.com/,44.28,74,96,1592,0,4.2,98441,0.425,61.9,38.1,71.8,73,67.1,259,60.6,google.com,,Low,Completed,analytics_data,NORMAL,PASSED
+PARTNER226,426,https://site126.com/,3.39,8,20,6912,16484,0.1,9736,0.07,18.7,81.3,23.6,1033,84.4,36,71.2,generic-ads.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER227,427,https://site127.com/,6.62,5,14,7334,405,1.2,15546,0.007,43.6,56.4,72.7,507,91.1,28,50.9,popup-ads.com,Redirecting Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER228,428,https://site128.com/,5.75,13,2,3935,853,0.7,28687,0.05,82.6,17.4,80.3,1296,82.2,43,65.7,twitter.com,Spoofing Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER229,429,https://site129.com/,8.65,10,8,9670,16699,0.5,32054,0.019,12.1,87.9,28.5,859,84.6,10,33.3,generic-ads.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER230,430,https://site130.com/,2.58,13,2,2971,9387,1.2,65044,0.077,59.8,40.2,63.9,708,95.3,35,63.7,generic-ads.com,Traffic/URL Cloaking,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER231,431,https://site131.com/,6.81,5,1,4798,1455,1.1,46381,0.041,25.8,74.2,60.3,711,92.8,14,34.9,google.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER232,432,https://site132.com/,5.86,8,9,8614,3084,1.2,69319,0.063,52.0,48.0,69.7,1185,85.1,38,53.1,organic-search.com,Redirecting Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER233,433,https://site133.com/,4.13,4,2,8903,15053,0.9,55253,0.08,83.6,16.4,59.2,1341,94.2,15,74.6,facebook.com,Traffic Stuffing,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER234,434,https://site134.com/,8.91,4,14,4317,13691,1.2,83023,0.029,52.4,47.6,71.7,277,81.2,5,10.2,google.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER235,435,https://site135.com/,3.13,7,4,7520,28811,0.8,42374,0.05,66.7,33.3,89.9,285,83.5,9,48.7,google.com,Blank Source Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER236,436,https://site136.com/,9.28,15,13,8740,19115,0.4,67024,0.029,37.7,62.3,59.7,40,80.5,16,71.0,twitter.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER237,437,https://site137.com/,66.43,70,69,2186,0,4.8,34077,0.196,67.1,32.9,76.0,1301,44.1,205,43.3,organic-search.com,,Low,Completed,analytics_data,NORMAL,PASSED
+PARTNER238,438,https://site138.com/,67.88,46,29,6483,0,4.2,89538,0.159,33.4,66.6,58.7,1500,58.4,71,15.5,google.com,,Low,Completed,"screenshots,URLs,analytics_data",NORMAL,PASSED
+PARTNER239,439,https://site139.com/,8.59,13,13,4756,23965,0.8,30758,0.022,10.1,89.9,28.0,881,97.0,21,69.4,redirect-ads.com,Redirecting Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER240,440,https://site140.com/,3.91,15,10,9831,27602,0.5,19541,0.048,82.5,17.5,76.2,862,86.6,19,38.3,twitter.com,Traffic Stuffing,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER241,441,https://site141.com/,4.01,14,15,4181,2728,1.3,38157,0.074,51.6,48.4,24.7,1498,81.9,27,20.3,redirect-ads.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER242,442,https://site142.com/,9.42,5,6,6064,20444,0.4,55098,0.065,23.5,76.5,40.2,1202,88.1,12,15.1,generic-ads.com,Spoofing Traffic,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER243,443,https://site143.com/,3.29,11,12,1745,24969,1.1,79029,0.079,89.8,10.2,37.3,775,84.5,43,64.5,google.com,Traffic Stuffing,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER244,444,https://site144.com/,4.95,5,7,9412,23452,0.3,72417,0.023,51.0,49.0,70.3,386,82.1,27,19.0,generic-ads.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER245,445,https://site145.com/,1.42,2,4,5014,6100,0.1,76163,0.006,29.1,70.9,35.8,1225,92.0,44,66.3,generic-ads.com,Pop Ads Masking,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER246,446,https://site146.com/,7.92,1,12,4579,16008,1.2,57296,0.061,14.2,85.8,65.0,262,87.0,6,28.6,redirect-ads.com,Pop Ads Masking,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER247,447,https://site147.com/,0.22,13,12,2383,16058,0.9,98149,0.002,81.3,18.7,61.2,668,89.7,18,12.3,traffic-stuffing.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER248,448,https://site148.com/,9.01,1,14,9616,8736,0.4,12320,0.025,14.5,85.5,52.1,232,90.6,14,26.0,organic-search.com,Redirecting Traffic,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER249,449,https://site149.com/,2.7,5,10,2748,18387,0.2,11467,0.047,39.2,60.8,23.8,840,97.7,20,34.1,google.com,Click Funneling,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER250,450,https://site150.com/,3.66,5,5,9304,21375,1.1,5907,0.025,68.3,31.7,58.3,727,82.8,8,20.7,click-funnel.com,Pop Ads Masking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER251,451,https://site151.com/,69.5,44,79,8123,0,4.9,77423,0.392,41.1,58.9,89.2,1418,57.9,172,61.3,twitter.com,,Low,Completed,"screenshots,URLs",NORMAL,PASSED
+PARTNER252,452,https://site152.com/,0.66,8,7,6648,13515,0.9,52185,0.011,76.1,23.9,20.0,365,92.0,34,65.4,traffic-stuffing.com,Click Funneling,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER253,453,https://site153.com/,9.6,15,5,7596,2875,1.2,14025,0.057,88.8,11.2,75.3,847,96.2,11,60.5,google.com,Traffic Stuffing,High,Completed,analytics_data,VIOLATION_DETECTED,FAILED
+PARTNER254,454,https://site154.com/,4.29,15,5,3832,21206,0.9,50727,0.076,11.2,88.8,75.9,823,87.8,41,67.7,twitter.com,Click Funneling,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER255,455,https://site155.com/,4.29,1,15,1281,28004,0.9,21101,0.015,19.2,80.8,39.5,1416,90.7,6,29.1,redirect-ads.com,Redirecting Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER256,456,https://site156.com/,4.54,9,10,6729,15828,1.5,6534,0.022,61.3,38.7,75.6,1456,96.6,12,60.9,twitter.com,Click Funneling,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER257,457,https://site157.com/,7.74,8,3,9539,27931,0.9,26195,0.01,61.9,38.1,81.8,898,85.3,7,66.0,organic-search.com,Traffic Stuffing,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER258,458,https://site158.com/,6.79,5,11,3612,27977,0.5,16321,0.026,62.3,37.7,65.5,1320,85.5,10,42.0,facebook.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER259,459,https://site159.com/,3.99,3,6,7158,26011,0.5,49530,0.057,51.4,48.6,28.1,952,88.3,39,12.8,unknown,Traffic Stuffing,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER260,460,https://site160.com/,4.51,4,7,4958,25120,1.0,82551,0.003,39.9,60.1,60.7,1382,96.2,15,64.3,facebook.com,Click Funneling,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING
+PARTNER261,461,https://site161.com/,4.11,12,16,6317,20781,1.3,11968,0.034,29.4,70.6,58.9,124,85.8,9,36.4,generic-ads.com,Plugin/Software Usage,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER262,462,https://site162.com/,5.68,4,6,6895,1554,1.2,78370,0.073,14.2,85.8,70.0,270,93.7,11,20.6,redirect-ads.com,Traffic Stuffing,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER263,463,https://site163.com/,1.36,7,3,6094,10297,1.1,9916,0.034,39.8,60.2,25.4,643,94.0,5,38.0,traffic-stuffing.com,Traffic Stuffing,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER264,464,https://site164.com/,2.14,12,13,8600,26572,1.3,97396,0.051,35.0,65.0,69.3,1121,86.3,19,72.0,click-funnel.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER265,465,https://site165.com/,9.34,5,4,6506,3770,0.9,92498,0.057,56.6,43.4,71.9,836,89.5,43,78.3,unknown,Click Funneling,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER266,466,https://site166.com/,84.95,33,84,7875,0,2.8,63772,0.399,39.2,60.8,88.2,1429,61.5,205,24.0,facebook.com,,Low,Completed,"screenshots,URLs,analytics_data",NORMAL,PASSED
+PARTNER267,467,https://site167.com/,4.18,12,6,8208,19694,1.4,76746,0.076,82.5,17.5,28.2,360,96.7,21,58.2,redirect-ads.com,Blank Source Traffic,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER268,468,https://site168.com/,9.38,2,9,2584,11423,1.0,6171,0.034,65.2,34.8,80.4,547,97.3,41,66.2,twitter.com,Click Funneling,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER269,469,https://site169.com/,4.4,9,12,4771,22434,0.5,5196,0.064,80.3,19.7,89.1,1473,85.9,19,65.0,google.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER270,470,https://site170.com/,1.65,2,5,3885,22099,0.7,31655,0.056,52.2,47.8,45.5,385,91.6,5,22.3,unknown,Pop Ads Masking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER271,471,https://site171.com/,7.1,4,14,2424,6505,0.6,83830,0.034,25.7,74.3,77.1,1191,81.8,37,24.4,generic-ads.com,Traffic Stuffing,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER272,472,https://site172.com/,5.96,8,11,2857,8200,1.3,51715,0.052,41.9,58.1,34.5,130,88.8,7,27.0,organic-search.com,Traffic/URL Cloaking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER273,473,https://site173.com/,9.83,15,1,6217,26795,0.3,55510,0.02,58.9,41.1,82.3,1,89.7,27,32.2,unknown,Spoofing Traffic,High,Completed,"screenshots,URLs,analytics_data",VIOLATION_DETECTED,FAILED
+PARTNER274,474,https://site174.com/,57.8,78,85,7903,0,2.5,60977,0.256,34.4,65.6,42.2,329,68.6,146,24.7,click-funnel.com,,Low,Completed,analytics_data,NORMAL,PASSED
+PARTNER275,475,https://site175.com/,0.62,4,17,1989,21608,1.4,68939,0.022,54.5,45.5,51.1,1100,80.1,18,17.3,traffic-stuffing.com,Traffic/URL Cloaking,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER276,476,https://site176.com/,1.39,3,4,3892,27073,0.5,81448,0.075,71.5,28.5,80.3,316,90.1,33,23.7,traffic-stuffing.com,Redirecting Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER277,477,https://site177.com/,7.5,4,14,4165,19514,0.8,91641,0.021,32.1,67.9,36.0,480,84.1,6,49.8,traffic-stuffing.com,Pop Ads Masking,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER278,478,https://site178.com/,7.16,5,14,7025,6565,0.9,5907,0.054,85.1,14.9,55.3,318,86.8,17,72.7,traffic-stuffing.com,Blank Source Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER279,479,https://site179.com/,2.9,8,3,8684,17190,0.6,7348,0.026,65.2,34.8,54.7,1309,84.9,7,69.2,google.com,Blank Source Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER280,480,https://site180.com/,70.66,91,72,1444,0,2.8,56318,0.474,82.4,17.6,85.2,1313,42.7,222,30.1,unknown,,Low,Completed,"screenshots,URLs",NORMAL,PASSED
+PARTNER281,481,https://site181.com/,4.21,5,12,3775,17710,1.3,6087,0.055,19.1,80.9,22.3,1491,84.5,14,78.9,generic-ads.com,Plugin/Software Usage,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER282,482,https://site182.com/,4.3,9,1,1733,6211,0.4,32683,0.055,13.1,86.9,67.3,263,94.1,20,28.6,generic-ads.com,Spoofing Traffic,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER283,483,https://site183.com/,2.94,9,5,9142,9519,0.6,55549,0.034,16.8,83.2,69.6,144,83.2,37,53.2,google.com,Pop Ads Masking,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER284,484,https://site184.com/,6.02,5,6,1449,5709,0.9,83574,0.035,57.0,43.0,71.7,768,87.5,43,32.9,google.com,Spoofing Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER285,485,https://site185.com/,8.61,12,3,4837,5097,1.2,76479,0.03,30.6,69.4,81.5,1003,90.2,23,31.3,traffic-stuffing.com,Blank Source Traffic,Medium,Completed,analytics_data,SUSPICIOUS,WARNING
+PARTNER286,486,https://site186.com/,0.25,10,18,2664,14604,1.1,92471,0.014,44.2,55.8,41.0,512,91.6,17,67.8,generic-ads.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER287,487,https://site187.com/,9.24,9,11,7410,11989,1.4,90415,0.004,47.0,53.0,26.6,1331,91.6,16,13.3,redirect-ads.com,Redirecting Traffic,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER288,488,https://site188.com/,7.18,1,7,6428,2445,0.4,35944,0.079,76.9,23.1,77.7,767,83.7,17,74.5,generic-ads.com,Redirecting Traffic,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER289,489,https://site189.com/,53.14,98,60,9310,0,3.0,77406,0.306,52.3,47.7,61.5,639,42.2,67,72.8,facebook.com,,Low,Completed,URLs,NORMAL,PASSED
+PARTNER290,490,https://site190.com/,67.36,43,98,4314,0,3.9,46071,0.226,47.5,52.5,80.0,1359,30.1,109,12.9,google.com,,Low,Completed,"screenshots,URLs",NORMAL,PASSED
+PARTNER291,491,https://site191.com/,5.12,15,2,6862,7040,1.3,97853,0.003,13.5,86.5,42.5,974,97.6,5,15.4,organic-search.com,Click Funneling,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER292,492,https://site192.com/,9.16,13,9,8192,12683,1.5,35695,0.058,44.5,55.5,81.2,942,83.3,41,39.0,popup-ads.com,Traffic Stuffing,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER293,493,https://site193.com/,8.55,2,16,4027,18531,1.0,36872,0.034,78.9,21.1,73.8,55,96.2,28,51.5,popup-ads.com,Traffic/URL Cloaking,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER294,494,https://site194.com/,4.04,7,4,4380,7578,0.6,66422,0.023,70.0,30.0,30.4,179,95.3,11,31.5,facebook.com,Blank Source Traffic,High,Completed,URLs,VIOLATION_DETECTED,FAILED
+PARTNER295,495,https://site195.com/,5.78,12,7,7430,22908,0.7,15728,0.079,84.6,15.4,79.4,924,81.8,40,32.5,facebook.com,Blank Source Traffic,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER296,496,https://site196.com/,6.4,5,13,3816,5259,1.0,37730,0.011,80.3,19.7,44.3,269,82.7,16,30.9,traffic-stuffing.com,Click Funneling,Medium,Completed,"screenshots,URLs",SUSPICIOUS,WARNING
+PARTNER297,497,https://site197.com/,8.6,9,16,9226,23102,1.4,72561,0.013,25.9,74.1,83.9,1287,83.9,37,17.4,popup-ads.com,Traffic/URL Cloaking,Medium,Completed,URLs,SUSPICIOUS,WARNING
+PARTNER298,498,https://site198.com/,0.78,12,16,2898,20837,0.6,17245,0.003,43.9,56.1,29.1,42,95.0,43,51.3,click-funnel.com,Pop Ads Masking,High,Completed,"screenshots,URLs",VIOLATION_DETECTED,FAILED
+PARTNER299,499,https://site199.com/,6.18,11,9,7185,14476,1.4,30608,0.023,89.4,10.6,40.3,1270,93.7,42,22.2,twitter.com,Spoofing Traffic,Medium,Completed,"screenshots,URLs,analytics_data",SUSPICIOUS,WARNING

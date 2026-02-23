@@ -1,0 +1,260 @@
+[
+    {
+        "toolSpec": {
+            "name": "calculateBotProbabilityIndex",
+            "description": "Calculates the Bot Probability Index (BPI) by analyzing user behavior patterns, captcha interactions, and device consistency metrics as per SOP section 5.1",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "userid": {
+                            "type": "string",
+                            "description": "Unique identifier for the user",
+                            "pattern": "^u[0-9]+$"
+                        },
+                        "is_possible_bot": {
+                            "type": "number",
+                            "description": "Initial bot probability assessment score",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "Captcha_tries": {
+                            "type": "integer",
+                            "description": "Number of captcha attempts by the user",
+                            "minimum": 0,
+                            "maximum": 5
+                        },
+                        "device_type": {
+                            "type": "string",
+                            "description": "Type of device used for content posting",
+                            "enum": [
+                                "mobile",
+                                "desktop",
+                                "unknown",
+                                "tablet"
+                            ]
+                        },
+                        "os": {
+                            "type": "string",
+                            "description": "Operating system of the device",
+                            "enum": [
+                                "iOS",
+                                "Windows",
+                                "Android",
+                                "Chrome",
+                                "unknown",
+                                "NA"
+                            ]
+                        },
+                        "browser": {
+                            "type": "string",
+                            "description": "Browser used for content posting",
+                            "enum": [
+                                "unknown",
+                                "NA",
+                                "Chrome",
+                                "Firefox",
+                                "Safari",
+                                "Edge"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "userid",
+                        "is_possible_bot",
+                        "Captcha_tries",
+                        "device_type",
+                        "os",
+                        "browser"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "determineFinalDecision",
+            "description": "Evaluates content moderation metrics and determines final content disposition based on user trust score, content severity, bot probability, and historical behavior patterns",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "content_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the content being evaluated",
+                            "pattern": "^C[0-9]{9}$"
+                        },
+                        "user_trust_score": {
+                            "type": "integer",
+                            "description": "User Trust Coefficient (UTC) indicating overall user trustworthiness",
+                            "minimum": 0,
+                            "maximum": 100
+                        },
+                        "content_severity_index": {
+                            "type": "integer",
+                            "description": "Content Severity Index (CSI) indicating violation severity",
+                            "minimum": 0,
+                            "maximum": 100
+                        },
+                        "bot_probability_index": {
+                            "type": "number",
+                            "description": "Bot Probability Index (BPI) indicating likelihood of automated activity",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "NumberofPreviousPosts": {
+                            "type": "integer",
+                            "description": "Total count of user's previous posts",
+                            "minimum": 0,
+                            "maximum": 1000
+                        },
+                        "CountofFlaggedPosts": {
+                            "type": "integer",
+                            "description": "Count of user's previously flagged posts",
+                            "minimum": 0,
+                            "maximum": 500
+                        }
+                    },
+                    "required": [
+                        "content_id",
+                        "user_trust_score",
+                        "content_severity_index",
+                        "bot_probability_index",
+                        "NumberofPreviousPosts",
+                        "CountofFlaggedPosts"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculateContentSeverityIndex",
+            "description": "Calculates the Content Severity Index (CSI) by analyzing primary and secondary content violations, applying weighted matrices, and generating a normalized severity score for content moderation decisions.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "content_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the flagged content",
+                            "pattern": "^C[0-9]{9}$"
+                        },
+                        "PrimaryViolationType": {
+                            "type": "string",
+                            "enum": [
+                                "hate_speech",
+                                "spam",
+                                "violence",
+                                "adult_content",
+                                "copyright",
+                                "misinformation",
+                                "bot_activity",
+                                "self_harm",
+                                "discrimination",
+                                "harassment"
+                            ],
+                            "description": "Primary violation category identified for the content"
+                        },
+                        "SecondaryViolationType": {
+                            "type": "string",
+                            "enum": [
+                                "hate_speech",
+                                "spam",
+                                "violence",
+                                "adult_content",
+                                "copyright",
+                                "misinformation",
+                                "bot_activity",
+                                "self_harm",
+                                "discrimination",
+                                "harassment"
+                            ],
+                            "description": "Secondary violation category identified for the content"
+                        },
+                        "PrimaryViolation_Confidence": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Confidence score for the primary violation (0-100)"
+                        },
+                        "SecondaryViolation_Confidence": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100,
+                            "description": "Confidence score for the secondary violation (0-100)"
+                        }
+                    },
+                    "required": [
+                        "content_id",
+                        "PrimaryViolationType",
+                        "PrimaryViolation_Confidence"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculate_user_trust_score",
+            "description": "Calculates a comprehensive user trust coefficient (0-100) based on historical behavior, geographic risk assessment, and device consistency patterns as specified in the content moderation SOP.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "userid": {
+                            "type": "string",
+                            "description": "Unique identifier for the user",
+                            "pattern": "^u[0-9]+$"
+                        },
+                        "NumberofPreviousPosts": {
+                            "type": "integer",
+                            "description": "Total count of user's previous posts",
+                            "minimum": 0,
+                            "maximum": 1000
+                        },
+                        "CountofFlaggedPosts": {
+                            "type": "integer",
+                            "description": "Number of user's posts that have been flagged",
+                            "minimum": 0,
+                            "maximum": 500
+                        },
+                        "Latitude": {
+                            "type": "number",
+                            "description": "Geographic latitude of the user's location",
+                            "minimum": -90,
+                            "maximum": 90
+                        },
+                        "Longitude": {
+                            "type": "number",
+                            "description": "Geographic longitude of the user's location",
+                            "minimum": -180,
+                            "maximum": 180
+                        },
+                        "bot_probability_index": {
+                            "type": "number",
+                            "description": "Calculated probability of the user being a bot",
+                            "minimum": 0,
+                            "maximum": 1
+                        },
+                        "device_consistency_score": {
+                            "type": "number",
+                            "description": "Measure of consistency in user's device patterns",
+                            "minimum": 0,
+                            "maximum": 1
+                        }
+                    },
+                    "required": [
+                        "userid",
+                        "NumberofPreviousPosts",
+                        "CountofFlaggedPosts",
+                        "bot_probability_index",
+                        "device_consistency_score",
+                        "Latitude",
+                        "Longitude"
+                    ]
+                }
+            }
+        }
+    }
+]

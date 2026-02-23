@@ -1,0 +1,50 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, mainline ]
+  pull_request:
+    branches: [ main, mainline ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.10', '3.11']
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Cache pip packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-py${{ matrix.python-version }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-py${{ matrix.python-version }}-pip-
+          
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e .
+        pip install pytest pytest-cov pytest-mock moto[all]
+        
+    - name: Run tests
+      run: |
+        pytest tests/ -v --cov=amazon_sop_bench --cov-report=term
+      env:
+        # Mock AWS credentials for testing
+        AWS_ACCESS_KEY_ID: testing
+        AWS_SECRET_ACCESS_KEY: testing
+        AWS_SECURITY_TOKEN: testing
+        AWS_SESSION_TOKEN: testing
+        AWS_DEFAULT_REGION: us-west-2
+        name: codecov-umbrella
+        fail_ci_if_error: false

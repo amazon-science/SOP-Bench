@@ -1,0 +1,333 @@
+[
+    {
+        "toolSpec": {
+            "name": "getAuthenticationDetails",
+            "description": "Retrieves authentication history and status for a customer account, checking recent authentication attempts as part of the initial service verification process.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's unique account identifier following the format of three uppercase letters, hyphen, and five digits (e.g., ABC-12345)",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$"
+                        },
+                        "is_account_id_valid": {
+                            "type": "boolean",
+                            "description": "Flag indicating whether the provided account_id matches the required format pattern"
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "is_account_id_valid"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "createSessionAndOpenTicket",
+            "description": "Creates a session token and opens a new service ticket after successful account validation and authentication. This tool is used to initialize the support workflow tracking system.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's unique account identifier",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$",
+                            "examples": [
+                                "ABC-12345"
+                            ]
+                        },
+                        "is_account_id_valid": {
+                            "type": "boolean",
+                            "description": "Flag indicating whether the account ID format has been validated",
+                            "examples": [
+                                true
+                            ]
+                        },
+                        "is_authenticated": {
+                            "type": "boolean",
+                            "description": "Flag indicating whether the account has passed authentication checks",
+                            "examples": [
+                                true
+                            ]
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "is_account_id_valid",
+                        "is_authenticated"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkAccountStatus",
+            "description": "Evaluates the current status of a customer account and determines support eligibility by checking account state, suspension status, and related metadata. This tool is part of the account validation phase of the service resolution workflow.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Unique customer identifier in format ABC-12345 (3 uppercase letters, hyphen, 5 digits)",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$"
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Valid authentication session token"
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "performTechnicalDiagnostics",
+            "description": "Executes comprehensive technical diagnostics on customer service, measuring key performance indicators including latency, jitter, and bandwidth throughput. Analyzes results against defined thresholds and identifies potential root causes of service issues.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's unique account identifier",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$",
+                            "examples": [
+                                "ABC-12345"
+                            ]
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Valid authentication session token",
+                            "examples": [
+                                "SES-20250509-ABC12345-001"
+                            ]
+                        },
+                        "service_type": {
+                            "type": "string",
+                            "description": "Type of service being diagnosed"
+                        },
+                        "subscribed_bandwidth": {
+                            "type": "string",
+                            "description": "Customer's subscribed bandwidth with units",
+                            "examples": [
+                                "300 Mbps"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token",
+                        "service_type",
+                        "subscribed_bandwidth"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateAccount",
+            "description": "Validates the format of a customer Account ID to ensure it follows the organization's standard pattern of three uppercase letters followed by a hyphen and five digits (e.g., ABC-12345). This validation is the first step in the service issue resolution workflow.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's Account ID to be validated",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$",
+                            "minLength": 9,
+                            "maxLength": 9,
+                            "examples": [
+                                "ABC-12345"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "account_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkServiceAreaOutage",
+            "description": "Analyzes the service area for active outages within a 10-mile radius and returns outage details including detection status, impact score, and estimated resolution time",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's unique account identifier in format ABC-12345",
+                            "pattern": "^[A-Z]{3}-\\d{5}$"
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Active session token for authenticated operations"
+                        },
+                        "service_area_code": {
+                            "type": "string",
+                            "description": "Geographic service area identifier"
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token",
+                        "service_area_code"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "executeTroubleshooting",
+            "description": "Performs automated troubleshooting steps based on identified root causes, executing predefined resolution procedures such as modem resets and signal refreshes. Records timestamps and outcomes for traceability.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Customer's unique account identifier",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$",
+                            "examples": [
+                                "ABC-12345"
+                            ]
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Valid authentication session token for the current troubleshooting session",
+                            "examples": [
+                                "SES-20250509-ABC12345-001"
+                            ]
+                        },
+                        "root_causes": {
+                            "type": "array",
+                            "description": "List of identified root causes requiring troubleshooting",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token",
+                        "root_causes"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkPaymentStatus",
+            "description": "Verifies the payment status of a suspended account to determine if the customer has made the payment with assistance from the Accounts Payable team.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Unique customer account identifier in format ABC-12345",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$"
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Active session token for the current support workflow"
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "createEscalation",
+            "description": "Creates an escalation ticket when automated troubleshooting fails to resolve the service issue, linking it to the original case and assigning it to the appropriate support team.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "session_token": {
+                            "type": "string",
+                            "description": "Valid session token for the current support workflow"
+                        },
+                        "ticket_id": {
+                            "type": "string",
+                            "description": "Identifier of the original service ticket"
+                        },
+                        "metrics_improved_post_troubleshooting": {
+                            "type": "boolean",
+                            "description": "Indicates whether service metrics improved after troubleshooting attempts"
+                        },
+                        "escalation_required": {
+                            "type": "boolean",
+                            "description": "Flag indicating if escalation is needed based on troubleshooting results"
+                        }
+                    },
+                    "required": [
+                        "session_token",
+                        "ticket_id",
+                        "metrics_improved_post_troubleshooting",
+                        "escalation_required"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkAccountSuspensionStatus",
+            "description": "Verifies the current suspension status of a customer account to determine support eligibility and workflow continuation. This check is performed after authentication and before proceeding with diagnostic steps.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "string",
+                            "description": "Unique customer account identifier in format XXX-12345 (three uppercase letters, hyphen, five digits)",
+                            "pattern": "^[A-Z]{3}-[0-9]{5}$"
+                        },
+                        "session_token": {
+                            "type": "string",
+                            "description": "Active session token generated after successful authentication"
+                        }
+                    },
+                    "required": [
+                        "account_id",
+                        "session_token"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    }
+]

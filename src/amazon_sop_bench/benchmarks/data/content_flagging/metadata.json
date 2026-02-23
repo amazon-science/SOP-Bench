@@ -1,0 +1,4 @@
+{
+  "name": "content_flagging",
+  "output_columns": ["final_decision"]
+}

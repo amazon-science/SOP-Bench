@@ -1,0 +1,108 @@
+1. Purpose
+This Standard Operating Procedure establishes a comprehensive framework for the systematic evaluation, classification, and disposition of flagged content within the platform's content moderation ecosystem, incorporating multi-dimensional trust metrics, behavioral analysis, and severity assessment protocols.
+
+2. Scope
+This procedure encompasses all user-generated content flagging operations, subsequent automated analysis protocols, and human moderation workflows within the platform's content management system. It applies to all content moderators, trust and safety specialists, and automated moderation systems.
+
+3. Definitions
+3.1 Bot Probability Index (BPI): A normalized score between 0-1 derived from behavioral metrics and captcha interaction patterns
+3.2 User Trust Coefficient (UTC): A dynamic score (0-100) incorporating historical behavior and device consistency metrics
+3.3 Content Severity Index (CSI): A weighted composite score (0-100) calculated from primary and secondary violation assessments
+3.4 Geographic Risk Quotient (GRQ): A risk assessment metric derived from historical geographic pattern analysis
+3.5 Device Consistency Score (DCS): A metric evaluating the consistency of user's device fingerprint patterns
+3.6 Violation Confidence Threshold (VCT): Minimum confidence score required for violation classification
+
+4. Input
+4.1 Content Metadata
+- content_id: Unique content identifier
+- userid: User identification string
+- flagid: Unique flag identifier
+- Geolocation coordinates (latitude, longitude)
+
+4.2 Device Information
+- device_type
+- operating_system
+- browser_specification
+
+4.3 Violation Data
+- Primary and Secondary violation types
+- Confidence scores for each violation
+- Historical violation records
+
+5. Main Procedure
+
+IMPORTANT: All calculations in this procedure MUST be performed by calling the designated tools. Do NOT compute scores manually - the tools contain the official validated implementations.
+
+5.1 Bot Detection Protocol
+REQUIRED TOOL: calculateBotProbabilityIndex
+
+5.1.1 Calculate Bot Probability Index (BPI)
+- CALL the calculateBotProbabilityIndex tool with the following parameters:
+  * userid: The user's unique identifier
+  * is_possible_bot: The initial bot probability assessment from the input
+  * Captcha_tries: Number of captcha attempts
+  * device_type: Device type (mobile/desktop/tablet/unknown)
+  * os: Operating system (iOS/Windows/Android/Chrome/unknown/NA)
+  * browser: Browser type (Chrome/Firefox/Safari/Edge/unknown/NA)
+- The tool will return the official BPI score (0-1 scale)
+- Store the returned BPI for use in subsequent steps
+
+5.2 User Trust Score Calculation
+REQUIRED TOOL: calculate_user_trust_score
+
+5.2.1 Calculate User Trust Coefficient (UTC)
+- CALL the calculate_user_trust_score tool with the following parameters:
+  * userid: The user's unique identifier
+  * NumberofPreviousPosts: Total count of user's previous posts
+  * CountofFlaggedPosts: Number of previously flagged posts
+  * bot_probability_index: The BPI value returned from step 5.1
+  * device_consistency_score: Device consistency score from input (if available)
+  * Latitude: Optional geographic latitude
+  * Longitude: Optional geographic longitude
+- The tool will return the official UTC score (0-100 scale)
+- Store the returned UTC for use in the final decision
+
+5.3 Content Severity Assessment
+REQUIRED TOOL: calculateContentSeverityIndex
+
+5.3.1 Calculate Content Severity Index (CSI)
+- CALL the calculateContentSeverityIndex tool with the following parameters:
+  * content_id: The unique content identifier
+  * PrimaryViolationType: The primary violation category
+  * PrimaryViolation_Confidence: Confidence score for primary violation (0-100)
+  * SecondaryViolationType: Optional secondary violation category
+  * SecondaryViolation_Confidence: Optional confidence score for secondary violation
+- The tool will return the official CSI score (0-100 scale)
+- Store the returned CSI for use in the final decision
+
+5.4 Final Decision
+REQUIRED TOOL: determineFinalDecision
+
+5.4.1 Determine Final Disposition
+- CALL the determineFinalDecision tool with the following parameters:
+  * content_id: The unique content identifier
+  * user_trust_score: The UTC value returned from step 5.2
+  * content_severity_index: The CSI value returned from step 5.3
+  * bot_probability_index: The BPI value returned from step 5.1
+  * NumberofPreviousPosts: Total count of user's previous posts
+  * CountofFlaggedPosts: Number of previously flagged posts
+- The tool will evaluate all metrics and return the final disposition
+
+5.4.2 Final Decision Categories
+The tool will return one of the following decisions:
+- user_banned: User account is banned (highest severity)
+- removed: Content is removed from platform
+- warning: Warning issued to user
+- allowed: Content is allowed to remain
+
+6. Output
+6.1 Decision Package
+- Final disposition (removed/warning/user_banned/allowed) - from determineFinalDecision tool
+- Comprehensive scoring matrix (BPI, UTC, CSI from respective tools)
+- Audit trail of tool calls and returned values
+
+6.2 Workflow Summary
+1. Call calculateBotProbabilityIndex → receive BPI
+2. Call calculate_user_trust_score (using BPI) → receive UTC
+3. Call calculateContentSeverityIndex → receive CSI
+4. Call determineFinalDecision (using BPI, UTC, CSI) → receive final decision

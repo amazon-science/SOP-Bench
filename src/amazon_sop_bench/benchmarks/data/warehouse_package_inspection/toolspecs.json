@@ -1,0 +1,217 @@
+[
+  {
+    "toolSpec": {
+      "name": "validateBarcode",
+      "description": "Validates the received product barcode against the confirmed product ID using image processing system. Returns match status, problem types, and resolution status.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number associated with the shipment"
+            },
+            "confirmed_product_id": {
+              "type": "string",
+              "description": "13-digit product identification code confirmed by vendor"
+            },
+            "received_product_bar_code": {
+              "type": "string",
+              "description": "File path to the barcode image of the received product"
+            }
+          },
+          "required": ["po_number", "confirmed_product_id", "received_product_bar_code"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "calculateQuantityVariance",
+      "description": "Calculates quantity variance between ordered, confirmed, and received quantities. Returns variance percentage, problem types, and chargeable status.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number for the shipment"
+            },
+            "ordered_quantity": {
+              "type": "integer",
+              "description": "Number of units originally ordered on the PO"
+            },
+            "confirmed_quantity": {
+              "type": "integer",
+              "description": "Number of units confirmed by vendor before shipping"
+            },
+            "received_quantity": {
+              "type": "integer",
+              "description": "Actual number of units received at warehouse"
+            },
+            "QVT": {
+              "type": "number",
+              "description": "Quantity Variance Threshold percentage (default 5.0)"
+            }
+          },
+          "required": ["po_number", "ordered_quantity", "confirmed_quantity", "received_quantity"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "verifyWarehouseLocation",
+      "description": "Validates whether a shipment was delivered to its intended warehouse location. Returns location match status and problem types.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number associated with the shipment"
+            },
+            "intended_warehouse_id": {
+              "type": "string",
+              "description": "ID of the warehouse where the shipment was supposed to be delivered"
+            },
+            "actual_warehouse_id": {
+              "type": "string",
+              "description": "ID of the warehouse where the shipment was actually delivered"
+            }
+          },
+          "required": ["po_number", "intended_warehouse_id", "actual_warehouse_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "assessPackageCondition",
+      "description": "Evaluates the physical condition of received packages using damage detection algorithm. Returns package condition assessment and problem types.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number associated with the shipment being assessed"
+            },
+            "package_image_path": {
+              "type": "string",
+              "description": "File system path to the package image analyzed for damage"
+            }
+          },
+          "required": ["po_number", "package_image_path"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "calculateChargeback",
+      "description": "Calculates vendor chargeback amounts based on identified shipment problems. Returns chargeable status and charge amount.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number for the shipment"
+            },
+            "problem_type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of identified problems with the shipment"
+            },
+            "ordered_quantity": {
+              "type": "integer",
+              "description": "Number of units originally ordered on the PO"
+            },
+            "received_quantity": {
+              "type": "integer",
+              "description": "Actual number of units received at warehouse"
+            },
+            "unit_cost": {
+              "type": "number",
+              "description": "Cost per unit for chargeback calculation"
+            }
+          },
+          "required": ["po_number", "problem_type", "ordered_quantity", "received_quantity", "unit_cost"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "updateResolutionStatus",
+      "description": "Updates the resolution status of a shipment based on identified problems and current status. Returns updated resolution status and timestamp.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number associated with the shipment"
+            },
+            "problem_type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of identified problems for the shipment"
+            },
+            "current_status": {
+              "type": "string",
+              "description": "Current resolution status of the shipment"
+            }
+          },
+          "required": ["po_number", "problem_type", "current_status"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "generateProblemReport",
+      "description": "Generates a comprehensive problem classification report for shipment issues. Returns complete report with problem summary, chargeback details, and resolution information.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "po_number": {
+              "type": "string",
+              "description": "Purchase order number associated with the shipment"
+            },
+            "vendor_id": {
+              "type": "string",
+              "description": "Unique identifier for the vendor"
+            },
+            "vendor_name": {
+              "type": "string",
+              "description": "Name of the shipping vendor"
+            },
+            "problem_type": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of identified problems with the shipment"
+            },
+            "charge_amount": {
+              "type": "number",
+              "description": "Total chargeback amount calculated for the problems"
+            },
+            "resolution_status": {
+              "type": "string",
+              "description": "Current status of the problem resolution process"
+            }
+          },
+          "required": ["po_number", "vendor_id", "vendor_name", "problem_type"]
+        }
+      }
+    }
+  }
+]

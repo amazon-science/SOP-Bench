@@ -1,0 +1,122 @@
+
+<API>
+Name: validateVideo
+Description: Validates video format and extracts technical metadata
+Endpoint: /api/v1/video/validate
+Method: POST
+Request Body:
+{
+    "video_id": "string",
+    "video_path": "string"
+}
+Response:
+{
+    "video_id": "string",
+    "format_validated": "boolean",
+    "duration_seconds": "float",
+    "frame_rate": "float",
+    "resolution": "string",
+    "region": "string",
+    "video_language": "string"
+}
+Dependencies: None
+Error Scenarios:
+- Invalid video format: Return 400 with format error details
+- File not found: Return 404
+- Corrupted video: Return 400 with corruption details
+</API>
+
+<API>
+Name: assignReviewer
+Description: Assigns a qualified reviewer to the video content
+Endpoint: /api/v1/review/assign
+Method: POST
+Request Body:
+{
+    "video_id": "string",
+    "video_language": "string",
+    "region": "string"
+}
+Response:
+{
+    "video_id": "string",
+    "initial_reviewer_id": "string"
+}
+Dependencies: validateVideo
+Error Scenarios:
+- No available reviewers: Return 503
+- Language mismatch: Return 400
+</API>
+
+<API>
+Name: getReview
+Description: Fetches the review details for a given video and reviewer
+Endpoint: /api/v1/review/get
+Method: POST
+Request Body:
+{
+    "video_id": "string",
+    "initial_reviewer_id": "string"
+}
+Response:
+{
+    "video_id": "string",
+    "initial_reviewer_id": "string",
+    "review_notes": "string",
+    "detected_categories": "List[string]",
+    "confidence_scores": "List[float]"
+}
+Dependencies: validateVideo, Name: assignReviewer
+Error Scenarios:
+- Review not found: Return 404
+- Mismatched reviewer or video ID: Return 400
+- Server error fetching review: Return 500
+</API>
+
+<API>
+Name: submitContentReview
+Description: Records initial content review findings
+Endpoint: /api/v1/review/submit
+Method: POST
+Request Body:
+{
+    "video_id": "string",
+    "initial_reviewer_id": "string",
+    "review_notes": "string",
+    "detected_categories": "List[string]",
+    "confidence_scores": "List[float]"
+}
+Response:
+{
+    "video_id": "string",
+    "escalated": "boolean",
+    "moderator_id": "string"
+}
+Dependencies: assignReviewer, getReview
+Error Scenarios:
+- Invalid reviewer ID: Return 403
+- Missing required fields: Return 400
+</API>
+
+<API>
+Name: implementModeration
+Description: Implements final moderation decisions
+Endpoint: /api/v1/moderation/implement
+Method: POST
+Request Body:
+{
+    "video_id": "string",
+    "moderator_id": "string"
+}
+Response:
+{
+    "video_id": "string",
+    "moderation_actions": List[string],
+    "final_decision": "string",
+    "age_rating": "string"
+}
+Dependencies: submitContentModeration
+Error Scenarios:
+- Invalid moderation action: Return 400
+- System error: Return 500
+</API>

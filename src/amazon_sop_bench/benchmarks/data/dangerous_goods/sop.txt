@@ -1,0 +1,64 @@
+
+1. Purpose
+To establish a standardized methodology for the systematic identification and classification of dangerous goods hazard classes through multi-source data integration and quantitative severity assessment protocols in accordance with international transportation regulations and safety standards.
+
+2. Scope
+This procedure encompasses all dangerous goods shipment classification processes within the organization's supply chain operations, including but not limited to the assessment of chemical substances, articles containing hazardous materials, and mixed-classification shipments. The procedure applies to all personnel involved in dangerous goods classification, shipping coordination, and compliance verification.
+
+3. Definitions
+3.1 Safety Data Sheet (SDS): A standardized document containing comprehensive information about the properties and hazards of a particular substance or mixture.
+3.2 Handling and Storage Guidelines (HS): Documented protocols for the safe manipulation and storage of dangerous goods.
+3.3 Transportation Requirements (TR): Regulatory specifications for the movement of dangerous goods.
+3.4 Disposal Guidelines (DG): Standardized procedures for the proper disposal of hazardous materials.
+3.5 API Integration Protocol (AIP): Automated interface for real-time severity score calculation.
+3.6 Hazard Classification Matrix (HCM): Algorithmic framework for determining final hazard class based on cumulative scoring.
+3.7 Severity Assessment Score (SAS): Numerical value between 1-5 assigned to each evaluation parameter.
+
+4. Input
+4.1 Product Identification Data
+- Product ID (format: P_XXXXX)
+4.2 Source Documentation
+- Safety Data Sheet (SDS)
+- Handling and Storage Guidelines
+- Transportation Requirements
+- Disposal Guidelines
+4.3 API Access Credentials
+- Classification API endpoint URLs
+- Authentication tokens
+- Backup authentication protocols
+
+5. Main Procedure
+In, initial Data validation, verify product identification documentation completeness using the Document Validation Protocol (DVP-2023). Cross-reference 
+product ID against master dangerous goods database. If the product ID fails to meet format requirements (e.g., missing prefix, invalid character set, or 
+non-resolvable reference), no further action should be taken. The hazard score should be marked as 0 and hazard class as Unable to Decide.
+
+5.2 Safety Data Sheet Analysis
+Extract hazard statements from Section 2 of SDS and calculate safety data sheet score. Validate that it is between 1 and 5
+
+5.3 Handling and Storage Evaluation
+Parse handling and storage guidelines and compute a handling score. Validate that it is between 1 and 5
+
+5.4 Transportation Requirements Assessment
+Analyze transportation requirements using Transportation Compliance Module and obtain a transportation severity score. 
+Validate that it is between 1 and 5.
+
+5.5 Disposal Guidelines Evaluation
+Process disposal guidelines through waste classification API and calculate a disposal severity score. It should be between 1 and 5. 
+
+5.6 Hazard Score Computation
+Calculate cumulative hazard_score using the formula:
+      hazard_score = safety score + handling score + transportation score + disposal score
+Validate total score against acceptable ranges (4-20)
+If any of the components is missing or 0, impute it by taking the max of the other scores. If more than two component scores are missing, then the hazard class 
+should be Unable to Decide and the hazard score marked as 0.
+
+5.7 Hazard Class Determination
+Apply the Hazard Class A, B, C and D based on the value of the hazard score. Higher score gets higher severity, D being the highest. 
+Document final classification in the Hazard Classification Registry
+
+6. Output
+6.1 Final hazard class designation in the format "Hazard Class A", "Hazard Class B", "Hazard Class C", "Hazard Class D", or "Unable to Decide"
+6.2 Digital record in Hazard Classification Registry
+6.3 API response logs for all scoring calculations
+6.4 Classification audit trail documentation
+6.5 The final output should be in xml format with tags <hazard_score> and <hazard_class>

@@ -1,0 +1,28 @@
+{
+  "name": "aircraft_inspection",
+  "output_columns": [
+    "aircraft_ready",
+    "mechanical_inspection_result",
+    "electrical_inspection_result",
+    "component_incident_response",
+    "component_mismatch_response",
+    "cross_check_response",
+    "cross_check_reporting_response"
+  ],
+  "input_columns": [
+    "aircraft_id", 
+    "tail_number", 
+    "maintenance_record_id", 
+    "expected_departure_time", 
+    "component_serial_number", 
+    "inspection_location_id", 
+    "component_weight", 
+    "physical_condition_observation", 
+    "installation_time", 
+    "battery_status", 
+    "circuit_continuity_check", 
+    "avionics_diagnostics_response", 
+    "installed_component_serial_number", 
+    "expected_component_weight", 
+    "actual_inspection_time"]
+}

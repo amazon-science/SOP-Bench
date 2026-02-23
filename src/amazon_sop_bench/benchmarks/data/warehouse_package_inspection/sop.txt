@@ -1,0 +1,57 @@
+1. Purpose
+To establish a standardized protocol for the identification, classification, and resolution of problematic shipment receipts within the enterprise warehouse network, ensuring compliance with vendor agreements and maintaining inventory accuracy through systematic verification processes.
+
+2. Scope
+This procedure encompasses all inbound shipment receipts across the warehouse network, including cross-dock facilities and regional distribution centers. It applies to all personnel involved in receiving operations, quality control, and vendor compliance management.
+
+3. Definitions
+3.1 ASN (Advanced Shipping Notice): Electronic notification containing detailed shipment information transmitted prior to physical receipt
+3.2 POD (Proof of Delivery): Digital or physical documentation validating the transfer of custody
+3.3 VSPM (Vendor Shipment Problem Matrix): Standardized classification system for shipment discrepancies
+3.4 QVT (Quantity Variance Threshold): Acceptable deviation percentage between ordered and received quantities, if not provided, default value is 5%.
+3.5 CRM (Chargeback Resolution Matrix): Standardized framework for determining vendor liability
+
+4. Input
+4.1 Required Documentation:
+- Purchase Order (po_number)
+- Vendor Information (vendor_id, vendor_name)
+- Product Specifications (confirmed_product_id, product_name)
+- Quantity Parameters (ordered_quantity, confirmed_quantity, received_quantity)
+- Warehouse Assignment (intended_warehouse_id,actual_warehouse_id)
+- Digital Assets (received_product_bar_code, package_image_path)
+
+5. Main Procedure
+5.1 Initial Receipt Verification
+5.1.1 Execute barcode validation protocol by comparing the barcode from path provided in received_product_bar_code against confirmed_product_id using image processing system, if not match, ignore all the steps below and mark the problem as 'Wrong Item' and set resolution_status to "Returned to Vendor", only execute 'Problem Classification Report' step 6.
+5.1.2 Calculate quantity variance using formula: (received_quantity - confirmed_quantity) / confirmed_quantity * 100
+
+5.2 Problem Classification Protocol
+5.2.1 Quantity Discrepancy Assessment
+- If confirmed_quantity = 0, classify as "Cancelled Quantity"
+- If received_quantity > ordered_quantity, mark as "Overage Quantity"
+- If received_quantity < ordered_quantity, mark as "Underage Quantity"
+- If |quantity variance| > QVT, add additional callout for "Severe Unmatched Quantity"
+
+5.2.2 Location Verification
+- Compare actual_warehouse_id against intended_warehouse_id
+- If mismatch detected, initiate "Wrong Warehouse" protocol, append problem "Wrong Warehouse"
+
+5.2.3 Condition Assessment
+- Process package_image_path through damage detection algorithm
+- If damage detected, classify as "Vendor Damaged", append problem "Vendor Damaged"
+
+5.3 Resolution Pathway Determination
+5.3.1 Calculate chargeback_amount based on CRM parameters:
+- For quantity discrepancies: charge (ordered_quantity - received_quantity) * unit_cost
+- For damage cases: charge received_quantity * unit_cost
+
+5.3.2 Update resolution_status based on problem_type:
+- Initialize as "Pending"
+- Progress to "Processing" upon problem confirmation
+
+
+6. Output
+6.1 Generated Documentation:
+- Problem Classification Report
+- Chargeback Calculation Sheet
+- Resolution Status Update

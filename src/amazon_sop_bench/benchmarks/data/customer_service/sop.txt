@@ -1,0 +1,78 @@
+# **1. Purpose**
+
+This Standard Operating Procedure outlines a structured, fully offline process for diagnosing and resolving customer-reported service issues without requiring interactive communication with the customer, except for the initial inputs. The SOP ensures end-to-end consistency, traceability, and audit readiness by executing predefined steps across authentication, service eligibility validation, outage detection, diagnostics, troubleshooting, and escalation — all based on system logs and internal tools.
+
+# **2. Scope**
+
+This procedure applies to all support teams and automated systems involved in the backend resolution of service issues where the customer is unavailable or where automated processing is preferred. It is specifically designed for workflows in which initial customer inputs are provided, and the entire diagnostic and resolution process is performed using internal data — without any direct input or confirmation from the customer.
+
+# **3. Key Definitions**
+
+- **Account ID:** A unique alphanumeric identifier associated with a customer account, typically formatted as three uppercase letters followed by a hyphen and five digits (e.g., ABC-12345). It serves as the primary lookup key for authentication logs, service metadata, and diagnostic history.
+
+- **Diagnostic Metrics:** Quantitative indicators used to assess service quality, including latency, jitter/stability, and bandwidth throughput.
+
+- **Root Cause List:** A ranked set of potential service issues inferred from diagnostic tests and account telemetry.
+
+- **Resolution Outcome:** The final status of the SOP workflow, categorized as one of the following: `RESOLVED`, `PENDING_ACTION`, `ESCALATED`, or `FAILED`.
+
+- **Escalation Route:** A designated technical team responsible for follow-up action when automated resolution fails. Teams include Tier 2 Technical Support, Field Operations, and Network Engineering.
+
+# **4. Input**
+
+The inputs for this SOP are the customer's Account ID and a description of the customer service issue, both of which must be supplied at the outset of the process.
+
+# **5. Main Procedure**
+
+## **5.1 Authentication and Ticket Initialization**
+
+Begin the resolution process by validating the format of the provided Account ID. Ensure it conforms to the organization's standard pattern. If the format is invalid, log the issue and immediately terminate the process. If the Account ID is valid, retrieve the customer's most recent authentication history. If you find failed attempt and no record of successful recovery, classify the authentication as failed and close the case. If the customer meets the authentication requirements, generate a unique session token and open a new service ticket. Record both the session token and ticket ID, and use them throughout the remainder of the workflow.
+
+## **5.2 Account Status Evaluation**
+
+After establishing authentication, query the system to determine the current status of the customer's account. If the system flags the account as *Terminated*, log the termination reason and conclude the case, as the account is ineligible for support. If the account is *Suspended*, extract the specific reason for suspension. If the cause relates to non-payment, assign the case to the Accounts Payable department. If the reason is something else, conclude the case, as the account is ineligible for support. Post suspension resolution steps, if the system shows that the suspension has been lifted, continue with the workflow. If the account status is *Active*, record this status and proceed to the next step.
+
+## **5.3 Outage and Service Area Analysis**
+
+Access the outage monitoring system and search for recent or ongoing service disruptions within a 10-mile radius of the customer's service address. If you detect an outage, log the outage ID, impact scope, and estimated resolution time. You may conclude diagnostics at this point, as the root cause is known. If no outage exists, continue to the technical diagnostic phase.
+
+## **5.4 Technical Diagnosis**
+
+Select and run the appropriate diagnostic tools based on the type of service the customer uses (e.g., internet, voice, video). Measure key performance indicators, including latency, jitter, and bandwidth throughput. Evaluate each metric against defined thresholds. Flag latency values exceeding 100 milliseconds, jitter over 30 milliseconds, or bandwidth levels that fall below the customer's subscribed plan. Use the diagnostic results and any relevant account history to identify potential root causes. Rank these causes by their likelihood and relevance. Record all diagnostic values, interpretations, and inferred causes in the service ticket, including precise timestamps for traceability.
+
+## **5.5 Troubleshooting**
+
+Run all appropriate resolution steps using predefined troubleshooting guidelines, such as modem resets, signal refreshes, or provisioning adjustments based on the identified root causes. After troubleshooting is complete, re-execute diagnostics to assess changes in latency, jitter, and bandwidth. If metrics improve, classify the issue as fixed. If you observe no significant improvement after executing all troubleshooting steps, proceed to the escalation phase.
+
+## **5.6 Escalation Procedures**
+
+If automated troubleshooting fails to resolve the issue, determine the appropriate escalation path based on the nature of the problem. Create a new escalation ticket and link it to the primary case. Include all relevant diagnostic outputs, attempted troubleshooting steps, customer and device information, and a summary of findings. Assign the ticket to the appropriate support group: use Tier 2 Technical Support for complex diagnostic scenarios, assign on-site issues to the Field Operations team, and route infrastructure problems to Network Engineering. Log the escalation destination, reason, and service-level expectations.
+
+## **5.7 Final Resolution and Documentation**
+
+After completing all diagnosis and escalation steps, compile a comprehensive resolution summary. Include customer account details, authentication results, service status, diagnostic data, troubleshooting actions, and any escalations performed, along with relevant timestamps. Then, update the ticket with the final resolution status: mark it as `RESOLVED` if the issue was addressed, `PENDING_ACTION` if the issue is awaiting a dependent action (e.g., outage resolution), `ESCALATED` if the initial diagnosis and troubleshooting could not resolve the issue and it is therefore assigned to another expert team, or `FAILED` if authentication was not completed.
+
+# **6. Output**
+
+The resolution workflow results in a **Resolution Summary Document (RSD)**, structured as a valid JSON object and enclosed within <final_output> tags, as shown in the example below. This output includes key boolean and enumerated outcomes from each procedural step, facilitating downstream processing, analytics, or reporting. ALWAYS output in this format. DO NOT miss any keys mentioned in the final output JSON below.
+
+<final_output>
+{
+  "is_account_id_valid": true,
+  "is_authenticated": true,
+  "ticket_id": "TKT-2025051234",
+  "account_status": "SUSPENDED",
+  "account_suspension_status": "ACTIVE",
+  "eligible_for_support": true,
+  "outage_detected": false,
+  "diagnostic_needed": true,
+  "latency_issue": true,
+  "stability_issue": false,
+  "bandwidth_issue": true,
+  "metrics_improved_post_troubleshooting": true,
+  "escalation_required": false,
+  "escalation_ticket_id": "",
+  "resolution_summary": "<Insert a comprehensive resolution summary here from step 5.7>",
+  "final_resolution_status": "RESOLVED"
+}
+</final_output>

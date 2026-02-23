@@ -1,0 +1,27 @@
+{
+  "name": "patient_intake",
+  "output_columns": [
+    "prescription_insurance_validation",
+    "insurance_validation",
+    "life_style_risk_level",
+    "overall_risk_level",
+    "user_registration",
+    "pharmacy_check"
+  ],
+  "input_columns": [
+    "patient_id", 
+    "insurance_provider", 
+    "policy_number", 
+    "group_number", 
+    "coverage_start_date", 
+    "insurance_type", 
+    "preferred_pharmacy_name", 
+    "preferred_pharmacy_address", 
+    "pharmacy_phone", 
+    "smoking_status", 
+    "alcohol_consumption", 
+    "exercise_frequency", 
+    "previous_surgeries", 
+    "chronic_conditions"
+  ]
+}

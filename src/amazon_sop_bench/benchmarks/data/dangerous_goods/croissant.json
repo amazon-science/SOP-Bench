@@ -1,0 +1,174 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "dangerous_goods_sop",
+  "description": "Standard operating procedure for dangerous_goods_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "dangerous_goods_sop/test_set_with_outputs.csv",
+      "sha256": "f7a40880d717bbdfdf35d58116dfcfbeb424ab52b40209670aaba743463123c5"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "dangerous_goods_sop/test_set_without_outputs.csv",
+      "sha256": "9ab5cff8f7030b5b0ed42350e5e9d221651d2a9ca79dc768fc76c264aa8892d5"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "dangerous_goods_sop/toolspecs.json",
+      "sha256": "6f8a65d80aa582a3a6ff2ed138d7bf90149b5b8f2ad8aa2135985bcff0a74357"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "dangerous_goods_sop/tools.py",
+      "sha256": "5f653219d6e5458e628ebe5886c71df3b3175ab9e9d28ff5fb9e19ae15470385"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "dangerous_goods_sop/sop.txt",
+      "sha256": "a69b309e78a8a4cef971b2f736dbf0c17ac4be6153b9a73ce148aa56d771e6c1"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "dangerous_goods_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "product_id",
+          "description": "Column 'product_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sds_label_text",
+          "description": "Column 'sds_label_text' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sds_label_score",
+          "description": "Column 'sds_label_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "handling_and_storage_guidelines",
+          "description": "Column 'handling_and_storage_guidelines' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "handling_score",
+          "description": "Column 'handling_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "transportation_requirements",
+          "description": "Column 'transportation_requirements' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "transportation_score",
+          "description": "Column 'transportation_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "disposal_guidelines",
+          "description": "Column 'disposal_guidelines' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "disposal_score",
+          "description": "Column 'disposal_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "hazard_score",
+          "description": "Column 'hazard_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "hazard_class",
+          "description": "Column 'hazard_class' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "product_id",
+          "description": "Column 'product_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sds_label_text",
+          "description": "Column 'sds_label_text' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sds_label_score",
+          "description": "Column 'sds_label_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "handling_and_storage_guidelines",
+          "description": "Column 'handling_and_storage_guidelines' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "handling_score",
+          "description": "Column 'handling_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "transportation_requirements",
+          "description": "Column 'transportation_requirements' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "transportation_score",
+          "description": "Column 'transportation_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "disposal_guidelines",
+          "description": "Column 'disposal_guidelines' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "disposal_score",
+          "description": "Column 'disposal_score' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

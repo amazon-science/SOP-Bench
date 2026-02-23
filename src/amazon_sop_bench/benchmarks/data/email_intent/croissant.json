@@ -1,0 +1,164 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "email_intent_sop",
+  "description": "Standard operating procedure for email_intent_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "email_intent_sop/test_set_with_outputs.csv",
+      "sha256": "982b2d241a7e1ed6b32bf344fb4d584538f2e1868aeb9765cfc4de15da065eaf"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "email_intent_sop/test_set_without_outputs.csv",
+      "sha256": "e54524fb43bd8348610960862104155c739f9d53fbc5cc21e5ec576db1519a70"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "email_intent_sop/toolspecs.json",
+      "sha256": "c51c10bed99342b39d88e235400b71114a80588aa1fef21228019c854ef60a15"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "email_intent_sop/tools.py",
+      "sha256": "2ab7ad06558c8cf6ff9c727726e612d7987f7f8f04c97569327c252e2202bf9f"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "email_intent_sop/sop.txt",
+      "sha256": "25c56950dc6127a59d4919e8e659868195dc1b232b8601a69f34a65650216fd1"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "email_intent_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "email_id",
+          "description": "Column 'email_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "email_body",
+          "description": "Column 'email_body' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_id",
+          "description": "Column 'product_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_description",
+          "description": "Column 'product_description' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "listing_price",
+          "description": "Column 'listing_price' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "seller_intent",
+          "description": "Column 'seller_intent' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "listing_status_details",
+          "description": "Column 'listing_status_details' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "action",
+          "description": "Column 'action' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_inventory",
+          "description": "Column 'product_inventory' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "marketplace_id",
+          "description": "Column 'marketplace_id' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "email_id",
+          "description": "Column 'email_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "email_body",
+          "description": "Column 'email_body' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_id",
+          "description": "Column 'product_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_description",
+          "description": "Column 'product_description' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "listing_price",
+          "description": "Column 'listing_price' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "listing_status_details",
+          "description": "Column 'listing_status_details' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "product_inventory",
+          "description": "Column 'product_inventory' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "marketplace_id",
+          "description": "Column 'marketplace_id' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

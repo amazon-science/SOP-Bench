@@ -1,0 +1,5 @@
+{
+  "name": "referral_abuse_detection_v1",
+  "output_columns": ["enforcement_action"],
+  "input_columns": ["account_id"]
+}

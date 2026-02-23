@@ -1,0 +1,399 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "video_annotation_sop",
+  "description": "Standard operating procedure for video_annotation_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "video_annotation_sop/test_set_with_outputs.csv",
+      "sha256": "16abcc441fa2f85de234f276153a45c1e9769e61f55f3dc48821d205a0ae285c"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "video_annotation_sop/test_set_without_outputs.csv",
+      "sha256": "51aed15c75d1cb7cd8a35e3b073bab72c1a1002713446b400b2e352db6fa4d41"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "video_annotation_sop/toolspecs.json",
+      "sha256": "15529e8ad4eacdc2326df4a15cabc1a1e9406ac25bb30ea15df7839cdc012c4b"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "video_annotation_sop/tools.py",
+      "sha256": "02238fcf3c86c02a7533456ce1425effd3c259d3ed6825da1e4131c64ef843e2"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "video_annotation_sop/sop.txt",
+      "sha256": "6f4806b7abfe619eef41a8dc86ed1f9bd0e7d93330c87761e1231f534978f0a0"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "video_annotation_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "video_id",
+          "description": "Column 'video_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "video_path",
+          "description": "Column 'video_path' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "format",
+          "description": "Column 'format' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "resolution_width",
+          "description": "Column 'resolution_width' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "resolution_height",
+          "description": "Column 'resolution_height' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "frame_rate",
+          "description": "Column 'frame_rate' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bit_depth",
+          "description": "Column 'bit_depth' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "channel_count",
+          "description": "Column 'channel_count' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lidar_point_cloud_path",
+          "description": "Column 'lidar_point_cloud_path' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "object_distance",
+          "description": "Column 'object_distance' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "time_offset",
+          "description": "Column 'time_offset' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "camera_intrinsics_available",
+          "description": "Column 'camera_intrinsics_available' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lidar_transform_available",
+          "description": "Column 'lidar_transform_available' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ground_truth_object",
+          "description": "Column 'ground_truth_object' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "predicted_object",
+          "description": "Column 'predicted_object' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "confidence_threshold_object_detection",
+          "description": "Column 'confidence_threshold_object_detection' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tracking_enabled",
+          "description": "Column 'tracking_enabled' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "segmentation_type",
+          "description": "Column 'segmentation_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "predicted_iou",
+          "description": "Column 'predicted_iou' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "temporal_smoothing",
+          "description": "Column 'temporal_smoothing' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "temporal_consistency_score",
+          "description": "Column 'temporal_consistency_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "spatial_accuracy_score",
+          "description": "Column 'spatial_accuracy_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "inter_annotator_score",
+          "description": "Column 'inter_annotator_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "min_reviewers",
+          "description": "Column 'min_reviewers' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "output_format_object_detection",
+          "description": "Column 'output_format_object_detection' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "scene_type",
+          "description": "Column 'scene_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "weather",
+          "description": "Column 'weather' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lighting_conditions",
+          "description": "Column 'lighting_conditions' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "camera_position",
+          "description": "Column 'camera_position' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "output_format_segmentation",
+          "description": "Column 'output_format_segmentation' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "object_detection_output_path",
+          "description": "Column 'object_detection_output_path' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "segmentation_output_path",
+          "description": "Column 'segmentation_output_path' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "final_status",
+          "description": "Column 'final_status' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "video_id",
+          "description": "Column 'video_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "video_path",
+          "description": "Column 'video_path' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "format",
+          "description": "Column 'format' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "resolution_width",
+          "description": "Column 'resolution_width' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "resolution_height",
+          "description": "Column 'resolution_height' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "frame_rate",
+          "description": "Column 'frame_rate' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bit_depth",
+          "description": "Column 'bit_depth' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "channel_count",
+          "description": "Column 'channel_count' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lidar_point_cloud_path",
+          "description": "Column 'lidar_point_cloud_path' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "object_distance",
+          "description": "Column 'object_distance' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "time_offset",
+          "description": "Column 'time_offset' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "camera_intrinsics_available",
+          "description": "Column 'camera_intrinsics_available' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lidar_transform_available",
+          "description": "Column 'lidar_transform_available' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ground_truth_object",
+          "description": "Column 'ground_truth_object' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "predicted_object",
+          "description": "Column 'predicted_object' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "confidence_threshold_object_detection",
+          "description": "Column 'confidence_threshold_object_detection' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tracking_enabled",
+          "description": "Column 'tracking_enabled' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "segmentation_type",
+          "description": "Column 'segmentation_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "predicted_iou",
+          "description": "Column 'predicted_iou' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "temporal_smoothing",
+          "description": "Column 'temporal_smoothing' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "temporal_consistency_score",
+          "description": "Column 'temporal_consistency_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "spatial_accuracy_score",
+          "description": "Column 'spatial_accuracy_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "inter_annotator_score",
+          "description": "Column 'inter_annotator_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "min_reviewers",
+          "description": "Column 'min_reviewers' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "output_format_object_detection",
+          "description": "Column 'output_format_object_detection' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "scene_type",
+          "description": "Column 'scene_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "weather",
+          "description": "Column 'weather' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "lighting_conditions",
+          "description": "Column 'lighting_conditions' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "camera_position",
+          "description": "Column 'camera_position' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "output_format_segmentation",
+          "description": "Column 'output_format_segmentation' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "object_detection_output_path",
+          "description": "Column 'object_detection_output_path' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "segmentation_output_path",
+          "description": "Column 'segmentation_output_path' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

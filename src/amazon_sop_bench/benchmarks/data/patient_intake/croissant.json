@@ -1,0 +1,454 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "patient_intake_sop",
+  "description": "Standard operating procedure for patient_intake_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "patient_intake_sop/test_set_with_outputs.csv",
+      "sha256": "07588389201e02a4f19a6bacf62b400951b01910f498892293b3f53a8b43bfca"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "patient_intake_sop/test_set_without_outputs.csv",
+      "sha256": "bf274028d4b6f43ce2e1fa7a55b3bb82cbd7b83dcfbd8b41fe0298f646dcaa4c"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "patient_intake_sop/toolspecs.json",
+      "sha256": "4593535221fe78159cedd91c01feb0e996cae27e2d4e9b3bc419b01d0bc9c041"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "patient_intake_sop/tools.py",
+      "sha256": "296d522ea12d6772cca8526f3e46a0e169b1660d607b3fa6f9628ff32e86283a"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "patient_intake_sop/sop.txt",
+      "sha256": "b5b45e864da06fef5d3fb7d66bced5229c31e0a6e89e7507ac9c04168037b3e5"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "patient_intake_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "patient_id",
+          "description": "Column 'patient_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "first_name",
+          "description": "Column 'first_name' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "last_name",
+          "description": "Column 'last_name' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "date_of_birth",
+          "description": "Column 'date_of_birth' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "patient_age",
+          "description": "Column 'patient_age' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "gender_identity",
+          "description": "Column 'gender_identity' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "race_ethnicity",
+          "description": "Column 'race_ethnicity' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_language",
+          "description": "Column 'preferred_language' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "marital_status",
+          "description": "Column 'marital_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "previous_surgeries",
+          "description": "Column 'previous_surgeries' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "chronic_conditions",
+          "description": "Column 'chronic_conditions' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "family_history",
+          "description": "Column 'family_history' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "current_medications",
+          "description": "Column 'current_medications' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "vaccination_status",
+          "description": "Column 'vaccination_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "blood_type",
+          "description": "Column 'blood_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "smoking_status",
+          "description": "Column 'smoking_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "alcohol_consumption",
+          "description": "Column 'alcohol_consumption' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "exercise_frequency",
+          "description": "Column 'exercise_frequency' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "diet_type",
+          "description": "Column 'diet_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sleep_hours",
+          "description": "Column 'sleep_hours' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "insurance_provider",
+          "description": "Column 'insurance_provider' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "policy_number",
+          "description": "Column 'policy_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "group_number",
+          "description": "Column 'group_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "coverage_start_date",
+          "description": "Column 'coverage_start_date' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "insurance_type",
+          "description": "Column 'insurance_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "drug_allergies",
+          "description": "Column 'drug_allergies' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "food_allergies",
+          "description": "Column 'food_allergies' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "environmental_allergies",
+          "description": "Column 'environmental_allergies' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "allergy_severity",
+          "description": "Column 'allergy_severity' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_name",
+          "description": "Column 'emergency_contact_name' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_relationship",
+          "description": "Column 'emergency_contact_relationship' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_phone",
+          "description": "Column 'emergency_contact_phone' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_pharmacy_name",
+          "description": "Column 'preferred_pharmacy_name' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_pharmacy_address",
+          "description": "Column 'preferred_pharmacy_address' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "pharmacy_phone",
+          "description": "Column 'pharmacy_phone' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "prescription_insurance_validation",
+          "description": "Column 'prescription_insurance_validation' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "insurance_validation",
+          "description": "Column 'insurance_validation' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "life_style_risk_level",
+          "description": "Column 'life_style_risk_level' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "overall_risk_level",
+          "description": "Column 'overall_risk_level' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "user_registration",
+          "description": "Column 'user_registration' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "pharmacy_check",
+          "description": "Column 'pharmacy_check' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "patient_id",
+          "description": "Column 'patient_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "first_name",
+          "description": "Column 'first_name' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "last_name",
+          "description": "Column 'last_name' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "date_of_birth",
+          "description": "Column 'date_of_birth' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "patient_age",
+          "description": "Column 'patient_age' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "gender_identity",
+          "description": "Column 'gender_identity' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "race_ethnicity",
+          "description": "Column 'race_ethnicity' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_language",
+          "description": "Column 'preferred_language' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "marital_status",
+          "description": "Column 'marital_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "previous_surgeries",
+          "description": "Column 'previous_surgeries' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "chronic_conditions",
+          "description": "Column 'chronic_conditions' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "family_history",
+          "description": "Column 'family_history' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "current_medications",
+          "description": "Column 'current_medications' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "vaccination_status",
+          "description": "Column 'vaccination_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "blood_type",
+          "description": "Column 'blood_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "smoking_status",
+          "description": "Column 'smoking_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "alcohol_consumption",
+          "description": "Column 'alcohol_consumption' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "exercise_frequency",
+          "description": "Column 'exercise_frequency' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "diet_type",
+          "description": "Column 'diet_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sleep_hours",
+          "description": "Column 'sleep_hours' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "insurance_provider",
+          "description": "Column 'insurance_provider' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "policy_number",
+          "description": "Column 'policy_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "group_number",
+          "description": "Column 'group_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "coverage_start_date",
+          "description": "Column 'coverage_start_date' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "insurance_type",
+          "description": "Column 'insurance_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "drug_allergies",
+          "description": "Column 'drug_allergies' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "food_allergies",
+          "description": "Column 'food_allergies' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "environmental_allergies",
+          "description": "Column 'environmental_allergies' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "allergy_severity",
+          "description": "Column 'allergy_severity' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_name",
+          "description": "Column 'emergency_contact_name' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_relationship",
+          "description": "Column 'emergency_contact_relationship' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "emergency_contact_phone",
+          "description": "Column 'emergency_contact_phone' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_pharmacy_name",
+          "description": "Column 'preferred_pharmacy_name' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "preferred_pharmacy_address",
+          "description": "Column 'preferred_pharmacy_address' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "pharmacy_phone",
+          "description": "Column 'pharmacy_phone' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

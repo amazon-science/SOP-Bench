@@ -1,0 +1,734 @@
+[
+    {
+        "toolSpec": {
+            "name": "validateVideoFormat",
+            "description": "Validates video format and metadata against required specifications for autonomous vehicle perception system training, ensuring compliance with format, resolution, frame rate, and environmental requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video to be validated",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": [
+                                "vid_00010"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "video_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateLidarData",
+            "description": "Validates LiDAR data completeness, synchronization, and associated metadata according to SOP requirements. Ensures point cloud data is properly aligned with video frames and meets technical specifications for autonomous vehicle perception.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video sequence",
+                            "pattern": "^vid_[0-9]{5}$"
+                        },
+                        "video_path": {
+                            "type": "string",
+                            "description": "Full path to the video file for which LiDAR data needs to be validated",
+                            "pattern": "^/data/videos/.*\\.(mp4|avi|mov)$"
+                        }
+                    },
+                    "required": [
+                        "video_id",
+                        "video_path"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "executeSegmentation",
+            "description": "Performs segmentation processing on detected objects in video data, generating segmentation masks and validating against quality thresholds as specified in the SOP.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video being processed",
+                            "pattern": "^vid_\\d{5}$"
+                        },
+                        "predicted_object": {
+                            "type": "string",
+                            "description": "The type of object detected in the previous detection step",
+                            "examples": [
+                                "road lanes",
+                                "pedestrians",
+                                "bicyclists",
+                                "street markings"
+                            ]
+                        },
+                        "object_detection_output_path": {
+                            "type": "string",
+                            "description": "File system path to the object detection results",
+                            "pattern": "^/data/videos/.*\\.(json|xml)$"
+                        },
+                        "output_format_object_detection": {
+                            "type": "string",
+                            "description": "Format of the object detection output file",
+                            "enum": [
+                                "json",
+                                "xml"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "video_id",
+                        "predicted_object",
+                        "object_detection_output_path",
+                        "output_format_object_detection"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "performObjectDetection",
+            "description": "Executes object detection on validated video data, ensuring compliance with confidence thresholds and temporal consistency requirements. Generates object detection results in specified output format with tracking capabilities.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video being processed",
+                            "pattern": "^vid_\\d{5}$"
+                        },
+                        "video_path": {
+                            "type": "string",
+                            "description": "Full path to the video file for processing",
+                            "pattern": "^/data/videos/.*\\.(mp4|HEVC|H\\.264)$"
+                        }
+                    },
+                    "required": [
+                        "video_id",
+                        "video_path"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "performHumanValidation",
+            "description": "Executes human-in-the-loop validation process for video annotations, managing multiple reviewer inputs and calculating inter-annotator agreement scores while ensuring compliance with minimum quality standards.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video being processed",
+                            "pattern": "^vid_\\d{5}$"
+                        },
+                        "predicted_object": {
+                            "type": "string",
+                            "description": "Type of object detected in the video (e.g., 'road lanes', 'pedestrians', 'bicyclists')"
+                        },
+                        "predicted_iou": {
+                            "type": "number",
+                            "description": "Predicted Intersection over Union score for the segmentation",
+                            "minimum": 0.0,
+                            "maximum": 1.0
+                        },
+                        "segmentation_output_path": {
+                            "type": "string",
+                            "description": "File system path to the segmentation output files",
+                            "pattern": "^/data/videos/.*\\.(binary|indices)$"
+                        },
+                        "object_detection_output_path": {
+                            "type": "string",
+                            "description": "File system path to the object detection output files",
+                            "pattern": "^/data/videos/.*\\.(json|xml)$"
+                        }
+                    },
+                    "required": [
+                        "video_id",
+                        "predicted_object",
+                        "predicted_iou",
+                        "segmentation_output_path",
+                        "object_detection_output_path"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "runAutomatedQC",
+            "description": "Performs automated quality control checks on video annotations, validating spatial accuracy and temporal consistency against SOP-defined thresholds. This tool is a critical component of the quality assurance pipeline for autonomous vehicle perception system training data.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video being processed",
+                            "pattern": "^vid_[0-9]{5}$"
+                        },
+                        "video_path": {
+                            "type": "string",
+                            "description": "Full path to the source video file",
+                            "pattern": "^/data/videos/.*\\.(mp4|HEVC)$"
+                        },
+                        "predicted_object": {
+                            "type": "string",
+                            "description": "Type of object detected in the video frame",
+                            "enum": [
+                                "road lanes",
+                                "pedestrians",
+                                "vehicles",
+                                "bicyclists",
+                                "street markings"
+                            ]
+                        },
+                        "predicted_iou": {
+                            "type": "number",
+                            "description": "Intersection over Union score from segmentation process",
+                            "minimum": 0.0,
+                            "maximum": 1.0
+                        },
+                        "segmentation_output_path": {
+                            "type": "string",
+                            "description": "Path to the segmentation output files",
+                            "pattern": "^/data/videos/.*\\.(binary|indices)$"
+                        },
+                        "object_detection_output_path": {
+                            "type": "string",
+                            "description": "Path to the object detection output files",
+                            "pattern": "^/data/videos/.*\\.(json|xml)$"
+                        }
+                    },
+                    "required": [
+                        "video_id",
+                        "video_path",
+                        "predicted_object",
+                        "predicted_iou",
+                        "segmentation_output_path",
+                        "object_detection_output_path"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calibrateCameraSensors",
+            "description": "Calibrates camera sensors based on their physical position and current environmental conditions for accurate perception alignment.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "camera_position": {
+                            "type": "string",
+                            "description": "Physical position of the camera on the vehicle (e.g., front, rear, left, right)"
+                        }
+                    },
+                    "required": ["video_id", "camera_position"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "synchronizeLidarTimestamp",
+            "description": "Synchronizes LiDAR data timestamps with video frames for temporal alignment.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "time_offset": {
+                            "type": "number",
+                            "description": "Time offset in seconds to align LiDAR and video data"
+                        }
+                    },
+                    "required": ["video_id", "time_offset"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "generateDepthMap",
+            "description": "Generates depth maps using LiDAR point cloud data aligned with video content.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "lidar_point_cloud_path": {
+                            "type": "string",
+                            "description": "File path to the LiDAR point cloud data"
+                        }
+                    },
+                    "required": ["video_id", "lidar_point_cloud_path"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateWeatherConditions",
+            "description": "Validates weather conditions for video suitability under specific environmental criteria.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "weather": {
+                            "type": "string",
+                            "description": "Weather condition during recording (e.g., sunny, rainy, foggy)"
+                        }
+                    },
+                    "required": ["video_id", "weather"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "optimizeFrameRate",
+            "description": "Adjusts the video frame rate to meet processing requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "frame_rate": {
+                            "type": "number",
+                            "description": "Target frame rate in frames per second"
+                        }
+                    },
+                    "required": ["video_id", "frame_rate"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "enhanceLowLightFootage",
+            "description": "Enhances video quality under low-light conditions using brightness and noise-reduction techniques.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "lighting_conditions": {
+                            "type": "string",
+                            "description": "Description of lighting conditions (e.g., dusk, night, poorly lit)"
+                        }
+                    },
+                    "required": ["video_id", "lighting_conditions"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "trackObjectMotion",
+            "description": "Tracks motion of specified objects across frames in a video sequence.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "predicted_object": {
+                            "type": "string",
+                            "description": "Type of object to be tracked (e.g., vehicle, pedestrian)"
+                        }
+                    },
+                    "required": ["video_id", "predicted_object"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateCameraIntrinsics",
+            "description": "Validates whether camera intrinsic calibration parameters are available and usable.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "camera_intrinsics_available": {
+                            "type": "boolean",
+                            "description": "Indicates if camera intrinsics are available"
+                        }
+                    },
+                    "required": ["video_id", "camera_intrinsics_available"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "processNightTimeFootage",
+            "description": "Processes and enhances video captured in nighttime conditions.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "lighting_conditions": {
+                            "type": "string",
+                            "description": "Lighting condition for nighttime footage (e.g., low ambient light, artificial light)"
+                        }
+                    },
+                    "required": ["video_id", "lighting_conditions"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "analyzeCameraStability",
+            "description": "Analyzes camera motion and vibration to determine recording stability.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "camera_position": {
+                            "type": "string",
+                            "description": "Camera mounting position on the vehicle"
+                        }
+                    },
+                    "required": ["video_id", "camera_position"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateSceneContext",
+            "description": "Validates whether the recorded scene matches expected context for processing (e.g., urban, highway).",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "scene_type": {
+                            "type": "string",
+                            "description": "Scene context for the video (e.g., urban, rural, indoor)"
+                        }
+                    },
+                    "required": ["video_id", "scene_type"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "adjustBitDepth",
+            "description": "Adjusts the bit depth of video frames to match processing requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "bit_depth": {
+                            "type": "integer",
+                            "description": "Desired bit depth for processing (e.g., 8, 10, 12)"
+                        }
+                    },
+                    "required": ["video_id", "bit_depth"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateChannelCount",
+            "description": "Validates the number of channels in the video data (e.g., RGB, RGBA).",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "channel_count": {
+                            "type": "integer",
+                            "description": "Number of color channels present in the video"
+                        }
+                    },
+                    "required": ["video_id", "channel_count"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "processHighResolution",
+            "description": "Processes high-resolution video content by adjusting scale or applying optimizations.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "resolution_width": {
+                            "type": "integer",
+                            "description": "Width of the video resolution in pixels"
+                        },
+                        "resolution_height": {
+                            "type": "integer",
+                            "description": "Height of the video resolution in pixels"
+                        }
+                    },
+                    "required": ["video_id", "resolution_width", "resolution_height"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateOutputFormat",
+            "description": "Validates that the output format for object detection results conforms to specifications.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "output_format_object_detection": {
+                            "type": "string",
+                            "description": "Expected format for object detection output (e.g., COCO, YOLO)"
+                        }
+                    },
+                    "required": ["video_id", "output_format_object_detection"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkProcessingStatus",
+            "description": "Checks if video processing has completed and returns processing status.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        }
+                    },
+                    "required": ["video_id"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateTemporalConsistency",
+            "description": "Validates temporal consistency of processed video frames over time.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "temporal_consistency_score": {
+                            "type": "number",
+                            "description": "Score representing consistency across frames (0.0–1.0)"
+                        }
+                    },
+                    "required": ["video_id", "temporal_consistency_score"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "checkSpatialAccuracy",
+            "description": "Checks spatial accuracy of processed video outputs against ground truth.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "spatial_accuracy_score": {
+                            "type": "number",
+                            "description": "Accuracy score comparing output to spatial ground truth (0.0–1.0)"
+                        }
+                    },
+                    "required": ["video_id", "spatial_accuracy_score"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateAnnotatorScores",
+            "description": "Validates inter-annotator agreement for labeled video data.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "inter_annotator_score": {
+                            "type": "number",
+                            "description": "Score indicating level of agreement between annotators (0.0–1.0)"
+                        }
+                    },
+                    "required": ["video_id", "inter_annotator_score"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "optimizeTrackingSettings",
+            "description": "Optimizes tracking configuration parameters based on whether tracking is enabled.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "video_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the video session",
+                            "pattern": "^vid_\\d{5}$",
+                            "examples": ["vid_00010"]
+                        },
+                        "tracking_enabled": {
+                            "type": "boolean",
+                            "description": "Flag indicating if object tracking is enabled"
+                        }
+                    },
+                    "required": ["video_id", "tracking_enabled"],
+                    "additionalProperties": false
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,10 @@
+{
+  "name": "dangerous_goods",
+  "output_columns": ["hazard_class"],
+  "input_columns": [
+    "product_id", 
+    "sds_label_text", 
+    "handling_and_storage_guidelines", 
+    "transportation_requirements", 
+    "disposal_guidelines"]
+}

@@ -1,0 +1,82 @@
+
+1. Purpose
+This Standard Operating Procedure establishes a comprehensive framework for the systematic classification, escalation, and moderation of user-generated video content within digital platforms. 
+The procedure implements a multi-tiered review system incorporating automated validation, human review, and escalation protocols while maintaining compliance with relevant regulatory requirements and platform policies.
+
+2. Scope
+This SOP encompasses all aspects of video content review from initial intake through final disposition, including format validation, metadata extraction, content classification, escalation procedures, and moderation actions. 
+It applies to all content reviewers, moderators, and technical personnel involved in the content moderation workflow.
+
+3. Keys Definitions
+3.1 Content Classification Taxonomy (CCT): A hierarchical system of content categories and subcategories used to classify potentially objectionable content.
+3.2 Confidence Score Matrix (CSM): A numerical framework for quantifying reviewer certainty in content classification decisions.
+3.3 Escalation Threshold Metric (ETM): A composite score derived from classification confidence scores and content severity ratings that determines escalation requirements.
+3.4 Moderation Action Matrix (MAM): A structured decision framework mapping content classifications to appropriate moderation actions.
+3.5 Review Session Protocol (RSP): The standardized methodology for conducting content reviews, including temporal requirements and documentation standards.
+3.6 Video Validation Protocol (VVP): Technical specifications for validating video format compliance and metadata integrity.
+
+4. Input
+4.1 Video Content Package (VCP) containing:
+- Unique video identifier and Video file path 
+- Upload metadata (upload_timestamp, uploader_id)
+- Technical specifications (format_validated, duration_seconds, frame_rate, resolution)
+- Associated metadata (video_language, region, metadata_tags)
+
+5. Main Procedure
+5.1 Video Intake and Validation
+5.1.1 Execute VVP to validate video format compliance against supported codec specifications (MP4, HEVC/H.264) and is at least 720p. 
+      Account for typos in specifications and do not discard based on typos. 
+5.1.2 Perform metadata extraction and validation according to the platform's Metadata Extraction Protocol (MEP).
+5.1.3 Perform analysis to ensure that the uploader history is clean else look for red flags and be cautious.
+5.1.4 If everything is positive till now, move to the next stage of the moderation process.
+
+5.2 Reviewer Assignment
+5.2.1 Run Reviewer Assignment Algorithm (RAA) incorporating reviewer expertise metrics, language proficiency scores, and current workload distribution factors. 
+5.2.2 Assign initial_reviewer_id based on optimal reviewer selection criteria
+5.2.3 Based on initial reviewer's categories that they detected and their confidences, decide if you need to escalate this to a moderation expert.
+
+5.3 Initial Content Review
+Dedicated reviewers should stick by these guidelines:
+5.3.1 Execute RSP including mandatory full-length video review and documentation requirements.
+5.3.2 Apply CCT to identify and classify content violations.
+5.3.3 Calculate confidence_scores for each identified violation category.
+5.3.4 Return empty fields if the there are no detected categories and confidence scores.
+
+5.4 Classification Processing for Reviewers
+5.4.1 Apply classification algorithms to detected_categories based on review findings.
+5.4.2 Calculate composite violation severity score using weighted category metrics.
+5.4.3 Generate preliminary classification report including violation details and confidence scores.
+
+
+5.5 Escalation Determination
+Please use these guidelines to determine escalation.
+5.5.1 Calculate ETM based on violation severity and confidence scores.
+5.5.2 Compare ETM against established escalation thresholds.
+5.5.3 If ETM exceeds threshold, initiate escalation protocol and assign moderator_id.
+5.5.4 Document escalation justification and associated metrics.
+
+5.6 Moderation Action Implementation
+Moderators should strictly abide by the guidelines to ensure timely processing of content.
+5.6.1 Generate comprehensive moderator_notes documenting timestamps and descriptions of potentially objectionable content.
+5.6.1 Apply MAM to determine appropriate actions and embed them in your notes.
+5.6.3 Upload the data in the database as per data upload guidelines within 24 hours of the case being assigned.
+
+5.7 Final Review, documentation and Audit Trail
+5.7.1 Generate comprehensive review documentation including all decision points and justifications.
+5.7.2 If you have chosen to escalate the content, assign it to a moderator.
+5.7.3 Go through the moderator's detailed notes to identify potential moderation actions you need to take from these: Age Restrict, Remove, Strike Issued, Warning
+      You may issue one of more actions as per the case or None for cases where you feel these should'nt be added.
+5.7.4 Assign an age rating based on the reviewers, moderation actions from these: '18+', '13+', None
+5.7.5 Based on all these signals, assign a content warning which is either True or False
+5.7.6 Based on all these signals, be it technical issues with the video or inappropriate content that is flagged by reviewers and moderators, assign a final_decision from these options: Remove, Warning, Allow, Age Restrict
+      Please not that allowed content may or may not have content warning status as True
+      Also not that technical hiccups in a content may be give a Remove State
+5.7.7 Output your decision reasons in section 6 in the 'Reason' field.
+5.7.7 Archive review session data according to data retention policies.
+
+6. Output
+After completing all review steps, provide your final decision in this format:
+
+Final Answer: <final_decision>value</final_decision>
+
+Where value is one of: Remove, Warning, Allow, Age Restrict

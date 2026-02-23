@@ -1,0 +1,275 @@
+product_id,sds_label_text,sds_label_score,handling_and_storage_guidelines,handling_score,transportation_requirements,transportation_score,disposal_guidelines,disposal_score,hazard_score,hazard_class
+P1_3191,Highly toxic material,5.0,High security vault,5,Secure transport,5,Specialized disposal,5,0,Unable to Decide
+P_13307,Compressed neon,4.0,Pressure rated storage,4,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13166,Minor hazard,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13264,Aquatic hazard,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13174,Acute toxicity,5.0,Secure facility,4,Special transport,4,Licensed disposal,4,17,Hazard Class D
+P_13041,Moderate skin sensitizer,3.0,Controlled storage area,3,Protected packaging,3,Chemical waste handling,3,12,Hazard Class B
+P_13184,Environmental hazard,4.0,Contained storage,4,Protected transport,4,Special disposal,4,16,Hazard Class C
+P_13048,Severe eye damage risk,5.0,Protected storage area,4,Impact-resistant packaging,4,Hazardous waste disposal,4,17,Hazard Class D
+P_13238,Toxic inhalation,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13371,Fatal if swallowed,5.0,Maximum security,5,Licensed transport,5,Incineration required,5,20,Hazard Class D
+P_13432,Liquid helium,4.0,Cryogenic storage,4,Protected transport,0,Controlled release,3,15,Hazard Class C
+P_13342,Liquid nitrogen,4.0,Cryogenic storage,4,Insulated transport,4,Controlled release,3,15,Hazard Class C
+P_13173,Heat sensitive,4.0,Temperature control,4,Thermal monitoring,4,Careful disposal,4,16,Hazard Class C
+P_13194,Dermal toxicity,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13271,Highly toxic solid,5.0,High security vault,5,Secure transport,5,Specialized disposal,5,20,Hazard Class D
+P_13436,Low reactivity solid,0.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13249,Low impact material,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13404,Toxic by ingestion,5.0,Secure storage,4,Protected transport,4,Hazardous disposal,0,18,Hazard Class D
+P_13314,Contact toxicity,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13273,Heat sensitive,4.0,Temperature monitored,4,Thermal control,4,Careful disposal,4,16,Hazard Class C
+P_13193,Unstable at room temp,4.0,Climate controlled,4,Temperature monitored,4,Careful disposal,4,16,Hazard Class C
+P_13043,Strong oxidizer,4.0,Oxidizer storage cabinet,4,Segregated transport,4,Chemical treatment,3,15,Hazard Class C
+P_13183,Strong oxidizer,4.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13109,Low risk solid,2.0,General storage,2,Standard shipping,2,Regular disposal,1,7,Hazard Class A
+P_13274,Dermal toxicity,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13042,Refrigerated gas,4.0,Cold storage required,4,Temperature-controlled transport,4,Controlled release disposal,3,15,Hazard Class C
+P_13328,Severe burns hazard,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+PA_13136,Spontaneous combustion,5.0,Fire-rated storage,5,Special containers,5,Expert handling,5,0,Unable to Decide
+P_13330,Moisture sensitive gas,4.0,Dry room storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13150,Water reactive,4.0,Dry storage,4,Moisture proof transport,4,Special handling,4,16,Hazard Class C
+P_13057,Skin sensitizer class 2,3.0,Controlled environment,2,Protected containers,2,Chemical disposal,2,9,Hazard Class B
+P_13062,Liquid nitrogen,4.0,Cryogenic storage,4,Insulated transport,4,Controlled evaporation,3,15,Hazard Class C
+P_13333,Heat reactive,4.0,Climate controlled,4,Thermal monitoring,4,Careful disposal,4,16,Hazard Class C
+P_13219,Minor health hazard,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13373,Temperature sensitive,4.0,Climate controlled,4,Thermal monitoring,4,Careful disposal,4,16,Hazard Class C
+P_13348,Severe corrosive,5.0,Acid cabinet storage,4,Corrosive transport,4,Hazardous disposal,4,17,Hazard Class D
+P_13189,Minimal impact,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13210,Moisture sensitive gas,4.0,Dry storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13211,Fatal if swallowed,5.0,Maximum security,5,Licensed transport,5,Incineration required,5,20,Hazard Class D
+P_13087,Compressed helium,4.0,Pressure-rated storage,4,Gas cylinder transport,4,Controlled release,3,15,Hazard Class C
+P_13143,Strong oxidant,4.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13181,Moderate sensitizer,3.0,Controlled storage,3,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13030,Reactive with water,4.0,Moisture-proof storage,4,Sealed container required,4,Reactive waste protocol,4,16,Hazard Class C
+P_13367,High pressure gas,4.0,Pressure vessel storage,4,Pressure regulations,4,Controlled venting,3,15,Hazard Class C
+P_13298,Asphyxiant mixture,5.0,Ventilated storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13034,Acute inhalation hazard,5.0,Ventilated cabinet storage,4,Restricted quantity shipping,4,Professional disposal,4,17,Hazard Class D
+P_13206,Low hazard liquid,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13135,Slight hazard,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13111,Fatal contact poison,5.0,High security area,5,Licensed transport,5,Incineration only,5,20,Hazard Class D
+P_13218,Asphyxiant gas,5.0,Ventilated storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13248,Severe irritant,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13220,Biological hazard,5.0,Biosafety storage,5,Biohazard transport,5,Autoclave required,5,20,Hazard Class D
+P_13267,Compressed air,4.0,Pressure rated storage,4,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13291,Fatal toxicity,5.0,Maximum security,5,Licensed transport,5,Incineration required,5,20,Hazard Class D
+P_13205,Detonating material,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13239,Low toxicity,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13122,Refrigerated liquid,4.0,Cold storage,4,Insulated transport,4,Controlled warming,3,15,Hazard Class C
+P_13097,Eye irritant class 2,3.0,Protected storage,2,Careful handling,2,Chemical disposal,2,9,Hazard Class B
+P_13289,Low risk chemical,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13128,Chemical burns risk,5.0,Corrosive cabinet,4,UN approved packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13179,Low health risk,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13324,Environmental hazard,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13129,Minimal impact,2.0,General storage,2,Standard shipping,2,Regular disposal,1,7,Hazard Class A
+P_13347,Compressed oxygen,4.0,Pressure rated storage,4,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13096,Pyrophoric solid,5.0,Inert atmosphere storage,5,Sealed transport,5,Special handling,5,20,Hazard Class D
+P_13047,Compressed air,4.0,Pressure vessel storage,4,Compressed gas regulations,4,Controlled release,3,15,Hazard Class C
+P_13063,Strong acid,4.0,Acid cabinet required,4,Corrosive transport rules,4,Neutralization needed,3,15,Hazard Class C
+P_13180,Biohazard class 2,5.0,Biosafety storage,5,Biohazard transport,5,Autoclave required,5,20,Hazard Class D
+P_13156,Self-heating material,5.0,Temperature monitored,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13095,Slight irritant,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13199,Low toxicity,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13335,Slight irritant,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13339,Low health risk,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13420,Water reactive material,4.0,Dry storage required,4,Moisture proof transport,4,Hazardous disposal,0,16,Hazard Class C
+P_13159,Low toxicity,2.0,Standard storage,1,Regular transport,1,Normal disposal,1,5,Hazard Class A
+P_13182,Liquid nitrogen,4.0,Cryogenic storage,4,Insulated transport,4,Controlled release,3,15,Hazard Class C
+P_13362,Refrigerated gas,4.0,Cold storage,4,Temperature controlled,4,Controlled release,3,15,Hazard Class C
+P_13116,Self-igniting solid,5.0,Fire-proof storage,5,Special container,5,Expert handling,5,20,Hazard Class D
+P_13424,Contact toxin,5.0,Restricted access,0,Protected transport,4,Licensed disposal,4,18,Hazard Class D
+P_13223,Strong oxidant,4.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13359,Low toxicity,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13213,Temperature sensitive,4.0,Climate controlled,4,Thermal monitoring,4,Careful disposal,4,16,Hazard Class C
+P_13323,Oxidizing liquid,4.0,Segregated storage,4,Oxidizer transport,4,Chemical disposal,3,15,Hazard Class C
+P_13215,Slight hazard,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13401,Acute respiratory hazard,5.0,Ventilated storage,0,Gas-tight transport,4,Professional disposal,4,18,Hazard Class D
+P_13260,Biohazard class 3,5.0,Biosafety storage,5,Biohazard transport,5,Autoclave required,5,20,Hazard Class D
+P_13304,Marine pollutant,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13163,Oxidizing liquid,4.0,Segregated storage,4,Oxidizer transport,4,Chemical disposal,3,15,Hazard Class C
+P_13064,Environmental toxin,4.0,Contained storage,4,Environmental protection,4,Special disposal needed,4,16,Hazard Class C
+P_13035,Minor health hazard,2.0,Standard storage,1,Regular packaging allowed,1,Standard disposal,1,5,Hazard Class A
+P_13283,Oxidizing material,4.0,Segregated storage,4,Oxidizer transport,4,Chemical disposal,3,15,Hazard Class C
+P_13234,Contact poison,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13144,Eco-toxicity,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13217,Skin sensitizer,3.0,Protected storage,2,Careful transport,2,Chemical disposal,2,9,Hazard Class B
+P_13282,Refrigerated liquid,4.0,Cold storage,4,Temperature controlled,4,Controlled release,3,15,Hazard Class C
+P_13269,Minimal impact,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13149,Low risk material,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13412,Cryogenic substance,4.0,Ultra-cold storage,4,Insulated transport,4,Chemical handling,0,16,Hazard Class C
+P_13427,Skin corrosion risk,0.0,Protected storage,2,Careful transport,2,Chemical disposal,2,8,Hazard Class B
+P_13364,Eco-toxic material,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13406,Self-decomposing solid,5.0,Temperature monitored,5,Licensed transport,0,Expert handling,5,20,Hazard Class D
+P_13200,Infectious substance,5.0,Biosafety storage,5,Biohazard transport,5,Sterilization required,5,20,Hazard Class D
+P_13261,Moderate sensitizer,3.0,Chemical storage,3,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13294,Systemic poison,5.0,Secure facility,4,Special transport,4,Licensed disposal,4,17,Hazard Class D
+P_13190,Water reactive class 3,4.0,Dry storage required,4,Moisture proof transport,4,Special handling,4,16,Hazard Class C
+P_13237,Eye irritant,3.0,Protected storage,2,Careful transport,2,Chemical disposal,2,9,Hazard Class B
+P_13415,Blasting compound,,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13026,Mild chemical irritant,2.0,Standard warehouse storage,2,Regular shipping permitted,1,Standard waste disposal,1,6,Hazard Class A
+P_13147,High pressure gas,4.0,Pressure rated storage,4,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13288,Caustic liquid,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13293,Unstable at heat,4.0,Climate controlled,4,Thermal monitoring,4,Careful disposal,4,16,Hazard Class C
+P_13336,Pyrophoric liquid,5.0,Fireproof storage,0,Special containers,5,Expert handling,0,0,Unable to Decide
+P_13154,Contact toxicity,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13329,Low impact material,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13250,Moisture sensitive,4.0,Dry room storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13370,Moisture sensitive,4.0,Dry storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13161,Skin irritant,3.0,Protected storage,3,Careful transport,3,Chemical handling,3,12,Hazard Class B
+P_13104,Soil contaminant,4.0,Sealed storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13344,Aquatic toxicity,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13055,Minor irritant,2.0,Regular storage area,1,Standard shipping boxes,1,Regular waste stream,1,5,Hazard Class A
+P_13113,Thermally unstable,4.0,Temperature control,4,Cooled transport,4,Careful disposal,4,16,Hazard Class C
+P_13353,Unstable at heat,4.0,Temperature monitored,4,Thermal control,4,Careful disposal,4,16,Hazard Class C
+P_13139,Minor health hazard,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13337,Skin sensitizer,3.0,Protected storage,2,Careful transport,2,Chemical disposal,2,9,Hazard Class B
+P_13265,High explosive,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13167,Pressurized liquid,4.0,Pressure vessel storage,4,Pressure regulations,4,Controlled release,3,15,Hazard Class C
+P_13222,Cryogenic liquid,4.0,Ultra-cold storage,4,Insulated transport,4,Controlled release,3,15,Hazard Class C
+P_13312,Benign substance,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13070,Dangerous when wet,4.0,Moisture-free storage,4,Waterproof transport,4,Special handling,4,16,Hazard Class C
+P_13411,Moderate corrosive liquid,3.0,Chemical storage,0,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13093,Temperature sensitive,4.0,Climate control storage,4,Temperature monitoring,4,Controlled disposal,4,16,Hazard Class C
+P_13318,Toxic inhalation hazard,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13115,Minor irritant,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13224,Marine toxicity,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13098,Toxic fumes risk,5.0,Ventilated cabinet,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13195,Minor irritant,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13036,Self-heating substance,5.0,Temperature-monitored storage,5,Thermal control required,5,Specialized handling,5,20,Hazard Class D
+Product_14124,Moderate eye hazard,3.0,Protected storage,3,Careful handling required,3,Chemical waste disposal,3,0,Unable to Decide
+P_13054,Toxic by contact,5.0,Restricted access storage,4,Protective packaging required,4,Licensed disposal only,4,17,Hazard Class D
+P_13208,Caustic substance,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13178,Toxic gas mixture,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13284,Eco-toxic substance,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13186,Low risk solid,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13270,Water reactive gas,4.0,Dry storage required,4,Moisture proof transport,4,Special handling,4,16,Hazard Class C
+P_13263,Strong oxidizer,4.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13165,Explosive material,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13368,Caustic material,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13079,Minor health risk,2.0,General storage,1,Standard shipping,1,Regular disposal,1,5,Hazard Class A
+P_13320,Infectious substance,5.0,Biosafety storage,5,Biohazard transport,5,Sterilization required,5,20,Hazard Class D
+P_13125,Detonator material,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13338,Toxic gas,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13216,Self-igniting liquid,5.0,Fireproof storage,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13244,Environmental toxin,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13157,Moderate corrosive,3.0,Chemical storage,2,Protected transport,2,Chemical disposal,2,9,Hazard Class B
+P_13067,Pressurized container,4.0,Secure storage area,4,Pressure vessel rules,4,Controlled release,3,15,Hazard Class C
+P_13119,Low toxicity,2.0,Basic storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13332,Non-hazardous,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13246,Minor hazard,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13170,Moisture sensitive,4.0,Dry room storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13050,Water-reactive class 1,4.0,Dry storage required,4,Moisture-proof transport,4,Reactive waste handling,4,16,Hazard Class C
+P_13433,Strong oxidant,0.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13175,Minimal hazard,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13290,Moisture sensitive solid,4.0,Dry storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13354,Dermal toxicity,5.0,Restricted access,4,Protected transport,4,Licensed disposal,4,17,Hazard Class D
+P_13028,Severe skin burns hazard,5.0,Acid cabinet storage,4,Corrosive packaging required,4,Neutralization required,4,17,Hazard Class D
+P_13300,Pathogenic agent,5.0,Biosafety storage,5,Biohazard transport,5,Autoclave required,5,20,Hazard Class D
+P_13402,Low volatility chemical,2.0,Standard storage,2,Regular shipping,0,Standard disposal,1,7,Hazard Class A
+P_13132,Safe material,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13268,Severe corrosive,5.0,Acid cabinet storage,4,Corrosive transport,4,Hazardous disposal,4,17,Hazard Class D
+P_13417,Compressed argon,4.0,Pressure vessel storage,0,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13255,Slight irritant,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13209,Low risk material,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13130,Moisture sensitive,4.0,Desiccated storage,4,Sealed transport,4,Special handling,4,16,Hazard Class C
+P_13257,Skin irritant,3.0,Protected storage,2,Careful transport,2,Chemical disposal,2,9,Hazard Class B
+P_13089,Minimal risk,2.0,Basic storage,2,Standard shipping,2,Regular disposal,1,7,Hazard Class A
+P_13073,Heat sensitive material,4.0,Temperature control,4,Cooled transport,4,Careful disposal,4,16,Hazard Class C
+P_13058,Toxic gas risk,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional handling,4,19,Hazard Class D
+P_13313,Temperature unstable,4.0,Temperature monitored,4,Thermal control,4,Careful disposal,4,16,Hazard Class C
+P_13240,Infectious agent,5.0,Biosafety storage,5,Biohazard transport,5,Sterilization required,5,20,Hazard Class D
+P_13375,Slight hazard,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13053,Unstable at high temp,4.0,Climate controlled storage,4,Temperature monitoring required,4,Special handling needed,4,16,Hazard Class C
+P_13334,Acute toxin,5.0,Secure facility,4,Special transport,4,Licensed disposal,4,17,Hazard Class D
+P_13272,Inert substance,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13306,Low reactivity,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13198,Poisonous gas,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13361,Moderate toxicity,3.0,Chemical storage,3,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13172,Non-hazardous,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13090,Water-reactive class 2,4.0,Dry room storage,4,Moisture protection,4,Reactive handling,4,16,Hazard Class C
+P_13169,Low impact material,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13162,Deeply refrigerated,4.0,Cryo storage,4,Cold chain transport,4,Controlled thawing,3,15,Hazard Class C
+P_13032,Non-toxic substance,1.0,Regular storage conditions,1,Standard shipping,1,Regular disposal,1,4,Hazard Class A
+P_13092,Non-toxic material,1.0,General storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13038,Toxic by inhalation,5.0,Negative pressure storage,5,Gas-tight packaging,5,Specialized disposal,4,19,Hazard Class D
+P_13192,Inert substance,1.0,Basic storage,1,Standard transport,1,Regular disposal,1,4,Hazard Class A
+P_13066,Low hazard chemical,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13410,Biological agent class 2,5.0,Biosafety storage,5,Gas-tight containers,0,Sterilization required,5,20,Hazard Class D
+P_13345,High explosive,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13258,Toxic gas mixture,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13325,Blasting agent,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13366,Low hazard liquid,2.0,General storage,2,Standard transport,1,Regular disposal,1,6,Hazard Class A
+P_13280,Infectious material,5.0,Biosafety storage,5,Biohazard transport,5,Sterilization required,5,20,Hazard Class D
+P_13247,Pressurized container,4.0,Pressure vessel storage,4,Pressure regulations,4,Controlled release,3,15,Hazard Class C
+P_13254,Acute toxicity,5.0,Secure facility,4,Special transport,4,Licensed disposal,4,17,Hazard Class D
+P_13343,Strong oxidizer,4.0,Oxidizer storage,4,Segregated transport,4,Chemical disposal,3,15,Hazard Class C
+P_13408,Inhalation risk,5.0,Gas cabinet,5,Gas-tight containers,5,Professional disposal,0,20,Hazard Class D
+P_13295,Slight hazard,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13431,Moderate irritant,3.0,Chemical storage,3,Protected transport,3,Controlled release,0,12,Hazard Class B
+P_13409,Low reactivity material,0.0,Standard storage,1,Regular transport,1,Standard disposal,1,4,Hazard Class A
+P_13315,Minimal risk,2.0,Regular storage,1,Standard transport,1,Normal disposal,1,5,Hazard Class A
+P_13241,Moderate irritant,3.0,Chemical storage,3,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13197,Moderate irritant,3.0,Protected storage,2,Careful transport,2,Chemical disposal,2,9,Hazard Class B
+P_13069,Low risk material,2.0,Standard storage,2,Normal shipping,2,Standard disposal,1,7,Hazard Class A
+P_13259,Low health risk,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13230,Water reactive solid,4.0,Dry storage required,4,Moisture proof transport,4,Special handling,4,16,Hazard Class C
+P_13305,Primary explosive,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13137,Respiratory irritant,3.0,Ventilated storage,2,Protected transport,2,Chemical disposal,2,9,Hazard Class B
+P_13081,Moderate corrosive,3.0,Chemical storage,3,Protected transport,3,Neutralization required,3,12,Hazard Class B
+P_13025,Explosive when dry,5.0,Humidity-controlled storage,5,Explosive transport protocols,5,Special facility disposal,5,20,Hazard Class D
+P_13075,Slight hazard,2.0,Basic storage,1,Regular transport,1,Normal disposal,1,5,Hazard Class A
+P_13110,Water-reactive gas,4.0,Dry storage required,4,Moisture-free transport,4,Special handling,4,16,Hazard Class C
+P_13245,Blasting explosive,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13060,Infectious material,5.0,Biosafety storage unit,5,Biohazard transport,5,Autoclave disposal,5,20,Hazard Class D
+P_13309,Minimal impact,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13121,Moderate toxin,3.0,Secure storage,3,Protected transport,3,Chemical treatment,3,12,Hazard Class B
+P_13080,Biohazard class 3,5.0,Containment facility,5,Biohazard transport,5,Sterilization required,5,20,Hazard Class D
+P_13310,Water reactive powder,4.0,Dry storage required,4,Moisture proof transport,4,Special handling,4,16,Hazard Class C
+P_13285,Detonating compound,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+Product_14123,Moderate corrosive,3.0,Corrosion-resistant storage,2,Limited quantity allowed,2,Chemical neutralization,2,0,Unable to Decide
+P_13365,Detonating material,5.0,Explosive bunker,5,Class 1 transport,5,Expert disposal,5,20,Hazard Class D
+P_13118,Asphyxiant gas,5.0,Ventilated storage,5,Gas cylinder rules,5,Professional handling,4,19,Hazard Class D
+P_13319,Low toxicity,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13204,Aquatic toxicity,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13434,Aquatic toxin,4.0,Contained storage,4,Environmental protection,0,Special disposal,4,16,Hazard Class C
+P_13168,Chemical burn risk,5.0,Corrosive storage,4,UN rated packaging,4,Hazardous disposal,4,17,Hazard Class D
+P_13356,Self-reactive type A,5.0,Temperature controlled,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13426,Self-heating material,5.0,Temperature controlled,5,Special containers,5,Expert handling,0,20,Hazard Class D
+P_13369,Low risk chemical,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13287,High pressure liquid,4.0,Pressure vessel storage,4,Pressure regulations,4,Controlled venting,3,15,Hazard Class C
+P_13082,Deeply refrigerated,4.0,Freezer storage,4,Cold chain transport,4,Controlled thawing,3,15,Hazard Class C
+P_13078,Poisonous vapor,5.0,Negative pressure storage,5,Vapor-tight transport,5,Licensed disposal,4,19,Hazard Class D
+P_13212,Safe substance,1.0,Basic storage,0,Standard transport,0,Regular disposal,1,0,Unable to Decide
+P_13229,Minimal impact,2.0,Standard storage,2,Regular shipping,2,Normal disposal,1,7,Hazard Class A
+P_13438,Caustic solution,5.0,Corrosive storage,4,UN rated packaging,0,Controlled venting,0,0,Unable to Decide
+P_13225,Primary explosive,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13207,High pressure gas,4.0,Pressure vessel storage,4,Pressure regulations,4,Controlled venting,3,15,Hazard Class C
+P_13086,Low-risk chemical,2.0,Standard storage,2,Regular transport,1,Normal disposal,1,6,Hazard Class A
+P_13074,Acute toxicity,5.0,Secure facility,4,Licensed transport,4,Hazardous waste handling,4,17,Hazard Class D
+P__13279,Low toxicity,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,0,Unable to Decide
+P_13296,Self-igniting powder,5.0,Fireproof storage,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13045,Detonation hazard,5.0,Explosive storage magazine,5,Explosive transport license,5,Licensed disposal only,5,20,Hazard Class D
+P_13363,Oxidizing solid,4.0,Segregated storage,4,Oxidizer transport,4,Chemical disposal,3,15,Hazard Class C
+P_13196,Pyrophoric gas,5.0,Fireproof storage,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13322,Deeply refrigerated,4.0,Cryo storage,4,Cold chain transport,4,Controlled thawing,3,15,Hazard Class C
+P_13231,Lethal by contact,5.0,High security vault,5,Secure transport,5,Specialized disposal,5,20,Hazard Class D
+P_13341,Moderate irritant,3.0,Chemical storage,3,Protected transport,3,Chemical handling,3,12,Hazard Class B
+P_13418,Strong acid solution,5.0,Acid cabinet storage,4,Corrosive transport,0,Hazardous disposal,4,18,Hazard Class D
+P_13303,Strong oxidant,4.0,Oxidizer storage,0,Segregated transport,4,Chemical disposal,0,0,Unable to Decide
+P_13358,Poisonous gas,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13185,High explosive,5.0,Explosive magazine,5,Explosive transport,5,Expert disposal,5,20,Hazard Class D
+P_13164,Marine pollutant,4.0,Contained storage,4,Environmental protection,4,Special disposal,4,16,Hazard Class C
+P_13187,Compressed oxygen,4.0,Pressure rated storage,4,Cylinder regulations,4,Controlled venting,3,15,Hazard Class C
+P_13131,Lethal toxicity,5.0,Maximum security,5,Authorized transport,5,Specialized disposal,5,20,Hazard Class D
+P_13117,Skin irritant class 2,3.0,Protected storage,2,Standard transport,2,Chemical disposal,2,9,Hazard Class B
+P_13405,Minor skin irritant,0.0,Regular storage,2,Standard shipping,1,Normal disposal,1,6,Hazard Class A
+P_13256,Pyrophoric material,5.0,Fireproof storage,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13155,Minimal risk,2.0,Basic storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13440,Moisture sensitive powder,4.0,Dry room storage,0,Sealed transport,0,Special handling,4,0,Unable to Decide
+P_13044,Marine pollutant,4.0,Environmental control storage,4,Water transport restrictions,4,Environmental disposal,4,16,Hazard Class C
+P_13228,Chemical burns risk,5.0,Acid cabinet storage,4,Corrosive transport,4,Hazardous disposal,4,17,Hazard Class D
+P_13099,Low hazard,2.0,Standard storage,1,Regular transport,1,Standard disposal,1,5,Hazard Class A
+P_13138,Toxic by inhalation,5.0,Gas cabinet storage,5,Gas-tight transport,5,Professional disposal,4,19,Hazard Class D
+P_13316,Self-heating material,5.0,Temperature controlled,5,Special containers,5,Expert handling,5,20,Hazard Class D
+P_13423,Heat sensitive compound,4.0,Temperature monitored,4,Thermal control,4,Careful disposal,0,16,Hazard Class C
+P_13134,Systemic toxin,5.0,Secure facility,4,Special transport,4,Licensed disposal,4,17,Hazard Class D

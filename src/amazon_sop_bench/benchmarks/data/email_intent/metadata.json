@@ -1,0 +1,5 @@
+{
+  "name": "email_intent",
+  "output_columns": ["seller_intent", "action"],
+  "input_columns": ["product_id", "marketplace_id"]
+}

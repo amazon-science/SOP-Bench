@@ -1,0 +1,110 @@
+[
+  {
+    "toolSpec": {
+      "name": "investigate_account",
+      "description": "Retrieves account investigation data including address validity, email patterns, website verification status, business description, account status, account age, and basic violation history",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account to investigate"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "analyze_traffic_patterns",
+      "description": "Retrieves traffic and transaction data including revenue amount, click-through rate, page views, device distribution, referral source quality, payment method sharing status, and order pattern indicators",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account to analyze"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "analyze_temporal_patterns",
+      "description": "Retrieves temporal activity data including registration burst detection, off-hours activity percentage, activity spike detection, and coordinated timing patterns. Use this to identify time-based fraud indicators",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account to analyze"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "get_violation_history",
+      "description": "Retrieves detailed violation history including previous violations count, last violation date, warning status, rehabilitation status, and enforcement action history. Use this to assess repeat offender status and determine risk severity",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "get_financial_impact",
+      "description": "Retrieves financial metrics including total lifetime revenue, refund rate percentage, and customer complaint count. Use this to calculate risk severity based on financial impact",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "determine_enforcement_action",
+      "description": "Retrieves enforcement action guidelines that map violation types and risk severity levels to their corresponding actions. Use this after determining both the violation type from scoring analysis AND the risk severity level from financial/historical data",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "account_id": {
+              "type": "string",
+              "description": "Unique identifier for the account"
+            }
+          },
+          "required": ["account_id"]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Simple wrapper script for sop-bench CLI."""
+
+import sys
+import os
+
+# Add the src directory to Python path
+script_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(script_dir, 'src')
+sys.path.insert(0, src_dir)
+
+# Import and run the CLI
+try:
+    from amazon_sop_bench.cli.main import cli
+    cli()
+except ImportError as e:
+    print(f"Error: Could not import amazon_sop_bench: {e}")
+    print("Make sure you're in the AmazonSOPBench directory and the package is installed.")
+    sys.exit(1)

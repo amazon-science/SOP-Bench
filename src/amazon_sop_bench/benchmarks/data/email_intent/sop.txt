@@ -1,0 +1,180 @@
+1. Purpose
+<<<<<<< Updated upstream
+This Standard Operating Procedure establishes a comprehensive framework for the systematic processing, classification, and resolution of seller email communications within the e-commerce platform ecosystem, ensuring consistent handling of seller inquiries, appeals, and support requests through multi-dimensional intent analysis and automated response determination protocols.
+
+2. Scope
+This procedure encompasses all seller-initiated email communications including product listing appeals, pricing adjustment requests, inventory management inquiries, and general support tickets within the marketplace seller support system. It applies to all seller support specialists, marketplace operations teams, and automated email processing systems.
+
+3. Definitions
+3.1 Intent Classification Score (ICS): A normalized confidence score (0-100) indicating the probability of correct email categorization
+3.2 Product Match Confidence (PMC): Validation metric for product database correlation accuracy
+3.3 Pricing Variance Threshold (PVT): Maximum acceptable deviation from market pricing standards (typically 20%)
+3.4 Inventory Synchronization Index (ISI): Real-time inventory status validation score
+3.5 Response Priority Level (RPL): Urgency classification for seller communications (Critical/High/Medium/Low)
+3.6 Compliance Verification Status (CVS): Regulatory and policy adherence confirmation
+
+4. Input
+4.1 Email Metadata
+- email_id: Unique email identifier
+- seller_id: Seller account identification string
+- product_id: Product ASIN or SKU reference
+- email_subject: Email subject line content
+- email_body: Complete email message text
+
+4.2 Contextual Information
+- seller_tier: Account classification (Standard/Professional/Enterprise)
+- account_status: Current seller account standing
+- previous_communications: Historical interaction count
+- timestamp: Email receipt timestamp
+
+4.3 Product Information
+- current_price: Listed product price
+- inventory_count: Available inventory quantity
+- listing_status: Current product listing status
+
+5. Main Procedure
+
+5.1 Email Intent Classification
+5.1.1 Primary Intent Analysis
+- Parse email_subject and email_body for keyword indicators
+- Apply natural language processing for intent extraction
+- Categorize into: pricing_concern, description_modification, listing_status, or general_inquiry
+- Calculate Intent Classification Score (ICS) based on keyword matching and context analysis
+
+5.1.2 Context Validation
+- Verify seller_id against active seller database
+- Confirm seller_tier and account_status eligibility
+- Assess communication history for pattern recognition
+- Apply seller reputation multiplier to classification confidence
+
+5.2 Product Validation Protocol
+5.2.1 Product Database Verification
+- Query product catalog using product_id
+- Validate product existence and ownership
+- Retrieve current product attributes and specifications
+- Calculate Product Match Confidence (PMC) score
+
+5.2.2 Pricing Analysis
+- Compare current_price against market benchmarks
+- Calculate pricing variance percentage
+- Apply Pricing Variance Threshold (PVT) validation
+- Generate pricing recommendation if variance exceeds threshold
+
+5.3 Inventory Assessment
+5.3.1 Inventory Status Verification
+- Query real-time inventory management system
+- Validate inventory_count accuracy
+- Calculate Inventory Synchronization Index (ISI)
+- Identify discrepancies requiring manual intervention
+
+5.3.2 Listing Status Validation
+- Verify current listing_status (active/inactive/suppressed)
+- Check for policy violations or restrictions
+- Assess eligibility for status modifications
+- Document compliance requirements
+
+5.4 Response Determination Matrix
+5.4.1 Priority Classification
+- If intent = pricing_concern AND variance > 20%: set RPL = "High"
+- If intent = listing_status AND status = "suppressed": set RPL = "Critical"
+- If intent = description_modification: set RPL = "Medium"
+- If intent = general_inquiry: set RPL = "Low"
+
+5.4.2 Action Resolution
+- Generate appropriate response template based on intent category
+- Include specific data points from validation steps
+- Apply compliance requirements and policy guidelines
+- Format response in standardized XML structure
+
+5.5 Escalation Protocol
+5.5.1 Escalation Triggers
+- If PMC < 60%: escalate to product catalog team
+- If ISI < 70%: escalate to inventory management team
+- If RPL = "Critical": escalate to senior support specialist
+- If CVS = "failed": escalate to compliance team
+
+6. Output
+6.1 Classification Package
+- email_intent: Final categorization (pricing_concern/description_modification/listing_status/general_inquiry)
+- response_template: Standardized response identifier
+- action_required: Specific actions to be taken
+- escalation_needed: Boolean escalation flag
+- priority_level: Response priority classification
+
+6.2 Response Structure
+- XML-formatted response with intent classification
+- Detailed action items and next steps
+- Reference numbers for tracking
+- Estimated resolution timeframe
+- Compliance documentation references
+
+6.3 System Updates
+- Email classification log entry
+- Seller communication history update
+- Product database synchronization
+- Inventory system notification
+- Compliance tracking record
+=======
+This Standard Operating Procedure establishes the systematic methodology for analyzing and classifying seller appeal emails regarding product listings, determining appropriate response actions, and maintaining compliance with e-commerce operational standards. The procedure encompasses email intent classification, product validation, and response action determination through integration with multiple API endpoints.
+
+2. Scope
+This SOP applies to all selling partner associates responsible for processing seller appeals related to product listings, pricing discrepancies, description modifications, and listing status inquiries. The procedure covers all products identified by the standardized product_id format within the e-commerce platform's catalog management system.
+
+3. Definitions
+3.1 Product Attribution System (PAS): The hierarchical database structure maintaining product metadata, including pricing, description, and listing status.
+3.2 Intent Classification Matrix (ICM): A structured framework for categorizing seller communications into predetermined intent categories.
+3.3 API Integration Points (AIP): Designated endpoints for retrieving product-specific information including get_product_price, get_product_description, and get_product_description.
+3.4 Listing Status Verification (LSV): The systematic process of validating and retrieving current product listing status and associated metadata.
+3.5 Response Action Protocol (RAP): The standardized methodology for determining and executing appropriate responses to seller appeals.
+
+4. Input
+4.1 Email Identifier (email_id): A unique alphanumeric string identifying the seller communication.
+4.2 Email Content (email_body): The complete textual content of the seller's appeal.
+4.3 Product Identifier (product_id): A six-digit alphanumeric code beginning with 'P'.
+4.4 Current Product Description (product_description): The existing product description in the catalog.
+4.5 Listed Price (listing_price): The current price point for the product.
+4.6 Product Inventory Level (product_inventory): The current stock quantity.
+
+5. Main Procedure
+5.1 Email Classification and Validation
+  Extract the product_id from the email_body using regular expression pattern matching. 
+  
+5.2 Intent-Based Processing
+  Identify the intent of the seller's email body. It could be one of the following:
+  a. concern about their product not being listed
+  b. concern about incorrect pricing
+  c. concern about incorrect description
+  d. generic question about a listing
+  e. unable to decide
+
+  For pricing concerns: Get the current price from the pricing database using validated product_id only and compare returned price value against seller-specified 
+  price. Calculate price delta and determine if update is warranted. Assign action "update price" if delta exists, otherwise "no action"
+
+  For description concerns: Get the description in the database, using the validated product_id. If it is significantly different from the requested description in 
+  the email, then assign action "update description", otherwise "no action".
+
+  For listing status concerns: Get the current listing status and inventory count from the product database and summarize and assign action "share listing status" 
+  and prepare status communication.
+
+  For generic inquiries: Document inquiry category in system, assign action "no action" and prepare standardized response template
+
+  The action could be one of the following:
+  (a) "no action"
+  (b) "update price"
+  (c) "update description"
+  (d) "share listing status"
+  (e) "further clarification required"
+
+6. Output
+6.1 The output should be the seller intent and action, in xml format with tags. 
+<email_id>email_id</email_id>
+<product_id>product_id></product_id>
+<seller intent>concern about incorrect description</seller intent> 
+<action>update price</action> 
+
+6.2 System Updates:
+- Updated product information (if action requires)
+- Modified listing status (if applicable)
+- Communication log entry
+- Compliance documentation
+>>>>>>> Stashed changes

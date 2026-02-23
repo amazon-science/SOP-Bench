@@ -1,0 +1,187 @@
+email_id,email_body,product_id,product_description,listing_price,seller_intent,listing_status_details,action,product_inventory,marketplace_id
+E1117,Why isn't P12H3I listed yet?,P12H3I,Essential oil diffuser,0.0,concern about their product not being listed,Product safety review pending,share listing status,0,US
+E1219,Price needs update to $69.99 for P78L9M,P78L9M,Bike lock,79.99,concern about incorrect pricing,,update price,120,US
+E1143,Price showing incorrectly as $59.99 for P89J1K,P89J1K,Wireless charger,49.99,concern about incorrect pricing,,update price,200,US
+E1083,Price showing $39.99 but approved for $34.99 - P56P7Q,P56P7Q,Yoga blocks,39.99,concern about incorrect pricing,,update price,150,US
+E1222,Question about bundle options for P45S6T,P45S6T,Bath towel set,49.99,generic question about a listing,,no action,200,US
+E1144,Description needs update for P12L3M ingredients,P12L3M,Natural shampoo,14.99,concern about incorrect description,,update description,280,US
+E1130,How to update product videos for P91I2J?,P91I2J,Yoga strap,15.99,generic question about a listing,,no action,300,US
+E1215,Price showing $249.99 but should be $229.99 for P89D1E,P89D1E,Electric toothbrush,249.99,concern about incorrect pricing,,update price,95,US
+E1124,Description missing solar specs for P67W8X,P67W8X,Garden lights,39.99,concern about incorrect description,,update description,220,US
+E1129,Why is P78G9H not showing up?,P78G9H,Face cream,0.0,concern about their product not being listed,Dermatological testing pending,share listing status,0,US
+E1087,Price needs correction to $229.99 for P45X6Y,P45X6Y,Security system,249.99,concern about incorrect pricing,,update price,35,US
+E1157,Why isn't P91M2N listed yet?,P91M2N,Baby formula,0.0,concern about their product not being listed,FDA approval pending,share listing status,0,US
+E1041,Can't find my product P23F4G in marketplace,P23F4G,Hair styling tools,0.0,concern about their product not being listed,Electronic safety review required,share listing status,0,US
+E1141,Product P45F6G not visible to customers,P45F6G,Sleep supplements,0.0,concern about their product not being listed,FDA review pending,share listing status,0,US
+E1132,Description missing memory specs for P45M6N,P45M6N,USB flash drive,24.99,concern about incorrect description,,update description,250,US
+E1099,Price needs update to $199.99 for P12W3X,P12W3X,Outdoor grill,219.99,concern about incorrect pricing,,update price,30,US
+E1016,Price incorrect for P67F8G - should be $149.99 not $159.99,P67F8G,Air purifier with HEPA filter,159.99,concern about incorrect pricing,,update price,45,US
+E1069,Why is P45L6M not listed?,P45L6M,Power tools set,0.0,concern about their product not being listed,Safety compliance documentation missing,share listing status,0,US
+E1161,Product P89V1W not visible in marketplace,P89V1W,Face serum,0.0,concern about their product not being listed,Cosmetic safety review needed,share listing status,0,US
+E1249,Why is P45W6X not showing in search?,P45W6X,Meal replacement,0.0,concern about their product not being listed,Nutritional compliance pending,share listing status,0,US
+E1170,How to optimize listing title for P89N1P?,P89N1P,Desk chair,149.99,generic question about a listing,,no action,55,US
+E1079,Price incorrect for P67G8H - should be $169.99,P67G8H,Vacuum cleaner,179.99,concern about incorrect pricing,,update price,45,US
+E1189,Why is P12B3C not showing in catalog?,P12B3C,Protein shake,0.0,concern about their product not being listed,Nutritional verification pending,share listing status,0,US
+E1154,Need help with bulk orders for P34G5H,P34G5H,Reusable straws,9.99,generic question about a listing,,no action,500,US
+E1233,Product P89P1Q not showing up,P89P1Q,Probiotic supplement,0.0,concern about their product not being listed,Health certification pending,share listing status,0,US
+E1164,Description incorrect dimensions for P56B7C,P56B7C,Storage boxes,19.99,concern about incorrect description,,update description,180,US
+E1043,Price needs correction for P67J8K to $449.99,P67J8K,Electric bicycle,499.99,concern about incorrect pricing,,update price,15,US
+E1023,How to update inventory location for P23U4V?,P23U4V,Stainless steel cookware set,199.99,generic question about a listing,,no action,40,US
+E1047,Price showing incorrectly as $89.99 for P56S7T,P56S7T,Bluetooth earbuds,79.99,concern about incorrect pricing,,update price,200,US
+E1040,Description missing technical specs for P91D2E,P91D2E,Gaming keyboard,89.99,concern about incorrect description,,update description,120,US
+E1055,Price incorrect for P34I5J - should be $34.99,P34I5J,Yoga mat,39.99,concern about incorrect pricing,,update price,240,US
+E1187,Price needs to be $199.99 for P67X8Y,P67X8Y,Security camera,219.99,concern about incorrect pricing,,update price,65,US
+E1034,How do I optimize my listing for P67R8S?,P67R8S,Portable phone charger,29.99,generic question about a listing,,no action,150,US
+E1108,Description missing safety features for P12P3Q,P12P3Q,Car seat cover,39.99,concern about incorrect description,,update description,120,US
+E1186,Need help with product tags for P45V6W,P45V6W,Bath towels,29.99,generic question about a listing,,no action,220,US
+E1254,Need help with inventory sync for P56G7H,P56G7H,Bed sheets,49.99,generic question about a listing,,no action,120,US
+E1064,Description missing battery life specs for P34B5C,P34B5C,Wireless mouse,29.99,concern about incorrect description,,update description,200,US
+E1110,How to update shipping weight for P56T7U?,P56T7U,Ceramic vase,49.99,generic question about a listing,,no action,60,US
+E1159,Price needs update to $159.99 for P45R6S,P45R6S,Coffee machine,179.99,concern about incorrect pricing,,update price,70,US
+E1218,How to set up promotional pricing for P56J7K?,P56J7K,Water filter,34.99,generic question about a listing,,no action,150,US
+E1090,How to update product images for P12D3E?,P12D3E,Makeup brushes,24.99,generic question about a listing,,no action,250,US
+E1054,Need help with variation listings for P12G3H,P12G3H,Cotton bed sheets,59.99,generic question about a listing,,no action,175,US
+E1127,Price showing $249.99 but should be $229.99 for P34C5D,P34C5D,Electric skateboard,249.99,concern about incorrect pricing,,update price,25,US
+E1168,Description missing battery life for P45J6K,P45J6K,Wireless keyboard,59.99,concern about incorrect description,,update description,140,US
+E1093,Product P78J9K not showing up,P78J9K,Protein bars,0.0,concern about their product not being listed,Allergen documentation required,share listing status,0,US
+E1184,Description incorrect capacity for P91R2S,P91R2S,Lunch box,24.99,concern about incorrect description,,update description,180,US
+E1038,Need help with promotion setup for P56Z7A,P56Z7A,Coffee grinder,49.99,generic question about a listing,,no action,85,US
+E1262,Question about product reviews for P34X5Y,P34X5Y,Yoga mat,29.99,generic question about a listing,,no action,250,US
+E1181,Product P34K5L not visible to customers,P34K5L,Energy drinks,0.0,concern about their product not being listed,Beverage safety certification pending,share listing status,0,US
+E1206,Need help with shipping settings for P89K1L,P89K1L,Plant stand,34.99,generic question about a listing,,no action,160,US
+E1158,How to set up lightning deals for P23P4Q?,P23P4Q,Smart bulbs,24.99,generic question about a listing,,no action,300,US
+E1011,Product P34V5W not showing in search results,P34V5W,Bluetooth speaker,0.0,concern about their product not being listed,Brand verification pending,share listing status,0,US
+E1013,Need to change P91Z2A price from $34.99 to $29.99,P91Z2A,Fitness resistance bands set,34.99,concern about incorrect pricing,,update price,250,US
+E1092,Description missing USB-C compatibility for P56H7I,P56H7I,Power bank,49.99,concern about incorrect description,,update description,180,US
+E1059,Price showing $159.99 but should be $149.99 for P23R4S,P23R4S,Air fryer,159.99,concern about incorrect pricing,,update price,70,US
+E1116,Description missing BPA-free status for P89F1G,P89F1G,Water filter,34.99,concern about incorrect description,,update description,160,US
+E1142,Question about shipping options for P67H8I,P67H8I,Throw blanket,49.99,generic question about a listing,,no action,150,US
+E1166,Need help with product photos for P91F2G,P91F2G,Wall mirror,69.99,generic question about a listing,,no action,90,US
+E1197,Why isn't P89S1T listed yet?,P89S1T,CBD oil,0.0,concern about their product not being listed,Legal compliance review pending,share listing status,0,US
+E1105,Can't find my listing for P45I6J,P45I6J,Pet supplements,0.0,concern about their product not being listed,Veterinary certification needed,share listing status,0,US
+E1100,Description missing weatherproof rating for P34Y5Z,P34Y5Z,Patio furniture cover,44.99,concern about incorrect description,,update description,150,US
+E1193,Product P91J2K not showing up,P91J2K,Collagen supplements,0.0,concern about their product not being listed,Health supplement verification needed,share listing status,0,US
+E1183,Price showing $39.99 but should be $34.99 for P78P9Q,P78P9Q,Hair dryer,39.99,concern about incorrect pricing,,update price,100,US
+E1114,Need help with inventory alerts for P45B6C,P45B6C,Dish towel set,19.99,generic question about a listing,,no action,250,US
+E1048,Description needs material update for P78U9V,P78U9V,Throw pillow covers,24.99,concern about incorrect description,,update description,250,US
+E1162,Question about return policy for P12X3Y,P12X3Y,Running shoes,79.99,generic question about a listing,,no action,160,US
+E1075,Price needs to be $49.99 for P78Y9Z,P78Y9Z,Electric kettle,59.99,concern about incorrect pricing,,update price,95,US
+E1239,Price needs update to $219.99 for P23B4C,P23B4C,Espresso maker,239.99,concern about incorrect pricing,,update price,35,US
+E1155,Price showing $89.99 but should be $79.99 for P56I7J,P56I7J,Bluetooth headphones,89.99,concern about incorrect pricing,,update price,120,US
+E1022,Product P91S2T not appearing in marketplace,P91S2T,Handmade soap set,0.0,concern about their product not being listed,Ingredient list documentation required,share listing status,0,US
+E1265,Can't find my listing for P91D2E,P91D2E,Green tea extract,0.0,concern about their product not being listed,Supplement verification needed,share listing status,0,US
+E1039,Price showing $299.99 but should be $279.99 for P78B9C,P78B9C,4K monitor,299.99,concern about incorrect pricing,,update price,30,US
+E1252,Description missing allergen info for P12C3D,P12C3D,Protein bars,24.99,concern about incorrect description,,update description,180,US
+E1015,How do I update the shipping weight for P45D6E?,P45D6E,Glass food storage containers,25.99,generic question about a listing,,no action,90,US
+E1139,Price needs correction to $299.99 for P91B2C,P91B2C,Electric scooter,319.99,concern about incorrect pricing,,update price,30,US
+E1044,Description incorrect - P89L1M has 3 speed settings not 2,P89L1M,Standing desk fan,39.99,concern about incorrect description,,update description,90,US
+E1160,Description missing wattage info for P67T8U,P67T8U,Microwave oven,129.99,concern about incorrect description,,update description,40,US
+E1196,Description wrong size chart for P67Q8R,P67Q8R,Compression socks,19.99,concern about incorrect description,,update description,250,US
+E1156,Description wrong material type for P78K9L,P78K9L,Yoga pants,44.99,concern about incorrect description,,update description,200,US
+E1076,Description incorrect - P91A2B has 5 attachments not 4,P91A2B,Food processor,89.99,concern about incorrect description,,update description,70,US
+E1153,Product P12E3F not showing up,P12E3F,Dietary supplement,0.0,concern about their product not being listed,Health claims documentation needed,share listing status,0,US
+E1145,Can't find my listing for P34N5P,P34N5P,Massage gun,0.0,concern about their product not being listed,Medical device verification needed,share listing status,0,US
+E1246,Need help with product categories for P78Q9R,P78Q9R,Garden tools,34.99,generic question about a listing,,no action,150,US
+E1230,How to update product images for P23I4J?,P23I4J,Makeup brushes,19.99,generic question about a listing,,no action,350,US
+E1084,Description missing dimensions for P78R9S,P78R9S,Storage cabinet,129.99,concern about incorrect description,,update description,40,US
+E1210,How to optimize product title for P78T9U?,P78T9U,Desk organizer,24.99,generic question about a listing,,no action,220,US
+E1078,How to set up promotional pricing for P45E6F?,P45E6F,Sunglasses,34.99,generic question about a listing,,no action,200,US
+E1057,Why isn't P78M9N available for sale?,P78M9N,Children's art supplies,0.0,concern about their product not being listed,Non-toxic certification required,share listing status,0,US
+E1178,How to set up promotional bundles for P67E8F?,P67E8F,Kitchen utensils,34.99,generic question about a listing,,no action,250,US
+E1053,Product P89E1F not showing in listings,P89E1F,CBD oil supplement,0.0,concern about their product not being listed,Regulatory compliance review pending,share listing status,0,US
+E1140,Description missing water resistance rating for P23D4E,P23D4E,Sports watch,89.99,concern about incorrect description,,update description,95,US
+E1172,Description missing SPF rating for P34S5T,P34S5T,Sunscreen,19.99,concern about incorrect description,,update description,200,US
+E1035,Price incorrect on P89T1U - should be $19.99,P89T1U,Yoga blocks set,24.99,concern about incorrect pricing,,update price,300,US
+E1205,Can't find my product P67I8J,P67I8J,Weight loss pills,0.0,concern about their product not being listed,FDA approval pending,share listing status,0,US
+E1201,Product P78A9B not visible in marketplace,P78A9B,Hair growth serum,0.0,concern about their product not being listed,Clinical testing verification needed,share listing status,0,US
+E1096,Description incorrect - P45Q6R is 32oz not 24oz,P45Q6R,Insulated tumbler,24.99,concern about incorrect description,,update description,220,US
+E1052,Description for P67C8D missing waterproof rating,P67C8D,Outdoor security camera,149.99,concern about incorrect description,,update description,80,US
+E1229,Why is P91G2H not showing in catalog?,P91G2H,Protein powder,0.0,concern about their product not being listed,Supplement safety review pending,share listing status,0,US
+E1060,Description needs update for P45T6U material composition,P45T6U,Running shoes,89.99,concern about incorrect description,,update description,160,US
+E1109,Why is P34R5S not appearing in search?,P34R5S,Meal replacement shake,0.0,concern about their product not being listed,Nutritional verification pending,share listing status,0,US
+E1264,Description incorrect size chart for P78B9C,P78B9C,Compression sleeves,19.99,concern about incorrect description,,update description,300,US
+E1180,Description missing warranty info for P12I3J,P12I3J,Blender,69.99,concern about incorrect description,,update description,80,US
+E1056,Description wrong - P56K7L is 1000W not 800W,P56K7L,Hair dryer,49.99,concern about incorrect description,,update description,95,US
+E1163,Price showing $49.99 but should be $39.99 for P34Z5A,P34Z5A,Phone holder,49.99,concern about incorrect pricing,,update price,250,US
+E1260,Description missing warranty details for P89T1U,P89T1U,Electric kettle,39.99,concern about incorrect description,,update description,85,US
+E1014,Description for P23B4C should include 'vegan leather' instead of 'synthetic leather',P23B4C,Laptop sleeve case with synthetic leather trim,39.99,concern about incorrect description,,update description,180,US
+E1121,Product P91Q2R not visible in marketplace,P91Q2R,Hair coloring kit,0.0,concern about their product not being listed,Chemical safety verification needed,share listing status,0,US
+E1066,Need help with inventory settings for P78F9G,P78F9G,Desk organizer,19.99,generic question about a listing,,no action,150,US
+E1150,How to update product variations for P45Y6Z?,P45Y6Z,Dress socks,12.99,generic question about a listing,,no action,400,US
+E1247,Price needs correction to $169.99 for P91S2T,P91S2T,Robot mop,189.99,concern about incorrect pricing,,update price,50,US
+E1242,Question about return policy for P89H1I,P89H1I,Running shoes,89.99,generic question about a listing,,no action,180,US
+E1253,Product P34E5F not appearing in listings,P34E5F,Face serum,0.0,concern about their product not being listed,Dermatological certification pending,share listing status,0,US
+E1062,Question about product category for P89X1Y,P89X1Y,Solar garden lights,44.99,generic question about a listing,,no action,125,US
+E1182,Question about shipping weights for P56M7N,P56M7N,Dumbbells set,99.99,generic question about a listing,,no action,60,US
+E1095,Price showing $159.99 but should be $149.99 for P23N4P,P23N4P,Dehumidifier,159.99,concern about incorrect pricing,,update price,65,US
+E1046,Need guidance on bundle creation for P34Q5R,P34Q5R,Gardening tool set,59.99,generic question about a listing,,no action,110,US
+E1225,Can't find my listing for P12Y3Z,P12Y3Z,Hair vitamins,0.0,concern about their product not being listed,Health claims verification pending,share listing status,0,US
+E1018,Why can't customers see P12J3K?,P12J3K,Children's bicycle,0.0,concern about their product not being listed,Safety certification expired,share listing status,0,US
+E1190,How to update variation photos for P34D5E?,P34D5E,Watch bands,19.99,generic question about a listing,,no action,400,US
+E1126,Need help with gift options for P12A3B,P12A3B,Scented candles,29.99,generic question about a listing,,no action,180,US
+E1106,Need help with variation setup for P67K8L,P67K8L,Running socks,14.99,generic question about a listing,,no action,300,US
+E1098,How to set up subscription option for P89U1V?,P89U1V,Air filters,34.99,generic question about a listing,,no action,400,US
+E1243,Price showing $44.99 but should be $39.99 for P12J3K,P12J3K,Yoga blocks,44.99,concern about incorrect pricing,,update price,250,US
+E1248,Description missing dimensions for P23U4V,P23U4V,Storage bench,129.99,concern about incorrect description,,update description,75,US
+E1104,Description wrong material type for P23G4H,P23G4H,Shower curtain,29.99,concern about incorrect description,,update description,180,US
+E1019,Need help understanding listing requirements for P34L5M,P34L5M,Organic coffee beans,14.99,generic question about a listing,,no action,300,US
+E1024,Price needs to be changed to $59.99 for P45W6X,P45W6X,LED desk lamp,69.99,concern about incorrect pricing,,update price,85,US
+E1073,Product P34U5V not appearing in marketplace,P34U5V,Dietary supplement,0.0,concern about their product not being listed,FDA compliance review pending,share listing status,0,US
+E1235,Price showing $89.99 but should be $79.99 for P34T5U,P34T5U,Gaming headset,89.99,concern about incorrect pricing,,update price,110,US
+E1148,Description wrong capacity for P91U2V,P91U2V,Power bank,39.99,concern about incorrect description,,update description,175,US
+E1028,Price error on P34E5F - should be $89.99,P34E5F,Wireless charging pad,99.99,concern about incorrect pricing,,update price,120,US
+E1185,Can't find my listing for P23T4U,P23T4U,Vitamin C serum,0.0,concern about their product not being listed,Cosmetic ingredient verification needed,share listing status,0,US
+E1086,Need help with bulk pricing for P23V4W,P23V4W,Water bottles,12.99,generic question about a listing,,no action,500,US
+E1240,Description missing power output for P45D6E,P45D6E,Solar charger,49.99,concern about incorrect description,,update description,120,US
+E1152,Description missing screen size for P89C1D,P89C1D,Tablet case,29.99,concern about incorrect description,,update description,150,US
+E1257,Why isn't P23M4N listed yet?,P23M4N,Hair growth oil,0.0,concern about their product not being listed,Clinical testing verification needed,share listing status,0,US
+E1250,How to optimize listing visibility for P67Y8Z?,P67Y8Z,Desk lamp,39.99,generic question about a listing,,no action,200,US
+E1077,Why isn't P23C4D showing up?,P23C4D,Baby formula,0.0,concern about their product not being listed,Nutritional compliance review needed,share listing status,0,US
+E1067,Price incorrect - P91H2I should be $299.99,P91H2I,Gaming console,319.99,concern about incorrect pricing,,update price,25,US
+E1123,Price needs update to $159.99 for P45U6V,P45U6V,Robot mop,179.99,concern about incorrect pricing,,update price,40,US
+E1063,Price needs adjustment to $79.99 for P12Z3A,P12Z3A,Bluetooth speaker,89.99,concern about incorrect pricing,,update price,85,US
+E1226,Need help with variation listings for P34A5B,P34A5B,Running socks,12.99,generic question about a listing,,no action,400,US
+E1194,Need help with gift wrapping for P23L4M,P23L4M,Scented candle set,39.99,generic question about a listing,,no action,150,US
+E1227,Price needs to be $189.99 for P56C7D,P56C7D,Air purifier,199.99,concern about incorrect pricing,,update price,70,US
+E1209,Why is P56R7S not showing in search?,P56R7S,Multivitamins,0.0,concern about their product not being listed,Supplement certification pending,share listing status,0,US
+E1267,Price needs correction to $229.99 for P45H6I,P45H6I,Gaming monitor,249.99,concern about incorrect pricing,,update price,30,US
+E1228,Description missing features for P78E9F,P78E9F,Smart plug,24.99,concern about incorrect description,,update description,280,US
+E1241,Product P67F8G not visible in marketplace,P67F8G,Weight gainer,0.0,concern about their product not being listed,Nutritional verification needed,share listing status,0,US
+E1188,Description missing ingredients for P89Z1A,P89Z1A,Face mask,14.99,concern about incorrect description,,update description,300,US
+E1072,Description missing eco-friendly certification for P12S3T,P12S3T,Reusable shopping bags,15.99,concern about incorrect description,,update description,400,US
+E1061,Can't find my listing for P67V8W,P67V8W,Facial serum,0.0,concern about their product not being listed,Dermatological testing verification needed,share listing status,0,US
+E1103,Price incorrect - P91E2F should be $299.99,P91E2F,Drone camera,319.99,concern about incorrect pricing,,update price,25,US
+E1033,Product P45P6Q not appearing in search,P45P6Q,Vitamin supplement,0.0,concern about their product not being listed,Health claims require verification,share listing status,0,US
+E1070,How to update shipping details for P67N8P?,P67N8P,Wall clock,24.99,generic question about a listing,,no action,180,US
+E1224,Description incorrect size specs for P89W1X,P89W1X,Laptop sleeve,29.99,concern about incorrect description,,update description,250,US
+E1179,Price needs update to $79.99 for P89G1H,P89G1H,Fitness tracker,89.99,concern about incorrect pricing,,update price,150,US
+E1263,Price showing $149.99 but should be $139.99 for P56Z7A,P56Z7A,Food processor,149.99,concern about incorrect pricing,,update price,60,US
+E1207,Price needs correction to $179.99 for P12M3N,P12M3N,Vacuum sealer,199.99,concern about incorrect pricing,,update price,45,US
+E1212,Description missing battery specs for P23X4Y,P23X4Y,Wireless mouse,39.99,concern about incorrect description,,update description,180,US
+E1146,Need help with product categories for P56Q7R,P56Q7R,Garden tools,34.99,generic question about a listing,,no action,120,US
+E1049,Why is P91W2X not showing up?,P91W2X,Essential oils set,0.0,concern about their product not being listed,Organic certification pending,share listing status,0,US
+E1176,Description wrong color options for P23A4B,P23A4B,Bedding set,89.99,concern about incorrect description,,update description,120,US
+E1256,Description wrong specifications for P91K2L,P91K2L,External hard drive,89.99,concern about incorrect description,,update description,95,US
+E1012,When will my P78X9Y listing go live?,P78X9Y,Essential oil diffuser,0.0,concern about their product not being listed,Product images do not meet quality standards,share listing status,0,US
+E1065,Product P56D7E not visible to customers,P56D7E,Weight loss supplement,0.0,concern about their product not being listed,Health claims documentation required,share listing status,0,US
+E1167,Price needs correction to $229.99 for P23H4I,P23H4I,Gaming monitor,249.99,concern about incorrect pricing,,update price,35,US
+E1147,Price needs to be $129.99 for P78S9T,P78S9T,Air purifier,149.99,concern about incorrect pricing,,update price,60,US
+E1169,Why is P67L8M not showing in search?,P67L8M,Protein bars,0.0,concern about their product not being listed,Nutritional label verification needed,share listing status,0,US
+E1119,Price incorrect for P56L7M - should be $89.99,P56L7M,Camping lantern,99.99,concern about incorrect pricing,,update price,70,US
+E1115,Price showing $129.99 but should be $119.99 for P67D8E,P67D8E,Food dehydrator,129.99,concern about incorrect pricing,,update price,45,US
+E1133,Product P67P8Q not appearing in listings,P67P8Q,Weight loss tea,0.0,concern about their product not being listed,Health claims verification needed,share listing status,0,US
+E1102,Question about bundle pricing for P78C9D,P78C9D,Kitchen knife set,89.99,generic question about a listing,,no action,75,US
+E1223,Price showing $159.99 but should be $149.99 for P67U8V,P67U8V,Slow cooker,159.99,concern about incorrect pricing,,update price,60,US
+E1088,Description wrong color options for P67Z8A,P67Z8A,Phone case,19.99,concern about incorrect description,,update description,300,US
+E1236,Description wrong material type for P56V7W,P56V7W,Throw pillows,24.99,concern about incorrect description,,update description,240,US
+E1232,Description missing waterproof rating for P67M8N,P67M8N,Bluetooth earbuds,79.99,concern about incorrect description,,update description,160,US
+E1138,How to set up quantity discounts for P78Z9A?,P78Z9A,Disposable masks,19.99,generic question about a listing,,no action,1000,US
+E1270,How to update product bundles for P12N3P?,P12N3P,Kitchen utensils,44.99,generic question about a listing,,no action,180,US
+E1032,Description for P23M4N should state 'merino wool' not just 'wool',P23M4N,Winter scarf and glove set,44.99,concern about incorrect description,,update description,200,US
+E1208,Description missing dimensions for P34P5Q,P34P5Q,Storage ottoman,69.99,concern about incorrect description,,update description,110,US
+E1085,Can't find my product P91T2U in search,P91T2U,Face masks,0.0,concern about their product not being listed,Medical device certification required,share listing status,0,US
+E1122,Question about return window for P23S4T,P23S4T,Wireless earphones,69.99,generic question about a listing,,no action,150,US
+E1025,Description incorrect - P67Y8Z is made of bamboo not plastic,P67Y8Z,Bathroom organizer set,34.99,concern about incorrect description,,update description,160,US
+E1107,Price showing $69.99 but should be $59.99 for P89M1N,P89M1N,Bike helmet,69.99,concern about incorrect pricing,,update price,85,US
+E1199,Price needs update to $299.99 for P34W5X,P34W5X,Laptop stand,319.99,concern about incorrect pricing,,update price,90,US
+E1118,How to set up cross-selling for P34J5K?,P34J5K,Makeup remover pads,12.99,generic question about a listing,,no action,400,US

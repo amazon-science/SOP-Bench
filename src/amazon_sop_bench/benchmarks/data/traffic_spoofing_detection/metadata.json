@@ -1,0 +1,5 @@
+{
+  "name": "traffic_spoofing_detection",
+  "output_columns": ["enforcement_action"],
+  "input_columns": ["partner_id", "registered_websites", "earnings_amount", "engagement_score", "conversion_rate", "bounce_rate", "unattributed_clicks", "top_referral_source", "violation_type", "evidence_collected", "risk_level"]
+}

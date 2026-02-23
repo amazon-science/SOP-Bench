@@ -1,0 +1,5 @@
+{
+  "name": "customer_service",
+  "output_columns": ["final_resolution_status"],
+  "input_columns": ["account_id", "service_area_code", "service_type", "subscribed_bandwidth"]
+}

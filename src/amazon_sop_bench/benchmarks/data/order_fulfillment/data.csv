@@ -1,0 +1,4 @@
+order_id,product_id,quantity_requested,customer_id,order_total,destination_zip,package_weight,shipping_speed,order_priority
+ORD001,PROD001,2,CUST001,159.98,98101,1.5,standard,normal
+ORD002,PROD002,10,CUST002,49.90,10001,0.5,express,high
+ORD003,PROD003,1,CUST003,89.99,90210,3.2,standard,normal

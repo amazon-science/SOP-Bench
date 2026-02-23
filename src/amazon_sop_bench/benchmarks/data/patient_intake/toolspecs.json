@@ -1,0 +1,326 @@
+[
+    {
+        "toolSpec": {
+            "name": "calculateLifestyleRisk",
+            "description": "Calculates a patient's lifestyle risk level based on smoking status, alcohol consumption, and exercise frequency, following the standardized risk assessment protocol defined in the SOP.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$",
+                            "example": "P123456789"
+                        },
+                        "smoking_status": {
+                            "type": "string",
+                            "enum": [
+                                "Never",
+                                "Former",
+                                "Current"
+                            ],
+                            "description": "Patient's current smoking status, used to calculate smoking risk index"
+                        },
+                        "alcohol_consumption": {
+                            "type": "string",
+                            "enum": [
+                                "None",
+                                "Occasional",
+                                "Moderate",
+                                "Heavy"
+                            ],
+                            "description": "Patient's level of alcohol consumption frequency"
+                        },
+                        "exercise_frequency": {
+                            "type": "string",
+                            "enum": [
+                                "None",
+                                "1-2 times",
+                                "3-4 times",
+                                "5+ times"
+                            ],
+                            "description": "Weekly frequency of patient's exercise activities"
+                        }
+                    },
+                    "required": [
+                        "patient_id",
+                        "smoking_status",
+                        "alcohol_consumption",
+                        "exercise_frequency"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "verifyPharmacy",
+            "description": "Validates pharmacy network participation and verifies pharmacy details as part of the patient registration process",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$",
+                            "example": "P123456789"
+                        },
+                        "preferred_pharmacy_name": {
+                            "type": "string",
+                            "description": "Full legal name of the preferred pharmacy",
+                            "minLength": 1,
+                            "maxLength": 100,
+                            "example": "CVS Pharmacy"
+                        },
+                        "preferred_pharmacy_address": {
+                            "type": "string",
+                            "description": "Complete street address of the pharmacy including city, state, and zip code",
+                            "minLength": 5,
+                            "maxLength": 200,
+                            "example": "123 Main St, Boston, MA 02108"
+                        },
+                        "pharmacy_phone": {
+                            "type": "string",
+                            "description": "Contact phone number for the pharmacy in XXX-XXX-XXXX format",
+                            "pattern": "^[0-9]{3}-[0-9]{3}-[0-9]{4}$",
+                            "example": "555-123-4567"
+                        }
+                    },
+                    "required": [
+                        "preferred_pharmacy_name",
+                        "preferred_pharmacy_address",
+                        "pharmacy_phone"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validatePrescriptionBenefits",
+            "description": "Validates patient prescription insurance coverage and PBM status as part of the patient intake process, verifying formulary compliance and coverage levels in accordance with HIPAA regulations",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$",
+                            "example": "P123456789"
+                        },
+                        "insurance_provider": {
+                            "type": "string",
+                            "description": "Name of the patient's insurance provider",
+                            "minLength": 1,
+                            "maxLength": 100,
+                            "example": "Blue Cross Blue Shield"
+                        },
+                        "policy_number": {
+                            "type": "string",
+                            "description": "Insurance policy identifier for prescription coverage verification",
+                            "pattern": "^INS[0-9]{6}$",
+                            "example": "INS123456"
+                        }
+                    },
+                    "required": [
+                        "patient_id",
+                        "insurance_provider",
+                        "policy_number"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "registerPatient",
+            "description": "Completes the patient registration process by validating insurance status, prescription benefits, risk levels, and pharmacy network participation. Registration proceeds only if all required validations pass successfully.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$"
+                        },
+                        "insurance_validation": {
+                            "type": "string",
+                            "description": "Status of primary insurance validation check",
+                            "enum": [
+                                "valid",
+                                "invalid"
+                            ]
+                        },
+                        "prescription_insurance_validation": {
+                            "type": "string",
+                            "description": "Status of prescription benefit validation check",
+                            "enum": [
+                                "valid",
+                                "invalid"
+                            ]
+                        },
+                        "life_style_risk_level": {
+                            "type": "string",
+                            "description": "Assessed lifestyle risk level based on smoking, alcohol, and exercise factors",
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high"
+                            ]
+                        },
+                        "overall_risk_level": {
+                            "type": "string",
+                            "description": "Composite risk assessment including clinical and lifestyle factors",
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high"
+                            ]
+                        },
+                        "pharmacy_check": {
+                            "type": "string",
+                            "description": "Status of preferred pharmacy network verification",
+                            "enum": [
+                                "yes",
+                                "no"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "patient_id",
+                        "insurance_validation",
+                        "prescription_insurance_validation",
+                        "life_style_risk_level",
+                        "overall_risk_level",
+                        "pharmacy_check"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "validateInsurance",
+            "description": "Validates primary insurance information and coverage status for new patient intake, ensuring active coverage and network participation in compliance with HIPAA regulations",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$",
+                            "example": "P123456789"
+                        },
+                        "insurance_provider": {
+                            "type": "string",
+                            "description": "Name of the insurance company providing coverage",
+                            "minLength": 1,
+                            "example": "Blue Cross Blue Shield"
+                        },
+                        "policy_number": {
+                            "type": "string",
+                            "description": "Insurance policy identifier number",
+                            "pattern": "^INS[0-9]{6,}$",
+                            "example": "INS123456789"
+                        },
+                        "group_number": {
+                            "type": "string",
+                            "description": "Insurance group number for the policy",
+                            "pattern": "^GRP[0-9]{6,}$",
+                            "example": "GRP987654321"
+                        },
+                        "coverage_start_date": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "Start date of the insurance coverage",
+                            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                            "example": "2023-01-01"
+                        },
+                        "insurance_type": {
+                            "type": "string",
+                            "enum": [
+                                "Private",
+                                "Medicare",
+                                "Medicaid",
+                                "None"
+                            ],
+                            "description": "Type of insurance coverage"
+                        }
+                    },
+                    "required": [
+                        "patient_id",
+                        "insurance_provider",
+                        "policy_number",
+                        "group_number",
+                        "coverage_start_date",
+                        "insurance_type"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculateOverallRisk",
+            "description": "Calculates comprehensive patient risk level by analyzing surgical history, chronic conditions, and lifestyle risk factors in accordance with the Risk Stratification Algorithm (RSA)",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "patient_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the patient",
+                            "pattern": "^P[0-9]{9}$",
+                            "example": "P123456789"
+                        },
+                        "previous_surgeries": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "List of patient's previous surgical procedures with dates",
+                            "example": [
+                                "Appendectomy 2015",
+                                "Tonsillectomy 2010"
+                            ]
+                        },
+                        "chronic_conditions": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "List of patient's ongoing medical conditions",
+                            "example": [
+                                "Type 2 Diabetes",
+                                "Hypertension"
+                            ]
+                        },
+                        "life_style_risk_level": {
+                            "type": "string",
+                            "enum": [
+                                "low",
+                                "medium",
+                                "high"
+                            ],
+                            "description": "Previously calculated lifestyle risk level based on smoking, alcohol, and exercise factors"
+                        }
+                    },
+                    "required": [
+                        "patient_id",
+                        "previous_surgeries",
+                        "chronic_conditions",
+                        "life_style_risk_level"
+                    ]
+                }
+            }
+        }
+    }
+]

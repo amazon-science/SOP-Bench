@@ -1,0 +1,168 @@
+[
+  {
+    "toolSpec": {
+      "name": "InvestigateViolations",
+      "description": "Reviews creator's accounts and websites for violations",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "registered_websites": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "List of registered websites"
+            },
+            "earnings_amount": {
+              "type": "number",
+              "description": "Earnings amount"
+            }
+          },
+          "required": ["partner_id", "registered_websites", "earnings_amount"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "AnalyzeTrafficPatterns",
+      "description": "Analyzes traffic data for suspicious patterns",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "engagement_score": {
+              "type": "number",
+              "description": "Engagement score"
+            },
+            "conversion_rate": {
+              "type": "number",
+              "description": "Conversion rate"
+            },
+            "bounce_rate": {
+              "type": "number",
+              "description": "Bounce rate"
+            }
+          },
+          "required": ["partner_id", "engagement_score", "conversion_rate", "bounce_rate"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "ValidateReferralSources",
+      "description": "Checks referral URLs and sources for legitimacy",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "unattributed_clicks": {
+              "type": "integer",
+              "description": "Number of unattributed clicks"
+            },
+            "top_referral_source": {
+              "type": "string",
+              "description": "Top referral source"
+            }
+          },
+          "required": ["partner_id", "unattributed_clicks", "top_referral_source"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "CalculateRiskScore",
+      "description": "Calculates risk score based on detection signals",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "violation_type": {
+              "type": "string",
+              "description": "Type of violation"
+            },
+            "engagement_score": {
+              "type": "number",
+              "description": "Engagement score"
+            },
+            "conversion_rate": {
+              "type": "number",
+              "description": "Conversion rate"
+            }
+          },
+          "required": ["partner_id", "violation_type", "engagement_score", "conversion_rate"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "GenerateEvidenceReport",
+      "description": "Generates comprehensive evidence report",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "violation_type": {
+              "type": "string",
+              "description": "Type of violation"
+            },
+            "evidence_collected": {
+              "type": "array",
+              "items": {"type": "string"},
+              "description": "List of evidence collected"
+            }
+          },
+          "required": ["partner_id", "violation_type", "evidence_collected"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "ExecuteEnforcementAction",
+      "description": "Executes the determined enforcement action",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "partner_id": {
+              "type": "string",
+              "description": "Partner identifier"
+            },
+            "risk_level": {
+              "type": "string",
+              "description": "Risk level"
+            },
+            "violation_type": {
+              "type": "string",
+              "description": "Type of violation"
+            }
+          },
+          "required": ["partner_id", "risk_level", "violation_type"]
+        }
+      }
+    }
+  }
+]

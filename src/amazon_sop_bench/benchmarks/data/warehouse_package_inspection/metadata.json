@@ -1,0 +1,4 @@
+{
+  "name": "warehouse_package_inspection",
+  "output_columns": ["resolution_status"]
+}

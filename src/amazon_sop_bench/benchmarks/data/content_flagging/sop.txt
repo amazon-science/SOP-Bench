@@ -1,0 +1,94 @@
+
+1. Purpose
+This Standard Operating Procedure establishes a comprehensive framework for the systematic evaluation, classification, and disposition of flagged content within the platform's content moderation ecosystem, incorporating multi-dimensional trust metrics, behavioral analysis, and severity assessment protocols.
+
+2. Scope
+This procedure encompasses all user-generated content flagging operations, subsequent automated analysis protocols, and human moderation workflows within the platform's content management system. It applies to all content moderators, trust and safety specialists, and automated moderation systems.
+
+3. Definitions
+3.1 Bot Probability Index (BPI): A normalized score between 0-1 derived from behavioral metrics and captcha interaction patterns
+3.2 User Trust Coefficient (UTC): A dynamic score (0-100) incorporating historical behavior and device consistency metrics
+3.3 Content Severity Index (CSI): A weighted composite score (0-100) calculated from primary and secondary violation assessments
+3.4 Geographic Risk Quotient (GRQ): A risk assessment metric derived from historical geographic pattern analysis
+3.5 Device Consistency Score (DCS): A metric evaluating the consistency of user's device fingerprint patterns
+3.6 Violation Confidence Threshold (VCT): Minimum confidence score required for violation classification
+
+4. Input
+4.1 Content Metadata
+- content_id: Unique content identifier
+- userid: User identification string
+- flagid: Unique flag identifier
+- Geolocation coordinates (latitude, longitude)
+
+4.2 Device Information
+- device_type
+- operating_system
+- browser_specification
+
+4.3 Violation Data
+- Primary and Secondary violation types
+- Confidence scores for each violation
+- Historical violation records
+
+5. Main Procedure
+
+5.1 Bot Detection Protocol
+5.1.1 Calculate Bot Probability Index (BPI)
+- If is_possible_bot > 0.7 AND captcha_tries >= 3, set BPI = 0.9
+- If is_possible_bot > 0.5 AND captcha_tries >= 2, set BPI = 0.7
+- If is_possible_bot < 0.3 AND captcha_tries <= 1, set BPI = 0.1
+
+5.1.2 Apply Device Consistency Validation
+- Compare current device_type, os, browser against historical patterns
+- Calculate device fingerprint deviation score
+- Adjust BPI based on deviation patterns
+
+5.2 User Trust Score Calculation
+5.2.1 Base Trust Score Computation
+- Initialize base_score = 50
+- Adjust for NumberofPreviousPosts (weight: 0.3)
+- Modify based on CountofFlaggedPosts (weight: -0.5)
+- Apply device consistency multiplier
+
+5.2.2 Geographic Risk Assessment
+- Calculate GRQ based on latitude/longitude clustering
+- Apply regional risk modifiers
+- Adjust trust score based on GRQ
+
+5.3 Content Severity Assessment
+5.3.1 Primary Violation Analysis
+- Apply violation type weight matrix
+- Calculate weighted confidence score
+- Normalize to 0-100 scale
+
+5.3.2 Secondary Violation Integration
+- Apply secondary violation multiplier
+- Calculate composite severity score
+- Adjust for violation type correlation
+
+5.4 Final Decision Matrix
+5.4.1 Decision Score Calculation
+- Combine UTC, CSI, and historical violation metrics
+- Apply threshold matrices for each decision category
+- Calculate final disposition score
+
+5.4.2 Action Determination
+- If final_score > 80: implement user_banned
+- If 60 < final_score ≤ 80: implement removed
+- If 40 < final_score ≤ 60: implement warning
+- If final_score ≤ 40: implement allowed
+
+6. Output
+6.1 Decision Package
+- Final disposition (removed/warning/user_banned/allowed)
+- Comprehensive scoring matrix
+- Audit trail of decision factors
+- Geographic risk assessment report
+- Device consistency analysis
+- Violation confidence metrics
+
+6.2 System Updates
+- User trust score modification
+- Historical violation record update
+- Geographic pattern database update
+- Device fingerprint repository update

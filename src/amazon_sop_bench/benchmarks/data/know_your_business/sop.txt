@@ -1,0 +1,87 @@
+
+1. Purpose
+This Standard Operating Procedure establishes a comprehensive framework for conducting systematic verification of business entities in accordance with regulatory requirements, including but not limited to the Bank Secrecy Act (BSA), USA PATRIOT Act Section 314, and FinCEN beneficial ownership requirements. The procedure implements a risk-based approach to entity verification, incorporating multi-jurisdictional considerations and enhanced due diligence protocols.
+
+2. Scope
+This SOP encompasses all aspects of business entity verification, including initial data collection, document validation, beneficial ownership analysis, sanctions screening, and risk assessment. It applies to all personnel involved in business entity verification processes, particularly compliance officers, risk analysts, and verification specialists operating within the organization's compliance framework.
+
+3. Definitions
+3.1 Ultimate Beneficial Owner (UBO): Natural person(s) who, directly or indirectly, owns or controls 25% or more of a business entity's shares or voting rights, or who exercises control through other means.
+3.2 Politically Exposed Person (PEP): Individual who is or has been entrusted with prominent public functions, including their family members and close associates.
+3.3 Shell Company: A business entity without significant assets or operations, potentially used for purposes other than legitimate business operations.
+3.4 Ownership Layer: A tier in the corporate structure between the subject entity and its ultimate beneficial owners.
+3.5 Risk-Based Approach (RBA): Methodology for allocating resources based on identified risks in compliance with regulatory requirements.
+3.6 Enhanced Due Diligence (EDD): Additional verification measures applied to high-risk entities or circumstances.
+3.7 Jurisdiction Risk Assessment: Evaluation of the risk level associated with the entity's jurisdiction of incorporation and operation.
+
+4. Input
+4.1 Primary Documentation Requirements
+The verification process requires comprehensive submission of business entity information including business_id, business_name, contact_info, website, address, email, registration documentation, tax identification documentation, and banking information. 
+All submitted documentation must conform to jurisdictional requirements and maintain PDF/A-1a format for archival purposes. 
+
+4.2 Secondary Documentation Requirements
+Additional documentation may include beneficial ownership declarations, corporate structure charts, bank statements, and regulatory licenses specific to the entity's operational domain.
+
+5. Main Procedure
+5.1 Initial Data Collection and Validation
+5.1.1 Entity Information Retrieval
+The verification specialist shall retrieve the complete business profile using the business_id as the primary key, ensuring all required fields are populated according to the data schema specifications. They must validate the presence and format of business_name, contact_info, website, address, email, registration_number, and tax_id.
+Business names are automatically validated when TIN or any other government based ID is entered in the system.
+They should use their experience to check if the website and/or address and/or email matches with the pre-validated business name. Due to errors by associates, there may be typos.
+For webpages, there may be some omissions in the text. Make sure that addresses have street number, road and the city. If the business in World Trade Center, NY or in a known building, they may omit the street number.
+Use your experience to identify if the errors are genuine typos by associates entering the data or made-up names submitted by the businesses.
+If you believe that there is some irregularities here, please enter in the system 'awaiting information' so that associates can reach out to these businesses for additional data.
+
+5.1.2 Documentation Completeness Assessment
+Conduct a systematic evaluation of submitted documentation, generating a documentation_completeness status for your notes. Documentation is considered "Complete" only when all required fields are populated and validated against prescribed format requirements.
+
+5.2 Business Registration, Licensing and Tax Verification
+5.2.1 Government Registry Validation
+Ensure that Tax IDs are TIN followed by 6 digits only and they cannot be the same digit. If so, escalate immediately. Do not be case sensitiv
+Check that the license is not expired for more than 42 days else escalate the case. 
+Use the relevant tool to access government portals to verify registration status, license expiry and date of entry. 
+The specialist must maintain a record of all verification attempts and results.
+
+5.2.2 Cross-Jurisdictional Verification
+For entities registered in multiple jurisdictions, perform parallel verification across all relevant government registries, with particular attention to offshore_jurisdiction_flag status.
+
+5.3 Ultimate Beneficial Ownership Analysis
+5.3.1 UBO Identification and Verification
+Process the ubo_list to identify all individuals with ownership percentage ≥ 25%. For each UBO, verify identification documents and cross-reference against government databases.
+
+5.3.2 Ownership Structure Analysis
+Calculate ownership_layer_count and evaluate shell_company_suspected status based on corporate structure complexity and operational indicators.
+
+5.4 Sanctions and PEP Screening
+5.4.1 Comprehensive Screening Protocol
+Execute sanctions_check_status and pep_status verification for all identified UBOs against multiple sanctions databases and PEP lists.
+
+5.4.2 False Positive Resolution
+Implement resolution protocols for potential matches, requiring dual verification for confirmed matches.
+
+5.5 Bank Account Verification
+5.5.1 Banking Information Validation
+Verify bank_account_number, banking_institution, and bank_account_type through automated banking APIs or manual verification processes.
+
+5.5.2 Ownership Alignment
+Cross-reference bank account ownership information against verified UBO data to ensure alignment.
+
+5.6 Risk Assessment and Escalation
+5.6.1 Risk Score Calculation
+Fetch risk_score using a weighted algorithm incorporating all verification results, with particular emphasis on sanctions status, jurisdiction risk, and ownership complexity. 
+The risk score is noisy and may not accurately capture all the relevant information.
+As was told during onboarding, this is still under development and the risk scores are not reliable, so document if your judgement aligns with the risk score.
+
+5.6.2 Escalation Determination
+Determine escalation_status based on cumulative risk assessment, triggering "escalate" status if your review triggers any of the above checks else "approve".
+If missing information, set 'awaiting information'
+
+6. Output
+The specialist generates the final output JSON format within <final_output> </final_output> tags. A sample output is shown below.
+<final_output>
+{
+    'escalation_status': escalate,
+}
+</final_output>
+The report includes detailed audit trails of all verification steps, system-generated risk scores, and recommendations for further action. 
+All outputs must be archived in compliance with regulatory retention requirements and be readily accessible for regulatory examination purposes.

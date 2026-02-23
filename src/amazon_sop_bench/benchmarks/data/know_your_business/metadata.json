@@ -1,0 +1,11 @@
+{
+  "name": "know_your_business",
+  "domain": "finance",
+  "description": "Verify business entities for compliance and risk assessment",
+  "num_tasks": 90,
+  "num_tools": 8,
+  "complexity_score": 9.0,
+  "human_complexity": "9/10",
+  "output_columns": ["escalation_status"],
+  "input_columns": ["business_id", "registration_number", "business_registration_state", "license_number", "ubo_list", "bank_account_number", "banking_institution", "bank_account_type"]
+}

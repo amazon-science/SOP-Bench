@@ -1,0 +1,319 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "know_your_business_sop",
+  "description": "Standard operating procedure for know_your_business_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "know_your_business_sop/test_set_with_outputs.csv",
+      "sha256": "7a44e6ecf7d23a63c13cf6a0a3641830622958c88cd7089fb83ff01ba657cca5"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "know_your_business_sop/test_set_without_outputs.csv",
+      "sha256": "786be78e67422141a1f1185bec6137244890fa4e9cd41416c255382d34855c52"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "know_your_business_sop/toolspecs.json",
+      "sha256": "937bc3c9cb8954fc12f4b4ecf70e2aa9da2ca4d28eb4d6de56a3da919e9b9675"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "know_your_business_sop/tools.py",
+      "sha256": "171e708dc071c347f8558bf8358b6f2725781c2fafb4f6526448cbcac6727d9b"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "know_your_business_sop/sop.txt",
+      "sha256": "e106bd7d6189a3c3ae7ab434f28c42ca7b330406a663e51c407f91126266c9c1"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "know_your_business_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "business_id",
+          "description": "Column 'business_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_name",
+          "description": "Column 'business_name' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_website",
+          "description": "Column 'business_website' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_address",
+          "description": "Column 'business_address' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_email",
+          "description": "Column 'business_email' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_type",
+          "description": "Column 'business_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "registration_number",
+          "description": "Column 'registration_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_registration_state",
+          "description": "Column 'business_registration_state' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "license_number",
+          "description": "Column 'license_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tax_id",
+          "description": "Column 'tax_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "registration_status",
+          "description": "Column 'registration_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "license_expiry_date",
+          "description": "Column 'license_expiry_date' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ubo_list",
+          "description": "Column 'ubo_list' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sanction_check_status",
+          "description": "Column 'sanction_check_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "pep_status",
+          "description": "Column 'pep_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_account_number",
+          "description": "Column 'bank_account_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "banking_institution",
+          "description": "Column 'banking_institution' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_account_type",
+          "description": "Column 'bank_account_type' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_verification_status",
+          "description": "Column 'bank_verification_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "offshore_jurisdiction_flag",
+          "description": "Column 'offshore_jurisdiction_flag' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "shell_company_suspected",
+          "description": "Column 'shell_company_suspected' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ownership_layer_count",
+          "description": "Column 'ownership_layer_count' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "risk_score",
+          "description": "Column 'risk_score' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "escalation_status",
+          "description": "Column 'escalation_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "date_of_entry",
+          "description": "Column 'date_of_entry' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "business_id",
+          "description": "Column 'business_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_name",
+          "description": "Column 'business_name' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_website",
+          "description": "Column 'business_website' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_address",
+          "description": "Column 'business_address' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_email",
+          "description": "Column 'business_email' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_type",
+          "description": "Column 'business_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "registration_number",
+          "description": "Column 'registration_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "business_registration_state",
+          "description": "Column 'business_registration_state' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "license_number",
+          "description": "Column 'license_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tax_id",
+          "description": "Column 'tax_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "registration_status",
+          "description": "Column 'registration_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "license_expiry_date",
+          "description": "Column 'license_expiry_date' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ubo_list",
+          "description": "Column 'ubo_list' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "sanction_check_status",
+          "description": "Column 'sanction_check_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "pep_status",
+          "description": "Column 'pep_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_account_number",
+          "description": "Column 'bank_account_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "banking_institution",
+          "description": "Column 'banking_institution' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_account_type",
+          "description": "Column 'bank_account_type' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "bank_verification_status",
+          "description": "Column 'bank_verification_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "offshore_jurisdiction_flag",
+          "description": "Column 'offshore_jurisdiction_flag' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "shell_company_suspected",
+          "description": "Column 'shell_company_suspected' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "ownership_layer_count",
+          "description": "Column 'ownership_layer_count' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "risk_score",
+          "description": "Column 'risk_score' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "date_of_entry",
+          "description": "Column 'date_of_entry' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

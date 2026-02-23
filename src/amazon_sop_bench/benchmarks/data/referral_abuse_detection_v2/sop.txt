@@ -1,0 +1,238 @@
+1. Purpose
+This Standard Operating Procedure (SOP) establishes a comprehensive framework for detecting and investigating referral abuse violations in subscription-based business environments. This kind of activity is considered abusive, as it involves deceiving customers in order to earn financial rewards, rather than legitimately promoting products or services. It negatively impacts consumer trust and the brand. The objective of this SOP is to create a standardized approach for investigators to pinpoint any instances of referral abuse and address the violation with appropriate enforcement actions based on risk severity.
+
+2. Scope
+This procedure encompasses referral abuse detection activities for subscription business referral accounts, including abusive account creation detection, misleading promotional content verification, personal subscription relationship mapping, temporal pattern analysis, historical violation review, and risk-based enforcement action determination.
+
+3. Definitions
+3.1 Abusive Account Creation: Automated bulk creation of customer accounts via referral links with sequential IDs, bulk creation timestamps, and new account creation patterns
+3.2 Misleading Ad Copy: Deceptive promotional content including false availability claims, incorrect pricing information, and misleading promotional offers
+3.3 Personal Orders/Subscriptions (Related User): Self-referrals or family/friend referrals detected through related customer connections
+3.4 Temporal Fraud Patterns: Time-based suspicious activities including registration bursts (>10 accounts within 24 hours), off-hours activity (80%+ activity between 2AM-6AM local time), and coordinated timing patterns
+3.5 Risk Severity Levels: 
+    - CRITICAL: Confirmed fraud with high financial impact (>$5000 revenue) or repeat offender
+    - HIGH: Strong fraud indicators with moderate impact ($1000-$5000 revenue)
+    - MEDIUM: Suspicious patterns requiring investigation (<$1000 revenue)
+    - LOW: Minor concerns, likely legitimate activity
+3.6 Historical Violation Context: Previous enforcement actions, warning history, and account rehabilitation status
+3.7 Account Investigation Process: Systematic review of user accounts focusing on address verification, email analysis, website verification, business description review, and temporal activity patterns
+
+4. Input (some are optional)
+4.1 Account Investigation Data:
+- account_id
+- user_email
+- registration_timestamp
+- address_validity
+- email_pattern_suspicious
+- website_verified
+- business_description
+- account_status
+- account_age_days (days since registration)
+- previous_violations_count (number of past violations)
+- last_violation_date (ISO timestamp of most recent violation, null if none)
+- warning_issued (boolean, whether account received prior warning)
+
+4.2 Pattern Analysis Data:
+- connected_accounts
+- login_geographic_consistency
+- revenue_amount
+- click_through_rate
+- page_views
+- device_distribution
+- registration_burst_detected (boolean, >10 related accounts in 24hrs)
+- off_hours_activity_percentage (0-100, percentage of activity 2AM-6AM)
+- activity_spike_detected (boolean, unusual traffic surge)
+
+4.3 Relationship Verification Data:
+- referral_source_quality
+- payment_method_shared
+- order_patterns_suspicious
+- violation_type
+- fraud_indicator_level
+- enforcement_action
+- investigation_status
+- evidence_collected
+
+4.4 Historical Context Data:
+- account_rehabilitation_status (Active/Probation/None)
+- total_lifetime_revenue
+- customer_complaint_count
+- refund_rate_percentage
+
+5. Main Procedure
+
+5.1 Account Investigation Process
+5.1.1 Review the user's account and websites they are using to promote referrals
+5.1.2 Perform Address Verification: Check address validity, flag suspicious/invalid addresses
+5.1.3 Conduct Email Analysis: Verify email authenticity, check for patterns suggesting mass creation, look for suspicious domains
+5.1.4 Execute Website Verification: Review listed promotional sites, check social media presence, identify suspicious link patterns
+5.1.5 Analyze Business Description: Look for duplicate descriptions, check business model legitimacy
+5.1.6 Monitor Account Status: Monitor for suspicious closure patterns
+5.1.7 Review Account Age: Consider account maturity (accounts <30 days are higher risk)
+5.1.8 Check Historical Violations: Review previous_violations_count and last_violation_date
+
+5.2 Temporal Pattern Analysis (NEW)
+5.2.1 Analyze Registration Timing: Check for registration_burst_detected indicating coordinated account creation
+5.2.2 Review Activity Hours: Evaluate off_hours_activity_percentage (>60% is suspicious)
+5.2.3 Detect Activity Spikes: Identify unusual traffic surges that may indicate bot activity
+5.2.4 Cross-reference Timing: Compare registration_timestamp with connected_accounts timing
+
+5.3 Account Relations Investigation
+5.3.1 Check for links to previously flagged accounts
+5.3.2 Review customer ID connections
+5.3.3 Analyze Login Pattern: Geographic consistency, suspicious location patterns, login time patterns
+5.3.4 Evaluate Connection Density: High connected_accounts (>20) with recent registration suggests fraud network
+
+5.4 Traffic Analysis Report Review
+5.4.1 Analyze Key Metrics: Revenue patterns, click-through rates, page view analytics, device/browser distribution
+5.4.2 Conduct URL Analysis: Check for empty referral sources, low-quality declared websites, unverified social channels, misleading content
+5.4.3 Perform Relationship Analysis: Monitor connected accounts through payment methods, email addresses, other identifiers
+5.4.4 Execute Transaction Review: Product order patterns, referral history analysis, customer verification
+5.4.5 Complete Referral Pattern Analysis: Review historical data, identify suspicious patterns, cross-reference known violation types
+5.4.6 Assess Financial Impact: Calculate total_lifetime_revenue and evaluate refund_rate_percentage
+
+5.5 Historical Context Review (NEW)
+5.5.1 Check Violation History: Review previous_violations_count and determine if repeat offender
+5.5.2 Evaluate Warning Status: Check if warning_issued previously and whether behavior improved
+5.5.3 Review Rehabilitation Status: Consider account_rehabilitation_status (accounts on Probation require stricter evaluation)
+5.5.4 Analyze Customer Complaints: High customer_complaint_count (>5) indicates potential fraud
+
+5.6 Document Investigation Findings
+5.6.1 Gather evidence such as screenshots, screen recordings, URLs, and any other relevant information to support the findings
+5.6.2 Make a ticket if the total earnings on the account meet the thresholds or if you believe the enforcement action may attract Legal, Public Relations (PR), or Brand Safety concerns
+
+5.7 Determine Risk Severity and Enforcement Action
+
+STEP 1: Calculate Violation Indicators (count how many are TRUE)
+
+IMPORTANT: Boolean fields (address_validity, email_pattern_suspicious, etc.) are actual boolean values (true/false), NOT strings.
+Compare them directly as booleans: if address_validity is false, if email_pattern_suspicious is true, etc.
+
+Abusive Account Creation Score (count TRUE indicators):
+- address_validity is false (+1)
+- email_pattern_suspicious is true (+1)
+- website_verified is false (+1)
+- connected_accounts >= 15 (+1)
+- login_geographic_consistency is false (+1)
+- registration_burst_detected is true (+2) [WEIGHTED - strong indicator]
+- account_age_days < 30 (+1)
+Score >= 4 → Abusive Account Creation
+
+Misleading Ad Copy Score (count TRUE indicators):
+- website_verified is false (+1)
+- referral_source_quality is "Low" or "Medium" (+1)
+- order_patterns_suspicious is true (+1)
+- click_through_rate > 0.4 (+1)
+- activity_spike_detected is true (+1)
+- customer_complaint_count > 5 (+1)
+Score >= 4 → Misleading Ad Copy
+
+Personal Orders Score (count TRUE indicators):
+- payment_method_shared is true (+1)
+- connected_accounts > 0 AND connected_accounts < 15 (+1)
+- order_patterns_suspicious is true (+1)
+- referral_source_quality is "High" (+1)
+- off_hours_activity_percentage < 30 (+1)
+Score >= 3 → Personal Orders (Related)
+
+Temporal Fraud Score (count TRUE indicators) [NEW]:
+- registration_burst_detected is true (+2) [WEIGHTED]
+- off_hours_activity_percentage > 60 (+1)
+- activity_spike_detected is true (+1)
+- account_age_days < 30 AND connected_accounts >= 15 (+2) [WEIGHTED]
+Score >= 4 → Temporal Fraud Pattern
+
+No Violation Score (count TRUE indicators):
+- address_validity is true (+1)
+- email_pattern_suspicious is false (+1)
+- website_verified is true (+1)
+- login_geographic_consistency is true (+1)
+- payment_method_shared is false (+1)
+- order_patterns_suspicious is false (+1)
+- registration_burst_detected is false (+1)
+- off_hours_activity_percentage < 30 (+1)
+- customer_complaint_count <= 2 (+1)
+Score >= 6 → No Violation
+
+STEP 2: Determine violation type based on HIGHEST score
+- If multiple scores >= threshold, choose the highest
+- If no score meets threshold → INCONCLUSIVE
+- If tied scores → Use priority order: Temporal Fraud > Abusive Account Creation > Misleading Ad Copy > Personal Orders
+
+STEP 3: Calculate Risk Severity Level
+
+For violations (not "No Violation" or "Inconclusive"):
+
+CRITICAL Risk if ANY of:
+- revenue_amount > 5000
+- previous_violations_count >= 2
+- (previous_violations_count >= 1 AND warning_issued is true AND last_violation_date within 90 days)
+- customer_complaint_count > 10
+
+HIGH Risk if ANY of:
+- revenue_amount > 1000 AND revenue_amount <= 5000
+- previous_violations_count == 1
+- connected_accounts >= 25
+- refund_rate_percentage > 40
+
+MEDIUM Risk if ANY of:
+- revenue_amount > 100 AND revenue_amount <= 1000
+- account_rehabilitation_status is "Probation"
+- connected_accounts >= 15 AND connected_accounts < 25
+
+LOW Risk:
+- All other violation cases not meeting above criteria
+
+STEP 4: Apply enforcement action based on violation type AND risk severity:
+
+For Abusive Account Creation or Misleading Ad Copy or Temporal Fraud:
+- CRITICAL Risk → "Permanent Account Closure"
+- HIGH Risk → "Account Closure"
+- MEDIUM Risk → "Temporary Suspension"
+- LOW Risk → "Warning Issued"
+
+For Personal Orders (Related):
+- CRITICAL Risk → "Account Closure"
+- HIGH Risk → "Temporary Suspension"
+- MEDIUM Risk → "Warning Issued"
+- LOW Risk → "No Action"
+
+For No Violation:
+- Always → "No Action"
+
+For INCONCLUSIVE:
+- If previous_violations_count > 0 → "Manual Review Required"
+- Otherwise → "Inconclusive"
+
+6. Output
+6.1 Final Decision Format:
+
+You MUST output your final enforcement decision in the following XML format:
+
+<final_decision>{enforcement_action}</final_decision>
+
+Where {enforcement_action} must be EXACTLY one of:
+- "Permanent Account Closure" (for CRITICAL risk violations)
+- "Account Closure" (for HIGH risk violations of Abusive/Misleading/Temporal types)
+- "Temporary Suspension" (for MEDIUM risk violations or HIGH risk Personal Orders)
+- "Warning Issued" (for LOW risk violations or MEDIUM risk Personal Orders)
+- "No Action" (for No Violation or LOW risk Personal Orders)
+- "Manual Review Required" (for INCONCLUSIVE with violation history)
+- "Inconclusive" (when evidence is insufficient and no violation history)
+
+Example outputs:
+<final_decision>Permanent Account Closure</final_decision>
+<final_decision>Account Closure</final_decision>
+<final_decision>Temporary Suspension</final_decision>
+<final_decision>Warning Issued</final_decision>
+<final_decision>No Action</final_decision>
+<final_decision>Manual Review Required</final_decision>
+<final_decision>Inconclusive</final_decision>
+
+CRITICAL:
+- Calculate ALL scores from tool outputs BEFORE making decision
+- Determine violation type from HIGHEST score
+- Calculate risk severity based on financial impact and history
+- Match enforcement action to BOTH violation type AND risk severity
+- Use "Manual Review Required" for inconclusive cases with violation history
+- Output ONLY the final_decision tag with the enforcement action value

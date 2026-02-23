@@ -1,0 +1,85 @@
+
+1. Purpose
+This Standard Operating Procedure establishes a comprehensive framework for the intake and registration of new patients, encompassing demographic data collection, insurance verification, risk stratification, and pharmacy network validation in compliance with HIPAA regulations and organizational protocols.
+
+2. Scope
+This procedure applies to all healthcare personnel involved in patient registration, including Patient Access Representatives, Insurance Verification Specialists, and Clinical Intake Coordinators. It covers all new patient registrations across ambulatory and acute care settings.
+
+3. Definitions
+3.1 Protected Health Information (PHI): Individually identifiable health information as defined by HIPAA
+3.2 Benefits Coordination Protocol (BCP): Systematic verification of primary and secondary insurance benefits
+3.3 Clinical Risk Index (CRI): Composite score derived from medical history and lifestyle factors
+3.4 Pharmacy Benefit Management (PBM) Validation: Real-time verification of prescription coverage
+3.5 Network Adequacy Verification (NAV): Assessment of provider network status
+3.6 Risk Stratification Algorithm (RSA): Mathematical model for patient risk assessment
+
+4. Input
+4.1 Required Documentation (some are optional)
+- Government-issued photo identification (optional)
+- Current insurance card(s)
+- Complete medical history questionnaire
+- Pharmacy benefit card
+- Prior authorization documentation (optional)
+- Release of medical records forms (optional)
+
+4.2 System Requirements
+- Electronic Health Record (EHR) access
+- Insurance eligibility verification portal
+- PBM interface connectivity
+- Risk assessment calculation tool
+
+5. Main Procedure
+
+5.1 Insurance Validation Protocol
+5.1.1 Primary Insurance Verification
+- Access payer portal using provider credentials
+- Verify coverage status and effective dates
+- Document benefit levels and copayment requirements
+- Confirm network participation status
+- Record authorization requirements
+
+5.1.2 Prescription Benefit Validation
+- Query PBM database for current coverage
+- Verify formulary compliance parameters
+- Document prior authorization requirements
+- Confirm specialty pharmacy protocols
+- Record copayment structure
+
+5.2 Risk Assessment Protocol
+5.2.1 Lifestyle Risk Evaluation
+- Calculate smoking risk index (Never=0, Former=1, Current=2)
+- Assess alcohol consumption frequency (None=0, Occasional=1, Moderate=2, Heavy=3)
+- Evaluate exercise patterns (5+ times=-1, 3-4 times=0, 1-2 times=1, None=2)
+- Compute aggregate lifestyle score
+
+5.2.2 Clinical Risk Assessment
+- Review surgical history chronology
+- Evaluate chronic condition severity
+- Calculate comorbidity interaction score
+- Generate weighted risk factor index
+
+5.3 Patient Registration Protocol
+5.3.1 Eligibility Confirmation
+- Verify insurance_validation status = "valid"
+- Confirm prescription_insurance_validation = "valid"
+- Validate life_style_risk_level within acceptable parameters
+- Assess overall_risk_level compatibility
+
+5.3.2 Pharmacy Network Verification
+- Query preferred pharmacy database
+- Verify pharmacy_check status = "yes"
+- Confirm pharmacy network participation
+- Document special handling requirements
+
+6. Output
+6.1 Required Documentation
+The procedure generates a comprehensive verification report (json with appropriate keys) containing all verification results.
+These should inlcude insurance validation check, prescription insurance validation check, pharmacy check, the life style risk of the patient, the overall risk of the patient, and if user / patient registration was successful.
+All outputs must be archived in compliance with regulatory retention requirements and be readily accessible for regulatory examination purposes.
+
+6.2 System Updates
+- Active patient status in EHR
+- Documented risk levels
+- Verified insurance records
+- Confirmed pharmacy selection
+- Completed registration status

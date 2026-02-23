@@ -1,0 +1,120 @@
+[
+    {
+        "toolSpec": {
+            "name": "calculate_disposal_score",
+            "description": "Evaluates disposal guidelines for dangerous goods to determine a severity score based on disposal complexity and environmental impact requirements",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "product_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the product (format: P_XXXXX)",
+                            "pattern": "^P_\\d{5}$"
+                        },
+                        "disposal_guidelines": {
+                            "type": "string",
+                            "description": "Detailed text describing the proper disposal procedures and requirements for the dangerous goods",
+                            "minLength": 1
+                        }
+                    },
+                    "required": [
+                        "product_id",
+                        "disposal_guidelines"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculate_handling_score",
+            "description": "Analyzes handling and storage guidelines to determine a severity score based on storage requirements and handling protocols",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "product_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the dangerous good product (format: P_XXXXX)",
+                            "pattern": "^P_[0-9]{5}$"
+                        },
+                        "handling_and_storage_guidelines": {
+                            "type": "string",
+                            "description": "Detailed text describing the handling procedures and storage requirements for the dangerous good",
+                            "minLength": 1,
+                            "maxLength": 2000
+                        },
+                        "assessmentFormId": {
+                            "type": "string",
+                            "description": "Reference ID for the Classification Assessment Form (CAF-01) where the score will be documented",
+                            "pattern": "^CAF-[0-9]{2}-[0-9]{4}$"
+                        }
+                    },
+                    "required": [
+                        "product_id",
+                        "handling_and_storage_guidelines"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculate_transportation_score",
+            "description": "Evaluates transportation requirements for dangerous goods to determine a severity score based on shipping restrictions and handling protocols",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "product_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the product (format: P_XXXXX)",
+                            "pattern": "^P_\\d{5}$"
+                        },
+                        "transportation_requirements": {
+                            "type": "string",
+                            "description": "Detailed description of transportation requirements, restrictions, and protocols for shipping the dangerous goods",
+                            "minLength": 1
+                        }
+                    },
+                    "required": [
+                        "product_id",
+                        "transportation_requirements"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculate_sds_label_score",
+            "description": "Analyzes safety data sheet (SDS) hazard statements and calculates a severity score",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "product_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the product being evaluated (format: P_XXXXX)",
+                            "pattern": "^P_\\d{5}$"
+                        },
+                        "sds_label_text": {
+                            "type": "string",
+                            "description": "Hazard statements extracted from Section 2 of the Safety Data Sheet (SDS)",
+                            "minLength": 1,
+                            "maxLength": 1000
+                        }
+                    },
+                    "required": [
+                        "product_id",
+                        "sds_label_text"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    }
+]

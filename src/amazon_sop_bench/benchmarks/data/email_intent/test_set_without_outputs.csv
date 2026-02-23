@@ -1,0 +1,72 @@
+<<<<<<< Updated upstream
+email_id,seller_id,product_id,email_subject,email_body,seller_tier,account_status,current_price,inventory_count,listing_status
+E100000001,S100000001,B08N5WRWNW,Price adjustment request for Echo Dot,I noticed my Echo Dot is priced higher than competitors. Can you help adjust the price to match market rates?,Professional,active,59.99,150,active
+E100000002,S100000002,B07XJ8C8F5,Product description update needed,The product description for my listing is outdated. Please update with new features and specifications.,Standard,active,129.99,75,active
+E100000003,S100000003,B09B8V1LZ3,Why is my listing suppressed?,My product listing has been suppressed without notice. Please help restore it immediately.,Enterprise,warning,299.99,0,suppressed
+E100000004,S100000004,B07PFFMP9P,General inquiry about seller metrics,Can you provide information about my seller performance metrics for last quarter?,Professional,active,89.99,200,active
+E100000005,S100000005,B08G9J44ZN,Urgent: Price matching request,Competitors are selling at $45. My price is $65. Need immediate price adjustment approval.,Standard,active,65.00,50,active
+=======
+email_id,email_body,product_id,product_description,listing_price,listing_status_details,product_inventory,marketplace_id
+E1045,Product P12N3P not visible in catalog,P12N3P,Protein powder,0.0,Nutritional content verification needed,0,US
+E1017,Description needs update for P89H1I - battery life is 12 hours not 8,P89H1I,Wireless gaming mouse with 8-hour battery,49.99,,120,US
+E1202,Question about product ranking for P91C2D,P91C2D,Resistance bands,15.99,,300,US
+E1101,Product P56A7B not visible to customers,P56A7B,Teeth whitening kit,0.0,Cosmetic safety review pending,0,US
+E1175,Price showing $169.99 but should be $159.99 for P91Y2Z,P91Y2Z,Robot vacuum,169.99,,50,US
+E1269,Why is P89L1M not showing in catalog?,P89L1M,Collagen powder,0.0,Health claims verification pending,0,US
+E1216,Description wrong color options for P12F3G,P12F3G,Phone case,19.99,,300,US
+E1120,Description wrong size specs for P78N9P,P78N9P,Travel backpack,59.99,,95,US
+E1020,Price showing $79.99 but approved price is $69.99 for P56N7P,P56N7P,Digital kitchen scale,79.99,,150,US
+E1258,How to set up seasonal offers for P45P6Q?,P45P6Q,Beach umbrella,34.99,,150,US
+E1255,Price showing $199.99 but should be $179.99 for P78I9J,P78I9J,Security camera,199.99,,40,US
+E1259,Price needs update to $59.99 for P67R8S,P67R8S,Wireless mouse,69.99,,200,US
+E1261,Product P12V3W not visible to customers,P12V3W,Diet pills,0.0,FDA approval pending,0,US
+E1198,How to set up subscribe and save for P12U3V?,P12U3V,Dog food,44.99,,180,US
+E1080,Description needs update for P89I1J warranty info,P89I1J,Smart watch,149.99,,85,US
+E1177,Why isn't P45C6D listed yet?,P45C6D,Anti-aging cream,0.0,Dermatological testing required,0,US
+E1213,Product P45Z6A not appearing in listings,P45Z6A,Herbal tea,0.0,Organic certification pending,0,US
+E1026,Can't find my listing for P89A1B,P89A1B,Natural face cream,0.0,Cosmetic certification pending,0,US
+E1203,Price showing $89.99 but should be $79.99 for P23E4F,P23E4F,Coffee grinder,89.99,,75,US
+E1036,Description needs update for P12V3W - dimensions are wrong,P12V3W,Storage ottoman,79.99,,45,US
+E1137,Why isn't P56X7Y listed in search?,P56X7Y,Protein powder,0.0,Nutritional certification pending,0,US
+E1030,Why is P78I9J not visible to customers?,P78I9J,Pet food supplement,0.0,FDA compliance documentation needed,0,US
+E1128,Description incorrect battery type for P56E7F,P56E7F,Remote control car,89.99,,65,US
+E1081,Product P12K3L not visible in catalog,P12K3L,Herbal tea set,0.0,Organic certification pending,0,US
+E1244,Description incorrect capacity for P34L5M,P34L5M,Lunch container,19.99,,400,US
+E1245,Can't find my product P56N7P,P56N7P,Eye cream,0.0,Cosmetic safety review pending,0,US
+E1221,Product P23Q4R not visible to customers,P23Q4R,Energy bars,0.0,Nutritional verification needed,0,US
+E1021,Description for P78Q9R missing allergen information,P78Q9R,Gourmet chocolate assortment,29.99,,75,US
+E1042,How to update seasonal availability for P45H6I?,P45H6I,Beach umbrella,34.99,,75,US
+E1112,Description incorrect - P91X2Y has 2-year warranty not 1,P91X2Y,Wireless router,79.99,,85,US
+E1237,Why isn't P78X9Y listed yet?,P78X9Y,Baby lotion,0.0,Safety testing required,0,US
+E1266,Need help with variation setup for P23F4G,P23F4G,Phone cases,14.99,,400,US
+E1134,Need help with seasonal pricing for P89R1S,P89R1S,Beach towel set,39.99,,175,US
+E1037,Why isn't P34X5Y listed yet?,P34X5Y,Baby car seat,0.0,Safety certification pending,0,US
+E1268,Description missing features for P67J8K,P67J8K,Smart thermostat,79.99,,110,US
+E1029,Description missing warranty info for P56G7H,P56G7H,Smart doorbell camera,159.99,,60,US
+E1149,Why is P23W4X not showing in catalog?,P23W4X,Hair vitamins,0.0,Supplement certification pending,0,US
+E1220,Description missing weight capacity for P91N2P,P91N2P,Folding chair,44.99,,85,US
+E1068,Description wrong size specs for P23J4K,P23J4K,Laptop bag,44.99,,110,US
+E1058,How to set up recurring orders for P91P2Q?,P91P2Q,Pet food,29.99,,300,US
+E1195,Price showing $59.99 but should be $49.99 for P45N6P,P45N6P,Bluetooth speaker,59.99,,120,US
+E1125,Can't find my product P89Y1Z,P89Y1Z,Collagen powder,0.0,Supplement verification required,0,US
+E1074,Need help with product tags for P56W7X,P56W7X,Decorative pillows,29.99,,145,US
+E1204,Description incorrect material for P45G6H,P45G6H,Yoga mat,29.99,,200,US
+E1027,Need clarification on P12C3D category placement,P12C3D,Multi-tool pocket knife,45.99,,95,US
+E1136,Description wrong color options for P34V5W,P34V5W,Desk lamp,45.99,,120,US
+E1082,Question about return policy for P34M5N,P34M5N,Designer handbag,199.99,,30,US
+E1200,Description missing technical specs for P56Y7Z,P56Y7Z,WiFi extender,49.99,,140,US
+E1050,How to improve search ranking for P23Y4Z?,P23Y4Z,Hiking backpack,69.99,,65,US
+E1192,Description missing water resistance for P78H9I,P78H9I,Smart watch,129.99,,85,US
+E1174,Need help with inventory tracking for P78W9X,P78W9X,Plant pots,24.99,,300,US
+E1234,Need help with shipping options for P12R3S,P12R3S,Wall clock,29.99,,200,US
+E1135,Price showing $79.99 but should be $69.99 for P12T3U,P12T3U,Baby monitor,79.99,,80,US
+E1217,Why isn't P34H5I listed yet?,P34H5I,Face moisturizer,0.0,Dermatological testing needed,0,US
+E1238,How to set up quantity discounts for P91Z2A,P91Z2A,Plant fertilizer,14.99,,300,US
+E1094,Need help with SEO optimization for P91L2M,P91L2M,Hiking boots,129.99,,90,US
+E1165,Can't find my product P78D9E,P78D9E,Pet treats,0.0,Pet food safety review pending,0,US
+E1214,Need help with inventory alerts for P67B8C,P67B8C,Hand sanitizer,8.99,,500,US
+E1113,Product P23Z4A not showing in catalog,P23Z4A,Probiotic supplement,0.0,Health certification pending,0,US
+E1173,Product P56U7V not appearing in listings,P56U7V,Meal replacement bars,0.0,Nutritional compliance review needed,0,US
+E1089,Why is P89B1C not listed yet?,P89B1C,Electric scooter,0.0,Safety certification pending,0,US
+E1097,Why isn't P67S8T listed in marketplace?,P67S8T,Hair supplements,0.0,Health claims verification needed,0,US
+>>>>>>> Stashed changes

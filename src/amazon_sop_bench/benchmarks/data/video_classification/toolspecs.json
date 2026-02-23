@@ -1,0 +1,275 @@
+[
+  {
+    "toolSpec": {
+      "name": "validateVideo",
+      "description": "Validates video format and extracts technical metadata.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$",
+              "examples": [
+                "vid_00010"
+              ]
+            },
+            "video_path": {
+              "type": "string",
+              "description": "Path to the video file"
+            }
+          },
+          "required": [
+            "video_id",
+            "video_path"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "assignReviewer",
+      "description": "Assigns a qualified reviewer to the video content.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "video_language": {
+              "type": "string",
+              "description": "Language of the video content"
+            },
+            "region": {
+              "type": "string",
+              "description": "Region code for the video"
+            }
+          },
+          "required": [
+            "video_id",
+            "video_language",
+            "region"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "getReview",
+      "description": "Fetches the review details for a given video and reviewer.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "initial_reviewer_id": {
+              "type": "string",
+              "description": "ID of the assigned reviewer"
+            }
+          },
+          "required": [
+            "video_id",
+            "initial_reviewer_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "submitContentModeration",
+      "description": "Records initial content moderation findings.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "initial_reviewer_id": {
+              "type": "string",
+              "description": "ID of the reviewer"
+            }
+          },
+          "required": [
+            "video_id",
+            "initial_reviewer_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "implementModeration",
+      "description": "Implements final moderation decisions.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "moderator_id": {
+              "type": "string",
+              "description": "ID of the moderator"
+            }
+          },
+          "required": [
+            "video_id",
+            "moderator_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "detectHateSpeech",
+      "description": "Identifies presence of hate speech in video content.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "transcript": {
+              "type": "string",
+              "description": "Video transcript text"
+            }
+          },
+          "required": [
+            "video_id",
+            "transcript"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "assessAgeRating",
+      "description": "Determines appropriate age rating for content.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "content_flags": {
+              "type": "array",
+              "description": "List of content warning flags",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "video_id",
+            "content_flags"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "detectExplicitContent",
+      "description": "Identifies explicit content in video.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            }
+          },
+          "required": [
+            "video_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "generateContentWarnings",
+      "description": "Generates appropriate content warnings.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "video_id": {
+              "type": "string",
+              "description": "Unique identifier for the video",
+              "pattern": "^vid_\\d{5}$"
+            },
+            "detected_issues": {
+              "type": "array",
+              "description": "List of detected content issues",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "video_id",
+            "detected_issues"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "checkUserHistory",
+      "description": "Reviews past behavior and violations by the uploader.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "uploader_id": {
+              "type": "string",
+              "description": "Uploader's unique identifier"
+            }
+          },
+          "required": [
+            "uploader_id"
+          ],
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+]

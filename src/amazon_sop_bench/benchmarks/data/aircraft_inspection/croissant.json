@@ -1,0 +1,264 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "@conformsTo": "https://mlcommons.org/croissant/context/v0.9.jsonld"
+  },
+  "@type": "Dataset",
+  "name": "aircraft_inspection_sop",
+  "description": "Standard operating procedure for aircraft_inspection_sop",
+  "license": "https://www.creativecommons.org/licenses/by-nc/4.0/deed.en",
+  "citation": "SOP-Bench: Evaluating LLM Agents on Complex Industrial SOPs. [Under Review] NeurIPS 2025 Datasets and Benchmarks Track.",
+  "datePublished": "2025-05-14",
+  "version": "1.0",
+  "distribution": [
+    {
+      "@type": "FileObject",
+      "name": "test_set_with_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "aircraft_inspection_sop/test_set_with_outputs.csv",
+      "sha256": "20646ee23b8c09a93945eeac0a47bc851bd32564bbf9584ab805e26d3367d0f2"
+    },
+    {
+      "@type": "FileObject",
+      "name": "test_set_without_outputs.csv",
+      "encodingFormat": "text/csv",
+      "contentUrl": "aircraft_inspection_sop/test_set_without_outputs.csv",
+      "sha256": "757e85d7c5c14f9e793e6afa714d0499e39ec2ef536ba1a1b261619459ef8769"
+    },
+    {
+      "@type": "FileObject",
+      "name": "toolspecs.json",
+      "encodingFormat": "application/json",
+      "contentUrl": "aircraft_inspection_sop/toolspecs.json",
+      "sha256": "51d3b78a01f1c7172468261e20279f77894c5084f133dddb0f7567cf5a0596d9"
+    },
+    {
+      "@type": "FileObject",
+      "name": "tools.py",
+      "encodingFormat": "text/x-python",
+      "contentUrl": "aircraft_inspection_sop/tools.py",
+      "sha256": "7cf7ab7f5ec48ce9bf477ebb000019f34ca1a36d28db368917f509f017fc658a"
+    },
+    {
+      "@type": "FileObject",
+      "name": "sop.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "aircraft_inspection_sop/sop.txt",
+      "sha256": "83e22b9604827ba07b2a1790580a6af1a5a5427d6a80204cdc3303fd47bb941b"
+    },
+    {
+      "@type": "FileObject",
+      "name": "disclaimer.txt",
+      "encodingFormat": "text/plain",
+      "contentUrl": "aircraft_inspection_sop/disclaimer.txt",
+      "sha256": "a5e0ad5045c375d38fd396bba273085bd50c7ef860c7304c6ae703805d6fb546"
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "DataStructure",
+      "name": "test_set_with_outputs.csv",
+      "description": "Schema of the test_set_with_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "aircraft_id",
+          "description": "Column 'aircraft_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tail_number",
+          "description": "Column 'tail_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "maintenance_record_id",
+          "description": "Column 'maintenance_record_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "expected_departure_time",
+          "description": "Column 'expected_departure_time' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "actual_inspection_time",
+          "description": "Column 'actual_inspection_time' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "aircraft_ready",
+          "description": "Column 'aircraft_ready' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "inspection_location_id",
+          "description": "Column 'inspection_location_id' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_serial_number",
+          "description": "Column 'component_serial_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "installed_component_serial_number",
+          "description": "Column 'installed_component_serial_number' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "installation_time",
+          "description": "Column 'installation_time' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_weight",
+          "description": "Column 'component_weight' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "expected_component_weight",
+          "description": "Column 'expected_component_weight' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "physical_condition_observation",
+          "description": "Column 'physical_condition_observation' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "mechanical_inspection_result",
+          "description": "Column 'mechanical_inspection_result' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "electrical_inspection_result",
+          "description": "Column 'electrical_inspection_result' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "battery_status",
+          "description": "Column 'battery_status' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "circuit_continuity_check",
+          "description": "Column 'circuit_continuity_check' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "avionics_diagnostics_response",
+          "description": "Column 'avionics_diagnostics_response' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_incident_response",
+          "description": "Column 'component_incident_response' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_mismatch_response",
+          "description": "Column 'component_mismatch_response' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "cross_check_response",
+          "description": "Column 'cross_check_response' from test_set_with_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "cross_check_reporting_response",
+          "description": "Column 'cross_check_reporting_response' from test_set_with_outputs.csv"
+        }
+      ]
+    },
+    {
+      "@type": "DataStructure",
+      "name": "test_set_without_outputs.csv",
+      "description": "Schema of the test_set_without_outputs.csv file",
+      "hasPart": [
+        {
+          "@type": "PropertyValue",
+          "name": "aircraft_id",
+          "description": "Column 'aircraft_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "tail_number",
+          "description": "Column 'tail_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "maintenance_record_id",
+          "description": "Column 'maintenance_record_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "expected_departure_time",
+          "description": "Column 'expected_departure_time' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "actual_inspection_time",
+          "description": "Column 'actual_inspection_time' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "inspection_location_id",
+          "description": "Column 'inspection_location_id' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_serial_number",
+          "description": "Column 'component_serial_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "installed_component_serial_number",
+          "description": "Column 'installed_component_serial_number' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "installation_time",
+          "description": "Column 'installation_time' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "component_weight",
+          "description": "Column 'component_weight' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "expected_component_weight",
+          "description": "Column 'expected_component_weight' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "physical_condition_observation",
+          "description": "Column 'physical_condition_observation' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "battery_status",
+          "description": "Column 'battery_status' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "circuit_continuity_check",
+          "description": "Column 'circuit_continuity_check' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "avionics_diagnostics_response",
+          "description": "Column 'avionics_diagnostics_response' from test_set_without_outputs.csv"
+        },
+        {
+          "@type": "PropertyValue",
+          "name": "cross_check_response",
+          "description": "Column 'cross_check_response' from test_set_without_outputs.csv"
+        }
+      ]
+    }
+  ]
+}

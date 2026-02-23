@@ -1,0 +1,139 @@
+1. Purpose
+This Standard Operating Procedure (SOP) establishes a comprehensive framework for detecting and investigating referral abuse violations in subscription-based business environments. This kind of activity is considered abusive, as it involves deceiving customers in order to earn financial rewards, rather than legitimately promoting products or services. It negatively impacts consumer trust and the brand. The objective of this SOP is to create a standardized approach for investigators to pinpoint any instances of referral abuse and address the violation.
+
+2. Scope
+This procedure encompasses referral abuse detection activities for subscription business referral accounts, including abusive account creation detection, misleading promotional content verification, personal subscription relationship mapping, and enforcement action determination. 
+
+3. Definitions
+3.1 Abusive Account Creation: Automated bulk creation of customer accounts via referral links with sequential IDs, bulk creation timestamps, and new account creation
+3.2 Misleading Ad Copy: Deceptive promotional content including false availability claims, incorrect pricing information, and misleading promotional offers
+3.3 Personal Orders/Subscriptions (Related User): Self-referrals or family/friend referrals detected through related customer connections
+3.4 Fraud Indicator Scale: High (confirmed fraudulent activity), Medium (suspected fraud requiring investigation), No (no fraudulent indicators present)
+3.5 Account Investigation Process: Systematic review of user accounts focusing on address verification, email analysis, website verification, and business description review
+
+4. Input (some are optional)
+4.1 Account Investigation Data:
+- account_id
+- user_email  
+- registration_timestamp
+- address_validity
+- email_pattern_suspicious
+- website_verified
+- business_description
+- account_status
+
+4.2 Pattern Analysis Data:
+- connected_accounts
+- login_geographic_consistency
+- revenue_amount
+- click_through_rate
+- page_views
+- device_distribution
+
+4.3 Relationship Verification Data:
+- referral_source_quality
+- payment_method_shared
+- order_patterns_suspicious
+- violation_type
+- fraud_indicator_level
+- enforcement_action
+- investigation_status
+- evidence_collected
+
+5. Main Procedure
+5.1 Account Investigation Process
+5.1.1 Review the user's account and websites they are using to promote referrals
+5.1.2 Perform Address Verification: Check address validity, flag suspicious/invalid addresses
+5.1.3 Conduct Email Analysis: Verify email authenticity, check for patterns suggesting mass creation, look for suspicious domains
+5.1.4 Execute Website Verification: Review listed promotional sites, check social media presence, identify suspicious link patterns
+5.1.5 Analyze Business Description: Look for duplicate descriptions, check business model legitimacy
+5.1.6 Monitor Account Status: Monitor for suspicious closure patterns
+
+5.2 Account Relations Investigation
+5.2.1 Check for links to previously flagged accounts
+5.2.2 Review customer ID connections
+5.2.3 Analyze Login Pattern: Geographic consistency, suspicious location patterns, login time patterns
+
+5.3 Traffic Analysis Report Review
+5.3.1 Analyze Key Metrics: Revenue patterns, click-through rates, page view analytics, device/browser distribution
+5.3.2 Conduct URL Analysis: Check for empty referral sources, low-quality declared websites, unverified social channels, misleading content
+5.3.3 Perform Relationship Analysis: Monitor connected accounts through payment methods, email addresses, other identifiers
+5.3.4 Execute Transaction Review: Product order patterns, referral history analysis, customer verification
+5.3.5 Complete Referral Pattern Analysis: Review historical data, identify suspicious patterns, cross-reference known violation types
+
+5.4 Document Investigation Findings
+5.4.1 Gather evidence such as screenshots, screen recordings, URLs, and any other relevant information to support the findings
+5.4.2 Make a ticket if the total earnings on the account meet the thresholds or if you believe the enforcement action may attract Legal, Public Relations (PR), or Brand Safety concerns
+
+5.5 Determine Enforcement Action
+5.5.1 Analyze tool outputs to calculate a violation score and determine the violation type:
+
+   STEP 1: Calculate Violation Indicators (count how many are TRUE)
+   
+   IMPORTANT: Boolean fields (address_validity, email_pattern_suspicious, etc.) are actual boolean values (true/false), NOT strings.
+   Compare them directly as booleans: if address_validity is false, if email_pattern_suspicious is true, etc.
+   
+   Abusive Account Creation Score (count TRUE indicators):
+   - address_validity is false (+1)
+   - email_pattern_suspicious is true (+1)
+   - website_verified is false (+1)
+   - connected_accounts >= 15 (+1)
+   - login_geographic_consistency is false (+1)
+   Score >= 3 → Abusive Account Creation
+   
+   Misleading Ad Copy Score (count TRUE indicators):
+   - website_verified is false (+1)
+   - referral_source_quality is "Low" or "Medium" (+1)
+   - order_patterns_suspicious is true (+1)
+   - click_through_rate > 0.4 (+1)
+   Score >= 3 → Misleading Ad Copy
+   
+   Personal Orders Score (count TRUE indicators):
+   - payment_method_shared is true (+1)
+   - connected_accounts > 0 AND connected_accounts < 15 (+1)
+   - order_patterns_suspicious is true (+1)
+   - referral_source_quality is "High" (+1)
+   Score >= 3 → Personal Orders (Related)
+   
+   No Violation Score (count TRUE indicators):
+   - address_validity is true (+1)
+   - email_pattern_suspicious is false (+1)
+   - website_verified is true (+1)
+   - login_geographic_consistency is true (+1)
+   - payment_method_shared is false (+1)
+   - order_patterns_suspicious is false (+1)
+   Score >= 4 → No Violation
+
+   STEP 2: Determine violation type based on HIGHEST score
+   - If multiple scores >= threshold, choose the highest
+   - If no score meets threshold → INCONCLUSIVE
+   - If tied scores → Use priority order: Abusive Account Creation > Misleading Ad Copy > Personal Orders
+
+5.5.2 Apply enforcement action based on determined violation type:
+   - Abusive Account Creation → "Account Closure"
+   - Misleading Ad Copy → "Account Closure"
+   - Personal Orders (Related) → "No Action"
+   - No Violation → "No Action"
+   - INCONCLUSIVE → "Inconclusive" (insufficient evidence)
+
+6. Output
+6.1 Final Decision Format:
+
+You MUST output your final enforcement decision in the following XML format:
+
+<final_decision>{enforcement_action}</final_decision>
+
+Where {enforcement_action} must be EXACTLY one of:
+- "Account Closure" (for Abusive Account Creation or Misleading Ad Copy violations)
+- "No Action" (for Personal Orders or No Violation cases)
+- "Inconclusive" (when evidence is insufficient or conflicting)
+
+Example outputs:
+<final_decision>Account Closure</final_decision>
+<final_decision>No Action</final_decision>
+<final_decision>Inconclusive</final_decision>
+
+CRITICAL: 
+- Calculate scores from tool outputs BEFORE making decision
+- Use "Inconclusive" when unsure rather than defaulting to Account Closure
+- Output ONLY the final_decision tag with the enforcement action value

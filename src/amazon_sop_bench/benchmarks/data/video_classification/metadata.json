@@ -1,0 +1,7 @@
+{
+    "name": "video_classification",
+    "output_columns": [
+        "final_decision"
+    ],
+    "input_columns": ["video_id", "video_path"]
+}

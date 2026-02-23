@@ -1,0 +1,291 @@
+[
+    {
+        "toolSpec": {
+            "name": "performSanctionsCheck",
+            "description": "Executes comprehensive sanctions and PEP (Politically Exposed Person) screening for Ultimate Beneficial Owners (UBOs) of a business entity, verifying against multiple sanctions databases and PEP lists in compliance with regulatory requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity being verified",
+                            "pattern": "^biz_[0-9]{3,}$"
+                        },
+                        "ubo_list": {
+                            "type": "array",
+                            "description": "List of Ultimate Beneficial Owners to be screened",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Full legal name of the UBO",
+                                        "minLength": 1
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Unique identifier for the UBO",
+                                        "pattern": "^ID[0-9]{3,}$"
+                                    },
+                                    "ownership": {
+                                        "type": "number",
+                                        "description": "Percentage of ownership held by the UBO",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "id",
+                                    "ownership"
+                                ]
+                            },
+                            "minItems": 1
+                        }
+                    },
+                    "required": [
+                        "business_id",
+                        "ubo_list"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "getBusinessProfile",
+            "description": "Retrieves and validates the complete business profile using a business identifier. This tool serves as the initial data collection step in the entity verification process, ensuring all required business information is available for subsequent verification steps.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity. Must be a valid business ID format as per system requirements.",
+                            "pattern": "^biz_[0-9]{3,}$",
+                            "minLength": 7,
+                            "maxLength": 50
+                        }
+                    },
+                    "required": [
+                        "business_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "getOwnershipData",
+            "description": "Retrieves the Ultimate Beneficial Owner (UBO) information for a specified business entity, including ownership percentages and identification details. This tool supports regulatory compliance by identifying individuals who own or control 25% or more of the business entity.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "pattern": "^biz_[0-9]+$",
+                            "description": "Unique identifier for the business entity. Must be in the format 'biz_' followed by numbers.",
+                            "examples": [
+                                "biz_001",
+                                "biz_002"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "business_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "verifyBankAccount",
+            "description": "Validates bank account information for business entities as part of the verification process, checking account existence, ownership, and status with the specified banking institution",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity being verified",
+                            "pattern": "^biz_[0-9]{3,}$"
+                        },
+                        "bank_account_number": {
+                            "type": "string",
+                            "description": "Bank account number to be verified",
+                            "minLength": 8,
+                            "maxLength": 20
+                        },
+                        "banking_institution": {
+                            "type": "string",
+                            "description": "Name of the banking institution where the account is held",
+                            "minLength": 2
+                        },
+                        "bank_account_type": {
+                            "type": "string",
+                            "description": "Type of bank account (e.g., Business, Checking, Savings)",
+                            "enum": [
+                                "Business",
+                                "Checking",
+                                "Savings"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "business_id",
+                        "bank_account_number",
+                        "banking_institution",
+                        "bank_account_type"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "getBankData",
+            "description": "Retrieves and validates bank account information for a business entity as part of the verification process. This tool supports Section 5.5 of the SOP by providing essential banking details and verification status.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "pattern": "^biz_[0-9]{3,}$",
+                            "description": "Unique identifier for the business entity. Must be in format 'biz_' followed by numbers.",
+                            "examples": [
+                                "biz_001"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "business_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "calculateRiskScore",
+            "description": "Calculates a comprehensive risk score for a business entity based on verification results, sanctions checks, and other compliance factors. Determines whether the case requires escalation based on the calculated risk score and other risk factors in alignment with regulatory requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity being assessed",
+                            "pattern": "^biz_[0-9]{3,}$",
+                            "examples": [
+                                "biz_001"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "business_id"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "verifyUBO",
+            "description": "Verifies Ultimate Beneficial Ownership information for a business entity, analyzing ownership structure, detecting shell company indicators, and assessing jurisdictional risks in compliance with regulatory requirements.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity being verified",
+                            "pattern": "^biz_[0-9]{3,}$"
+                        },
+                        "ubo_list": {
+                            "type": "array",
+                            "description": "List of Ultimate Beneficial Owners for the business entity",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "Full legal name of the beneficial owner"
+                                    },
+                                    "id": {
+                                        "type": "string",
+                                        "description": "Unique identifier for the beneficial owner"
+                                    },
+                                    "ownership": {
+                                        "type": "number",
+                                        "description": "Percentage of ownership held by the beneficial owner",
+                                        "minimum": 0,
+                                        "maximum": 100
+                                    }
+                                },
+                                "required": [
+                                    "name",
+                                    "id",
+                                    "ownership"
+                                ]
+                            },
+                            "minItems": 1
+                        }
+                    },
+                    "required": [
+                        "business_id",
+                        "ubo_list"
+                    ]
+                }
+            }
+        }
+    },
+    {
+        "toolSpec": {
+            "name": "verifyBusinessRegistration",
+            "description": "Validates business registration and licensing status against government registries, checking registration status, license validity, and tax ID compliance as part of the entity verification process.",
+            "inputSchema": {
+                "json": {
+                    "type": "object",
+                    "properties": {
+                        "business_id": {
+                            "type": "string",
+                            "description": "Unique identifier for the business entity",
+                            "pattern": "^biz_[0-9]{3,}$"
+                        },
+                        "registration_number": {
+                            "type": "string",
+                            "description": "Official business registration number issued by government authority",
+                            "pattern": "^REG[0-9]{6}$"
+                        },
+                        "business_registration_state": {
+                            "type": "string",
+                            "description": "Jurisdiction where the business is registered, including country for international entities",
+                            "minLength": 2
+                        },
+                        "license_number": {
+                            "type": "string",
+                            "description": "Business license number issued by regulatory authority",
+                            "pattern": "^LIC[0-9]{6}$"
+                        }
+                    },
+                    "required": [
+                        "business_id",
+                        "registration_number",
+                        "business_registration_state",
+                        "license_number"
+                    ],
+                    "additionalProperties": false
+                }
+            }
+        }
+    }
+]

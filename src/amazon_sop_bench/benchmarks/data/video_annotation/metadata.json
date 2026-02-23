@@ -1,0 +1,5 @@
+{
+  "name": "video_annotation",
+  "output_columns": ["final status"],
+  "input_columns": ["video_id"]
+}
