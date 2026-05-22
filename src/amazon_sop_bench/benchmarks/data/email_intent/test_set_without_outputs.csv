@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-email_id,seller_id,product_id,email_subject,email_body,seller_tier,account_status,current_price,inventory_count,listing_status
-E100000001,S100000001,B08N5WRWNW,Price adjustment request for Echo Dot,I noticed my Echo Dot is priced higher than competitors. Can you help adjust the price to match market rates?,Professional,active,59.99,150,active
-E100000002,S100000002,B07XJ8C8F5,Product description update needed,The product description for my listing is outdated. Please update with new features and specifications.,Standard,active,129.99,75,active
-E100000003,S100000003,B09B8V1LZ3,Why is my listing suppressed?,My product listing has been suppressed without notice. Please help restore it immediately.,Enterprise,warning,299.99,0,suppressed
-E100000004,S100000004,B07PFFMP9P,General inquiry about seller metrics,Can you provide information about my seller performance metrics for last quarter?,Professional,active,89.99,200,active
-E100000005,S100000005,B08G9J44ZN,Urgent: Price matching request,Competitors are selling at $45. My price is $65. Need immediate price adjustment approval.,Standard,active,65.00,50,active
-=======
 email_id,email_body,product_id,product_description,listing_price,listing_status_details,product_inventory,marketplace_id
 E1045,Product P12N3P not visible in catalog,P12N3P,Protein powder,0.0,Nutritional content verification needed,0,US
 E1017,Description needs update for P89H1I - battery life is 12 hours not 8,P89H1I,Wireless gaming mouse with 8-hour battery,49.99,,120,US
@@ -69,4 +61,3 @@ E1113,Product P23Z4A not showing in catalog,P23Z4A,Probiotic supplement,0.0,Heal
 E1173,Product P56U7V not appearing in listings,P56U7V,Meal replacement bars,0.0,Nutritional compliance review needed,0,US
 E1089,Why is P89B1C not listed yet?,P89B1C,Electric scooter,0.0,Safety certification pending,0,US
 E1097,Why isn't P67S8T listed in marketplace?,P67S8T,Hair supplements,0.0,Health claims verification needed,0,US
->>>>>>> Stashed changes

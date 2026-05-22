@@ -1,11 +1,3 @@
-<<<<<<< Updated upstream
-email_id,seller_id,product_id,email_subject,email_body,seller_tier,account_status,current_price,inventory_count,listing_status,email_intent,intent_confidence_score,product_exists,product_ownership_valid,product_match_confidence,market_benchmark_price,pricing_variance_percentage,pricing_recommendation,inventory_sync_status,inventory_sync_index,final_decision
-E100000001,S100000001,B08N5WRWNW,Price adjustment request for Echo Dot,I noticed my Echo Dot is priced higher than competitors. Can you help adjust the price to match market rates?,Professional,active,59.99,150,active,pricing_concern,95,True,True,98.5,49.99,20.0,reduce_price,synced,95.2,approved_price_adjustment
-E100000002,S100000002,B07XJ8C8F5,Product description update needed,The product description for my listing is outdated. Please update with new features and specifications.,Standard,active,129.99,75,active,description_modification,92,True,True,96.3,125.99,3.2,maintain_price,synced,88.7,approved_description_update
-E100000003,S100000003,B09B8V1LZ3,Why is my listing suppressed?,My product listing has been suppressed without notice. Please help restore it immediately.,Enterprise,warning,299.99,0,suppressed,listing_status,98,True,True,94.1,289.99,3.4,maintain_price,out_of_sync,45.3,escalate_to_compliance
-E100000004,S100000004,B07PFFMP9P,General inquiry about seller metrics,Can you provide information about my seller performance metrics for last quarter?,Professional,active,89.99,200,active,general_inquiry,88,True,True,91.2,87.99,2.3,maintain_price,synced,92.1,provide_standard_response
-E100000005,S100000005,B08G9J44ZN,Urgent: Price matching request,Competitors are selling at $45. My price is $65. Need immediate price adjustment approval.,Standard,active,65.00,50,active,pricing_concern,96,True,True,97.8,45.00,44.4,reduce_price,synced,89.5,approved_price_adjustment
-=======
 email_id,email_body,product_id,product_description,listing_price,seller_intent,listing_status_details,action,product_inventory,marketplace_id
 E1117,Why isn't P12H3I listed yet?,P12H3I,Essential oil diffuser,0.0,concern about their product not being listed,Product safety review pending,share listing status,0,US
 E1219,Price needs update to $69.99 for P78L9M,P78L9M,Bike lock,79.99,concern about incorrect pricing,,update price,120,US
@@ -193,4 +185,3 @@ E1025,Description incorrect - P67Y8Z is made of bamboo not plastic,P67Y8Z,Bathro
 E1107,Price showing $69.99 but should be $59.99 for P89M1N,P89M1N,Bike helmet,69.99,concern about incorrect pricing,,update price,85,US
 E1199,Price needs update to $299.99 for P34W5X,P34W5X,Laptop stand,319.99,concern about incorrect pricing,,update price,90,US
 E1118,How to set up cross-selling for P34J5K?,P34J5K,Makeup remover pads,12.99,generic question about a listing,,no action,400,US
->>>>>>> Stashed changes
