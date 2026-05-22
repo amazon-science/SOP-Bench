@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: CC-BY-NC-4.0
 
-"""Main CLI interface for amazon-sop-bench."""
+"""Main CLI interface for sop-bench."""
 
 import click
 from pathlib import Path

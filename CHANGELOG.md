@@ -102,7 +102,9 @@ This is the first public release of SOP-Bench, a comprehensive benchmark for eva
 
 **Getting Started:**
 ```bash
-pip install amazon-sop-bench
+git clone https://github.com/amazon-science/SOP-Bench.git
+cd SOP-Bench
+pip install -e .
 ./sop-bench list
 ./sop-bench evaluate content_flagging --agent function_calling --max-tasks 1
 ```

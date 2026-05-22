@@ -67,7 +67,7 @@ class ResultReporter:
         
         # Add metadata
         results_dict["metadata"] = {
-            "generated_by": "amazon-sop-bench",
+            "generated_by": "sop-bench",
             "version": "0.1.0",
             "timestamp": pd.Timestamp.now().isoformat(),
         }

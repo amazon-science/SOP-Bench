@@ -23,7 +23,7 @@ if readme_file.exists():
     long_description = readme_file.read_text(encoding="utf-8")
 
 setup(
-    name="amazon-sop-bench",
+    name="sop-bench",
     version=version["__version__"],
     description="Benchmark for evaluating LLM agents on Standard Operating Procedures",
     long_description=long_description,

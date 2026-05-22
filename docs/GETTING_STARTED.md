@@ -44,11 +44,7 @@ pip install -e .
 ./sop-bench --version
 ```
 
-### Option 2: From PyPI
-
-```bash
-pip install amazon-sop-bench
-```
+> **⚠️ Security Notice:** This package is **only** available via source installation from this GitHub repository. It is **not** published on PyPI. Do not install any package named `amazon-sop-bench`, `amazonsopbench`, or `sop-bench` from PyPI — those are not official and may contain malicious code.
 
 ### Development Installation
 

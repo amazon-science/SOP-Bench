@@ -29,10 +29,7 @@ This directory contains practical examples demonstrating how to use SOP-Bench fo
 ### Prerequisites
 
 ```bash
-# Install SOP-Bench
-pip install amazon-sop-bench
-
-# Or install from source
+# Install SOP-Bench from source
 cd AmazonSOPBench
 pip install -e .
 
