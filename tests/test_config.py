@@ -15,7 +15,7 @@ def test_config_defaults():
     assert config.aws_region == "us-west-2"
     assert config.temperature == 0.5
     assert config.max_tokens == 8192
-    assert config.save_traces is True
+    assert config.save_traces is False
     assert config.log_level == "INFO"
 
 
