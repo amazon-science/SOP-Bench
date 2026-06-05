@@ -429,7 +429,8 @@ CC-BY-NC-4.0 — See [LICENSE](LICENSE)
 
 ## Links
 
-- 📄 **Paper**: Coming soon
+- 📄 **Paper**: [SOP-Bench: Complex Industrial SOPs for Evaluating LLM Agents](https://arxiv.org/abs/2506.08119)
+- 🤗 **Dataset**: [amazon/sop-bench on Hugging Face](https://huggingface.co/datasets/amazon/sop-bench)
 - 📧 **Contact**: Open an issue on [GitHub](https://github.com/amazon-science/sop-bench/issues)
 
 ---
