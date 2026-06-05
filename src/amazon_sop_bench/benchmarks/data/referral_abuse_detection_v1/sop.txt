@@ -104,8 +104,9 @@ This procedure encompasses referral abuse detection activities for subscription 
    - order_patterns_suspicious is false (+1)
    Score >= 4 → No Violation
 
-   STEP 2: Determine violation type based on HIGHEST score
-   - If multiple scores >= threshold, choose the highest
+   STEP 2: Determine violation type based on severity-first priority
+   - If any closure-category (Abusive Account Creation, Misleading Ad Copy) meets its threshold, select it (highest score among closure-categories)
+   - Otherwise, select the highest-scoring non-closure category
    - If no score meets threshold → INCONCLUSIVE
    - If tied scores → Use priority order: Abusive Account Creation > Misleading Ad Copy > Personal Orders
 
