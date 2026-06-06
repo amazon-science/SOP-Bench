@@ -66,9 +66,9 @@ This procedure encompasses all traffic spoofing detection activities for affilia
 5.5.3 Update violation database with investigation findings
 
 5.6 Enforcement Action Determination
-Based on the risk level and violation type, determine the appropriate enforcement action:
+Based on the risk level, violation type, and investigator assessment of contextual factors, determine the appropriate enforcement action:
 - High risk violations: Account Closure
-- Medium risk violations: Temporary Suspension
+- Medium risk violations: Temporary Suspension (default); however, investigators may exercise discretion to issue a Warning based on the totality of evidence, including traffic pattern severity, source verification findings, and engagement anomaly indicators
 - Low risk violations with evidence: Warning Issued
 - Low risk violations without conclusive evidence: No Action
 
