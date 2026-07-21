@@ -193,7 +193,7 @@ class ProductListingManager:
         if not re.match("^P[A-Z0-9]{5}$", product_id):
             raise ValueError("Invalid product_id format")
 
-        if not re.match("^[A-Z]{2}[0-9]{3}$", marketplace_id):
+        if not re.match("^[A-Z]{2}([0-9]{3})?$", marketplace_id):
             raise ValueError("Invalid marketplace_id format")
 
         # Load dataset
@@ -263,8 +263,8 @@ class ProductListingManager:
             raise ValueError("Invalid product_id format. Must start with 'P' followed by 5 alphanumeric characters")
 
         # Validate marketplace_id format
-        if not re.match("^[A-Z]{2}[0-9]{3}$", marketplace_id):
-            raise ValueError("Invalid marketplace_id format. Must be 2 uppercase letters followed by 3 digits")
+        if not re.match("^[A-Z]{2}([0-9]{3})?$", marketplace_id):
+            raise ValueError("Invalid marketplace_id format. Must be 2 uppercase letters optionally followed by 3 digits")
 
         # Load dataset
         df = pd.read_csv(self.dataset_file_path)
