@@ -7,7 +7,7 @@ This SOP applies to all selling partner associates responsible for processing se
 3. Definitions
 3.1 Product Attribution System (PAS): The hierarchical database structure maintaining product metadata, including pricing, description, and listing status.
 3.2 Intent Classification Matrix (ICM): A structured framework for categorizing seller communications into predetermined intent categories.
-3.3 API Integration Points (AIP): Designated endpoints for retrieving product-specific information including get_product_price, get_product_description, and get_product_description.
+3.3 API Integration Points (AIP): Designated endpoints for retrieving product-specific information including get_product_price, get_product_description, get_product_listing_status, and get_inventory_status.
 3.4 Listing Status Verification (LSV): The systematic process of validating and retrieving current product listing status and associated metadata.
 3.5 Response Action Protocol (RAP): The standardized methodology for determining and executing appropriate responses to seller appeals.
 
@@ -50,11 +50,10 @@ This SOP applies to all selling partner associates responsible for processing se
   (e) "further clarification required"
 
 6. Output
-6.1 The output should be the seller intent and action, in xml format with tags. 
-<email_id>email_id</email_id>
-<product_id>product_id></product_id>
-<seller intent>concern about incorrect description</seller intent> 
-<action>update price</action> 
+6.1 The output must include both seller_intent and action in JSON format wrapped in <final_output> tags.
+<final_output>
+{"seller_intent": "concern about incorrect description", "action": "update description"}
+</final_output>
 
 6.2 System Updates:
 - Updated product information (if action requires)
