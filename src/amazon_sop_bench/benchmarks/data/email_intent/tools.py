@@ -363,7 +363,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 1 for API - get_product_price")
     try:
-        invalid_response = product_manager.get_product_price(
+        product_manager.get_product_price(
             product_id="",
             marketplace_id=""
         )
@@ -373,7 +373,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 2 for API - get_product_price")
     try:
-        invalid_response = product_manager.get_product_price(
+        product_manager.get_product_price(
             product_id="INVALID",
             marketplace_id="US001"
         )
@@ -395,7 +395,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 1 for API - get_product_description")
     try:
-        invalid_response = product_manager.get_product_description(
+        product_manager.get_product_description(
             product_id=""
         )
     except ValueError as e:
@@ -404,7 +404,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 2 for API - get_product_description")
     try:
-        invalid_response = product_manager.get_product_description(
+        product_manager.get_product_description(
             product_id="INVALID"
         )
     except ValueError as e:
@@ -424,7 +424,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 1 for API - get_product_listing_status")
     try:
-        invalid_response = product_manager.get_product_listing_status(
+        product_manager.get_product_listing_status(
             product_id="",
             marketplace_id=""
         )
@@ -434,7 +434,7 @@ if __name__ == "__main__":
     print("=" * 25)
     print("Invalid test case 2 for API - get_product_listing_status")
     try:
-        invalid_response = product_manager.get_product_listing_status(
+        product_manager.get_product_listing_status(
             product_id="INVALID",
             marketplace_id="US001"
         )
@@ -446,7 +446,7 @@ if __name__ == "__main__":
     try:
         valid_response = product_manager.get_product_listing_status(
             product_id="P78X9Y",
-            marketplace_id="US001"
+            marketplace_id="US"
         )
         print(f"Valid response: {valid_response}")
     except ValueError as e:
