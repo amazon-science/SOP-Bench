@@ -1,204 +1,132 @@
 [
-    {
-        "toolSpec": {
-            "name": "classifyEmailIntent",
-            "description": "Analyzes seller email communications to determine the primary intent category through natural language processing and contextual validation, considering seller tier and account status",
-            "inputSchema": {
-                "json": {
-                    "type": "object",
-                    "properties": {
-                        "email_id": {
-                            "type": "string",
-                            "description": "Unique identifier for the email communication",
-                            "pattern": "^E[0-9]{9}$"
-                        },
-                        "seller_id": {
-                            "type": "string",
-                            "description": "Unique identifier for the seller account",
-                            "pattern": "^S[0-9]{9}$"
-                        },
-                        "email_subject": {
-                            "type": "string",
-                            "description": "Email subject line content",
-                            "minLength": 1,
-                            "maxLength": 200
-                        },
-                        "email_body": {
-                            "type": "string",
-                            "description": "Complete email message text",
-                            "minLength": 10,
-                            "maxLength": 5000
-                        },
-                        "seller_tier": {
-                            "type": "string",
-                            "description": "Account classification level",
-                            "enum": [
-                                "Standard",
-                                "Professional",
-                                "Enterprise"
-                            ]
-                        },
-                        "account_status": {
-                            "type": "string",
-                            "description": "Current seller account standing",
-                            "enum": [
-                                "active",
-                                "warning",
-                                "suspended",
-                                "restricted"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "email_id",
-                        "seller_id",
-                        "email_subject",
-                        "email_body",
-                        "seller_tier",
-                        "account_status"
-                    ]
-                }
+  {
+    "toolSpec": {
+      "name": "get_product_price",
+      "description": "Retrieve the current listing price for a product in a given marketplace.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "description": "Product identifier starting with 'P' followed by 5 alphanumeric characters (e.g., P12H3I)",
+              "pattern": "^P[A-Z0-9]{5}$"
+            },
+            "marketplace_id": {
+              "type": "string",
+              "description": "Marketplace identifier (e.g., US or US001)",
+              "pattern": "^[A-Z]{2}([0-9]{3})?$"
             }
+          },
+          "required": ["product_id", "marketplace_id"]
         }
-    },
-    {
-        "toolSpec": {
-            "name": "validateProduct",
-            "description": "Verifies product existence and ownership in the product catalog database, returning validation confidence metrics",
-            "inputSchema": {
-                "json": {
-                    "type": "object",
-                    "properties": {
-                        "product_id": {
-                            "type": "string",
-                            "description": "Product ASIN or SKU reference",
-                            "pattern": "^[A-Z0-9]{10}$"
-                        },
-                        "seller_id": {
-                            "type": "string",
-                            "description": "Seller account identifier",
-                            "pattern": "^S[0-9]{9}$"
-                        }
-                    },
-                    "required": [
-                        "product_id",
-                        "seller_id"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "toolSpec": {
-            "name": "checkPricing",
-            "description": "Analyzes product pricing against market benchmarks and calculates variance percentage to identify pricing concerns",
-            "inputSchema": {
-                "json": {
-                    "type": "object",
-                    "properties": {
-                        "product_id": {
-                            "type": "string",
-                            "description": "Product ASIN or SKU reference",
-                            "pattern": "^[A-Z0-9]{10}$"
-                        },
-                        "current_price": {
-                            "type": "number",
-                            "description": "Listed product price in USD",
-                            "minimum": 0.01,
-                            "maximum": 999999.99
-                        }
-                    },
-                    "required": [
-                        "product_id",
-                        "current_price"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "toolSpec": {
-            "name": "verifyInventory",
-            "description": "Validates real-time inventory status and synchronization index for products, checking listing status and availability",
-            "inputSchema": {
-                "json": {
-                    "type": "object",
-                    "properties": {
-                        "product_id": {
-                            "type": "string",
-                            "description": "Product ASIN or SKU reference",
-                            "pattern": "^[A-Z0-9]{10}$"
-                        },
-                        "seller_id": {
-                            "type": "string",
-                            "description": "Seller account identifier",
-                            "pattern": "^S[0-9]{9}$"
-                        }
-                    },
-                    "required": [
-                        "product_id",
-                        "seller_id"
-                    ]
-                }
-            }
-        }
-    },
-    {
-        "toolSpec": {
-            "name": "determineResponse",
-            "description": "Determines the final response action and escalation requirements based on comprehensive analysis of email intent and all validation metrics",
-            "inputSchema": {
-                "json": {
-                    "type": "object",
-                    "properties": {
-                        "email_intent": {
-                            "type": "string",
-                            "description": "Classified email intent category",
-                            "enum": [
-                                "pricing_concern",
-                                "description_modification",
-                                "listing_status",
-                                "general_inquiry"
-                            ]
-                        },
-                        "product_match_confidence": {
-                            "type": "number",
-                            "description": "Product validation confidence score (0-100)",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "pricing_variance_percentage": {
-                            "type": "number",
-                            "description": "Percentage variance from market benchmark",
-                            "minimum": -100,
-                            "maximum": 1000
-                        },
-                        "inventory_sync_index": {
-                            "type": "number",
-                            "description": "Inventory synchronization score (0-100)",
-                            "minimum": 0,
-                            "maximum": 100
-                        },
-                        "listing_status": {
-                            "type": "string",
-                            "description": "Current product listing status",
-                            "enum": [
-                                "active",
-                                "inactive",
-                                "suppressed",
-                                "pending"
-                            ]
-                        }
-                    },
-                    "required": [
-                        "email_intent",
-                        "product_match_confidence",
-                        "pricing_variance_percentage",
-                        "inventory_sync_index",
-                        "listing_status"
-                    ]
-                }
-            }
-        }
+      }
     }
+  },
+  {
+    "toolSpec": {
+      "name": "get_product_description",
+      "description": "Retrieve the current product description from the catalog.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "description": "Product identifier starting with 'P' followed by 5 alphanumeric characters (e.g., P12H3I)",
+              "pattern": "^P[A-Z0-9]{5}$"
+            }
+          },
+          "required": ["product_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "get_product_description_from_image",
+      "description": "Analyze a product image stored in S3 and return a description of the product.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "description": "Product identifier starting with 'P' followed by 5 alphanumeric characters (e.g., P12H3I)",
+              "pattern": "^P[A-Z0-9]{5}$"
+            },
+            "s3_url": {
+              "type": "string",
+              "description": "S3 URI to the product image (e.g., s3://bucket/key)",
+              "pattern": "^s3://[a-z0-9.-]+/.*$"
+            },
+            "summarize": {
+              "type": "boolean",
+              "description": "Whether to return a summarized description",
+              "default": false
+            }
+          },
+          "required": ["product_id", "s3_url"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "get_inventory_status",
+      "description": "Retrieve current inventory status for a product, optionally including forecasts.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "description": "Product identifier starting with 'P' followed by 5 alphanumeric characters (e.g., P12H3I)",
+              "pattern": "^P[A-Z0-9]{5}$"
+            },
+            "marketplace_id": {
+              "type": "string",
+              "description": "Marketplace identifier (e.g., US or US001)",
+              "pattern": "^[A-Z]{2}([0-9]{3})?$"
+            },
+            "include_forecasts": {
+              "type": "boolean",
+              "description": "Whether to include 30-day inventory forecasts",
+              "default": false
+            }
+          },
+          "required": ["product_id", "marketplace_id"]
+        }
+      }
+    }
+  },
+  {
+    "toolSpec": {
+      "name": "get_product_listing_status",
+      "description": "Retrieve the current listing status for a product, optionally including recent status history.",
+      "inputSchema": {
+        "json": {
+          "type": "object",
+          "properties": {
+            "product_id": {
+              "type": "string",
+              "description": "Product identifier starting with 'P' followed by 5 alphanumeric characters (e.g., P12H3I)",
+              "pattern": "^P[A-Z0-9]{5}$"
+            },
+            "marketplace_id": {
+              "type": "string",
+              "description": "Marketplace identifier (e.g., US or US001)",
+              "pattern": "^[A-Z]{2}([0-9]{3})?$"
+            },
+            "include_history": {
+              "type": "boolean",
+              "description": "Whether to include listing status history",
+              "default": false
+            }
+          },
+          "required": ["product_id", "marketplace_id"]
+        }
+      }
+    }
+  }
 ]

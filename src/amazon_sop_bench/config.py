@@ -33,7 +33,7 @@ class Config:
     
     # AWS Settings
     aws_region: str = field(
-        default_factory=lambda: os.getenv("AWS_REGION", "us-east-1")
+        default_factory=lambda: os.getenv("AWS_REGION", "us-west-2")
     )
     aws_model_id: str = field(
         default_factory=lambda: os.getenv(

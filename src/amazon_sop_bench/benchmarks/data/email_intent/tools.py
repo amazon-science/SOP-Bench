@@ -7,12 +7,16 @@ import pandas as pd
 import re
 from typing import Dict, Any
 
+from amazon_sop_bench.utils.logging import get_logger
+
+logger = get_logger(__name__)
+
 class ProductListingManager:
     """
     Manages product listing operations including price, description and status retrieval.
     """
     
-    DATASET_CSV_FILE = "test_set_with_outputs.csv"
+    DATASET_CSV_FILE = "test_set_without_outputs.csv"
     TOOLSPEC_JSON_FILE = "toolspecs.json"
     
     def __init__(self):
@@ -193,7 +197,7 @@ class ProductListingManager:
         if not re.match("^P[A-Z0-9]{5}$", product_id):
             raise ValueError("Invalid product_id format")
 
-        if not re.match("^[A-Z]{2}[0-9]{3}$", marketplace_id):
+        if not re.match("^[A-Z]{2}([0-9]{3})?$", marketplace_id):
             raise ValueError("Invalid marketplace_id format")
 
         # Load dataset
@@ -217,10 +221,17 @@ class ProductListingManager:
         }
 
         if include_forecasts:
+            projected_stock = 0
+            restock_recommendation = None
+            if "projected_stock" in df.columns:
+                projected_stock = int(row["projected_stock"]) if pd.notna(row["projected_stock"]) else 0
+            if "restock_recommendation" in df.columns:
+                restock_recommendation = row["restock_recommendation"] if pd.notna(row["restock_recommendation"]) else None
+
             response.update({
                 "forecast_30_days": {
-                    "projected_stock": int(row["projected_stock"]) if pd.notna(row["projected_stock"]) else 0,
-                    "restock_recommendation": row["restock_recommendation"] if pd.notna(row["restock_recommendation"]) else None
+                    "projected_stock": projected_stock,
+                    "restock_recommendation": restock_recommendation
                 }
             })
 
@@ -263,8 +274,8 @@ class ProductListingManager:
             raise ValueError("Invalid product_id format. Must start with 'P' followed by 5 alphanumeric characters")
 
         # Validate marketplace_id format
-        if not re.match("^[A-Z]{2}[0-9]{3}$", marketplace_id):
-            raise ValueError("Invalid marketplace_id format. Must be 2 uppercase letters followed by 3 digits")
+        if not re.match("^[A-Z]{2}([0-9]{3})?$", marketplace_id):
+            raise ValueError("Invalid marketplace_id format. Must be 2 uppercase letters with optional 3 digits")
 
         # Load dataset
         df = pd.read_csv(self.dataset_file_path)
@@ -276,8 +287,10 @@ class ProductListingManager:
         ]
 
         if len(matched_rows) > 1:
-            raise ValueError(
-                f"Multiple records found for product_id={product_id} in marketplace={marketplace_id}"
+            if "update_timestamp" in df.columns:
+                matched_rows = matched_rows.sort_values("update_timestamp", ascending=False)
+            logger.warning(
+                f"Multiple records found for product_id={product_id} in marketplace={marketplace_id}. Using first match."
             )
 
         if matched_rows.empty:
@@ -294,7 +307,7 @@ class ProductListingManager:
         }
 
         # Add history if requested
-        if include_history:
+        if include_history and "update_timestamp" in df.columns:
             history_df = df[
                 (df["product_id"] == product_id) & 
                 (df["marketplace_id"] == marketplace_id)
@@ -303,6 +316,8 @@ class ProductListingManager:
             response["status_history"] = history_df[
                 ["update_timestamp", "listing_status_details"]
             ].to_dict("records")
+        elif include_history:
+            response["status_history"] = []
 
         return response
 
@@ -340,3 +355,99 @@ class ProductListingManager:
 
         return tool_map[tool_name](**tool_input)
 
+
+if __name__ == "__main__":
+    product_manager = ProductListingManager()
+    
+    ######################## Unit tests for API - get_product_price ########################
+    print("=" * 25)
+    print("Invalid test case 1 for API - get_product_price")
+    try:
+        product_manager.get_product_price(
+            product_id="",
+            marketplace_id=""
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Invalid test case 2 for API - get_product_price")
+    try:
+        product_manager.get_product_price(
+            product_id="INVALID",
+            marketplace_id="US001"
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Valid test case for API - get_product_price")
+    try:
+        valid_response = product_manager.get_product_price(
+            product_id="P91Z2A",
+            marketplace_id="US001"
+        )
+        print(f"Valid response: {valid_response}")
+    except ValueError as e:
+        print(f"Unexpected error: {str(e)}")
+
+    ######################## Unit tests for API - get_product_description ########################
+    print("=" * 25)
+    print("Invalid test case 1 for API - get_product_description")
+    try:
+        product_manager.get_product_description(
+            product_id=""
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Invalid test case 2 for API - get_product_description")
+    try:
+        product_manager.get_product_description(
+            product_id="INVALID"
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Valid test case for API - get_product_description")
+    try:
+        valid_response = product_manager.get_product_description(
+            product_id="P23B4C"
+        )
+        print(f"Valid response: {valid_response}")
+    except ValueError as e:
+        print(f"Unexpected error: {str(e)}")
+
+    ######################## Unit tests for API - get_product_listing_status ########################
+    print("=" * 25)
+    print("Invalid test case 1 for API - get_product_listing_status")
+    try:
+        product_manager.get_product_listing_status(
+            product_id="",
+            marketplace_id=""
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Invalid test case 2 for API - get_product_listing_status")
+    try:
+        product_manager.get_product_listing_status(
+            product_id="INVALID",
+            marketplace_id="US001"
+        )
+    except ValueError as e:
+        print(f"Expected error: {str(e)}")
+
+    print("=" * 25)
+    print("Valid test case for API - get_product_listing_status")
+    try:
+        valid_response = product_manager.get_product_listing_status(
+            product_id="P78X9Y",
+            marketplace_id="US"
+        )
+        print(f"Valid response: {valid_response}")
+    except ValueError as e:
+        print(f"Unexpected error: {str(e)}")
